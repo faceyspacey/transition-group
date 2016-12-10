@@ -1,3 +1,6 @@
+import ReactDOM from 'react-dom';
+
+
 export function addClass(component, transitionName='', className) {
   try { 
     let element = ReactDOM.findDOMNode(component);
