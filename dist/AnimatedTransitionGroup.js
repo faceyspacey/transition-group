@@ -16,6 +16,8 @@ var _reactAddonsTransitionGroup = require('react-addons-transition-group');
 
 var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
 
+var _domUtils = require('./dom-utils');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -39,11 +41,11 @@ var AnimatedTransitionGroup = function (_React$Component) {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (this.props.onEmpty && _react2.default.Children.count(nextProps.children) === this.props.zeroElements && _react2.default.Children.count(this.props.children) > this.props.zeroElements) {
-        setTimeoutAnimationFrame(this.props.onEmpty, this.props.timeout || 0);
+        (0, _domUtils.setTimeoutAnimationFrame)(this.props.onEmpty, this.props.timeout || 0);
       }
 
       if (this.props.onFull && _react2.default.Children.count(nextProps.children) > this.props.zeroElements && _react2.default.Children.count(this.props.children) === this.props.zeroElements) {
-        setTimeoutAnimationFrame(this.props.onFull);
+        (0, _domUtils.setTimeoutAnimationFrame)(this.props.onFull);
       }
     }
   }, {

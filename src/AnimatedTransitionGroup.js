@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactTransitionGroup from 'react-addons-transition-group';
 
+import { setTimeoutAnimationFrame } from './dom-utils';
+
 
 export default class AnimatedTransitionGroup extends React.Component {
   static defaultProps = {
