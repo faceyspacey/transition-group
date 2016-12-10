@@ -1,0 +1,31 @@
+{
+  "name": "animated-transition-group",
+  "version": "1.0.0",
+  "description": "like `<ReactTransitionGroup />` + callbacks, extras and child-specific customization",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel ./src --out-dir ./dist",
+    "publish": "npm run build && git add --all && git commit -a -m 'build' && git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celebvidy/animated-transition-group.git"
+  },
+  "author": "James Gillmore <james@faceyspacey.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/celebvidy/animated-transition-group/issues"
+  },
+  "homepage": "https://github.com/celebvidy/animated-transition-group#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0"
+  },
+  "peerDependencies": {
+    "react": "15.x",
+    "react-dom": "15.x",
+    "react-addons-transition-group": "15.x"
+  }
+}
