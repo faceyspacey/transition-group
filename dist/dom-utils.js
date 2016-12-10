@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.addClass = addClass;
 exports.removeAnimationClasses = removeAnimationClasses;
+exports.setTimeoutAnimationFrame = setTimeoutAnimationFrame;
 
 var _reactDom = require('react-dom');
 

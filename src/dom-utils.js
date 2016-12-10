@@ -29,7 +29,7 @@ export function removeAnimationClasses(component, transitionName='') {
   }
 }
 
-function setTimeoutAnimationFrame(func, ms=0) {
+export function setTimeoutAnimationFrame(func, ms=0) {
   if(!func) return;
 
   setTimeout(() => {
