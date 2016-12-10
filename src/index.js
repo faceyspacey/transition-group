@@ -1,2 +1,2 @@
-export { AnimatedTransitionGroup } from './AnimatedTransitionGroup';
-export { AnimatedChild } from './AnimatedChild';
+export { default as AnimatedTransitionGroup } from './AnimatedTransitionGroup';
+export { default as AnimatedChild } from './AnimatedChild';
