@@ -1,2 +1,2 @@
-# animated-class-name
-simple div component to switch the className without re-renders + an onComplete handler
+# animated-transition-group
+like `<ReactTransitionGroup />` + callbacks, extras and child-specific customization
