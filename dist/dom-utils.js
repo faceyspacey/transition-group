@@ -1,5 +1,10 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.addClass = addClass;
+exports.removeAnimationClasses = removeAnimationClasses;
 function addClass(component) {
   var transitionName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
   var className = arguments[2];

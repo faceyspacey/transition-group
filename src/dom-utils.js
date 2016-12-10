@@ -1,4 +1,4 @@
-function addClass(component, transitionName='', className) {
+export function addClass(component, transitionName='', className) {
   try { 
     let element = ReactDOM.findDOMNode(component);
     className = transitionName ? `${transitionName}-${className}` : className;
@@ -11,7 +11,7 @@ function addClass(component, transitionName='', className) {
   }
 }
 
-function removeAnimationClasses(component, transitionName='') {
+export function removeAnimationClasses(component, transitionName='') {
   try { //dom node may have been removed if wrapped by an outer animation with a shorter duration (no big deal)
     let element = ReactDOM.findDOMNode(component);
     let classNameReg = !transitionName ? 'enter-active|enter' : `${transitionName}-enter-active|${transitionName}-enter`;
