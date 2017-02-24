@@ -74,7 +74,7 @@ var AnimatedTransitionGroup = function (_React$Component) {
         _reactAddonsTransitionGroup2.default,
         props,
         _react2.default.Children.map(children, function (child) {
-          if (!child) return null; //cloneElement won't work on a non-existent child (then filter it out)
+          if (!child) return null; // cloneElement won't work on a non-existent child (then filter it out)
 
           return _react2.default.cloneElement(child, _extends({
             onlyEnter: onlyEnter,

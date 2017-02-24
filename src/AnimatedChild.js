@@ -40,8 +40,8 @@ export default class AnimatedChild extends React.Component {
     let {transitionName=''} = this.props
     let activeClass = `${className}-active`
 
-    addClass(this, transitionName, className)
-    setTimeoutAnimationFrame(() => addClass(this, transitionName, activeClass), delay)
+    addClass(this, className, transitionName)
+    setTimeoutAnimationFrame(() => addClass(this, activeClass, transitionName), delay)
 
     setTimeoutAnimationFrame(done, timeout)
   }

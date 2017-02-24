@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 
 
-export function addClass(component, transitionName='', className) {
+export function addClass(component, className, transitionName='') {
   try { 
     let element = ReactDOM.findDOMNode(component);
     className = transitionName ? `${transitionName}-${className}` : className;

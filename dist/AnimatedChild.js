@@ -97,9 +97,9 @@ var AnimatedChild = function (_React$Component) {
 
       var activeClass = className + '-active';
 
-      (0, _domUtils.addClass)(this, transitionName, className);
+      (0, _domUtils.addClass)(this, className, transitionName);
       (0, _domUtils.setTimeoutAnimationFrame)(function () {
-        return (0, _domUtils.addClass)(_this2, transitionName, activeClass);
+        return (0, _domUtils.addClass)(_this2, activeClass, transitionName);
       }, delay);
 
       (0, _domUtils.setTimeoutAnimationFrame)(done, timeout);

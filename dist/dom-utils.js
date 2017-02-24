@@ -13,9 +13,8 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function addClass(component) {
-  var transitionName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-  var className = arguments[2];
+function addClass(component, className) {
+  var transitionName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
 
   try {
     var element = _reactDom2.default.findDOMNode(component);
