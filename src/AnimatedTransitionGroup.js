@@ -54,7 +54,7 @@ export default class AnimatedTransitionGroup extends React.Component {
     return (
       <ReactTransitionGroup {...props}>
         {React.Children.map(children, child => {
-          if(!child) return null; //cloneElement won't work on a non-existent child (then filter it out)
+          if(!child) return null; // cloneElement won't work on a non-existent child (then filter it out)
 
           return React.cloneElement(child, {
             onlyEnter,

@@ -1,6 +1,6 @@
 {
   "name": "animated-transition-group",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "like `<ReactTransitionGroup />` + callbacks, extras and child-specific customization",
   "main": "dist/index.js",
   "scripts": {
@@ -27,5 +27,11 @@
     "react": "15.x",
     "react-dom": "15.x",
     "react-addons-transition-group": "15.x"
+  },
+  "jest": {
+    "verbose": true,
+    "moduleFileExtensions": [
+      "js"
+    ]
   }
 }
