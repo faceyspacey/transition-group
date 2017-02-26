@@ -41,7 +41,7 @@ var AnimatedTransitionGroup = function (_React$Component) {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (this.props.onEmpty && _react2.default.Children.count(nextProps.children) === this.props.zeroElements && _react2.default.Children.count(this.props.children) > this.props.zeroElements) {
-        (0, _domUtils.setTimeoutAnimationFrame)(this.props.onEmpty, this.props.timeout || 0);
+        (0, _domUtils.setTimeoutAnimationFrame)(this.props.onEmpty, this.props.timeout);
       }
 
       if (this.props.onFull && _react2.default.Children.count(nextProps.children) > this.props.zeroElements && _react2.default.Children.count(this.props.children) === this.props.zeroElements) {
@@ -57,7 +57,7 @@ var AnimatedTransitionGroup = function (_React$Component) {
           onFull = _props.onFull,
           zeroElements = _props.zeroElements,
           onlyEnter = _props.onlyEnter,
-          transitionName = _props.transitionName,
+          name = _props.name,
           timeout = _props.timeout,
           enterTimeout = _props.enterTimeout,
           leaveTimeout = _props.leaveTimeout,
@@ -68,17 +68,17 @@ var AnimatedTransitionGroup = function (_React$Component) {
           onAppear = _props.onAppear,
           onEnter = _props.onEnter,
           onLeave = _props.onLeave,
-          props = _objectWithoutProperties(_props, ['children', 'onEmpty', 'onFull', 'zeroElements', 'onlyEnter', 'transitionName', 'timeout', 'enterTimeout', 'leaveTimeout', 'appearTimeout', 'enterDelay', 'leaveDelay', 'appearDelay', 'onAppear', 'onEnter', 'onLeave']);
+          props = _objectWithoutProperties(_props, ['children', 'onEmpty', 'onFull', 'zeroElements', 'onlyEnter', 'name', 'timeout', 'enterTimeout', 'leaveTimeout', 'appearTimeout', 'enterDelay', 'leaveDelay', 'appearDelay', 'onAppear', 'onEnter', 'onLeave']);
 
       return _react2.default.createElement(
         _reactAddonsTransitionGroup2.default,
         props,
         _react2.default.Children.map(children, function (child) {
-          if (!child) return null; // cloneElement won't work on a non-existent child (then filter it out)
+          if (!child) return null; // cloneElement won't work on a non-existent child (null will filter it out)
 
           return _react2.default.cloneElement(child, _extends({
             onlyEnter: onlyEnter,
-            transitionName: transitionName,
+            name: name,
             timeout: timeout,
 
             enterTimeout: enterTimeout,
@@ -104,6 +104,25 @@ var AnimatedTransitionGroup = function (_React$Component) {
 }(_react2.default.Component);
 
 AnimatedTransitionGroup.defaultProps = {
-  zeroElements: 0
+  zeroElements: 0,
+  timeout: 0
+};
+AnimatedTransitionGroup.propTypes = {
+  children: require('react').PropTypes.any.isRequired,
+  onEmpty: require('react').PropTypes.func,
+  onFull: require('react').PropTypes.func,
+  zeroElements: require('react').PropTypes.number,
+  onlyEnter: require('react').PropTypes.bool,
+  name: require('react').PropTypes.string,
+  timeout: require('react').PropTypes.number,
+  appearTimeout: require('react').PropTypes.number,
+  enterTimeout: require('react').PropTypes.number,
+  leaveTimeout: require('react').PropTypes.number,
+  appearDelay: require('react').PropTypes.number,
+  enterDelay: require('react').PropTypes.number,
+  leaveDelay: require('react').PropTypes.number,
+  onAppear: require('react').PropTypes.func,
+  onEnter: require('react').PropTypes.func,
+  onLeave: require('react').PropTypes.func
 };
 exports.default = AnimatedTransitionGroup;

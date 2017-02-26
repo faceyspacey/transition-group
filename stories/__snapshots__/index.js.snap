@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test 1`] = `
+<div
+  className="foo"
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "blue",
+        "height": 100,
+        "width": 100,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`test Should have the Hello World label 1`] = `
+<AnimatedTransitionGroup
+  className="foo"
+  component="div"
+  name="fade"
+  timeout={1000}
+  zeroElements={0}
+>
+  <ReactTransitionGroup
+    childFactory={[Function]}
+    className="foo"
+    component="div"
+  >
+    <div
+      className="foo"
+    >
+      <AnimatedChild
+        name="fade"
+        timeout={1000}
+      >
+        <div
+          style={
+            Object {
+              "backgroundColor": "blue",
+              "height": 100,
+              "width": 100,
+            }
+          }
+        />
+      </AnimatedChild>
+    </div>
+  </ReactTransitionGroup>
+</AnimatedTransitionGroup>
+`;

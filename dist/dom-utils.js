@@ -13,32 +13,36 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// eslint-disable-line
+
+
 function addClass(component, className) {
-  var transitionName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+  var name = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
 
   try {
     var element = _reactDom2.default.findDOMNode(component);
-    className = transitionName ? transitionName + '-' + className : className;
+
+    className = name ? name + '-' + className : className;
     element.className = element.className + '  ' + className;
   } catch (e) {
-    if (process.env.NODE_ENV !== 'production') {
-      console.warn('AnimatedChild had the following adding classes ' + e.toString());
+    if (process.env.NODE_ENV !== 'production' && process.env.STORYBOOK_GIT_BRANCH) {
+      console.warn('AnimatedChild had the following issue adding classes: ' + e.toString());
     }
   }
 }
 
 function removeAnimationClasses(component) {
-  var transitionName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+  var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
 
   try {
-    //dom node may have been removed if wrapped by an outer animation with a shorter duration (no big deal)
+    // dom node may have been removed if wrapped by an outer animation with a shorter duration (no big deal)
     var element = _reactDom2.default.findDOMNode(component);
-    var classNameReg = !transitionName ? 'enter-active|enter' : transitionName + '-enter-active|' + transitionName + '-enter';
+    var classNameReg = !name ? 'enter-active|appear-active|enter|appear' : name + '-enter-active|' + name + '-appear-active|' + name + '-enter|' + name + '-appear';
 
     var re = new RegExp(classNameReg, 'g');
     element.className = element.className.replace(re, '');
   } catch (e) {
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production' && process.env.STORYBOOK_GIT_BRANCH) {
       console.warn('AnimatedChild had the following issue removing classes: ' + e.toString());
     }
   }

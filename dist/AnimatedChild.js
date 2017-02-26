@@ -58,8 +58,9 @@ var AnimatedChild = function (_React$Component) {
           _props$appearDelay = _props.appearDelay,
           appearDelay = _props$appearDelay === undefined ? 0 : _props$appearDelay;
 
-      timeout = (appearTimeout || timeout) + appearDelay + 1;
-      this.animate(done, 'appear', timeout, appearDelay);
+      var duration = (appearTimeout || timeout) + appearDelay + 1;
+
+      this.animate(done, 'appear', duration, appearDelay);
     }
   }, {
     key: 'handleEntrance',
@@ -71,8 +72,9 @@ var AnimatedChild = function (_React$Component) {
           _props2$enterDelay = _props2.enterDelay,
           enterDelay = _props2$enterDelay === undefined ? 0 : _props2$enterDelay;
 
-      timeout = (enterTimeout || timeout) + enterDelay + 1;
-      this.animate(done, 'enter', timeout, enterDelay);
+      var duration = (enterTimeout || timeout) + enterDelay + 1;
+
+      this.animate(done, 'enter', duration, enterDelay);
     }
   }, {
     key: 'handleLeave',
@@ -84,47 +86,53 @@ var AnimatedChild = function (_React$Component) {
           _props3$leaveDelay = _props3.leaveDelay,
           leaveDelay = _props3$leaveDelay === undefined ? 0 : _props3$leaveDelay;
 
-      timeout = (leaveTimeout || timeout) + leaveDelay + 1;
-      this.animate(done, 'leave', timeout, leaveDelay);
+      var duration = (leaveTimeout || timeout) + leaveDelay + 1;
+
+      this.animate(done, 'leave', duration, leaveDelay);
     }
   }, {
     key: 'animate',
-    value: function animate(done, className, timeout, delay) {
+    value: function animate(done, className, duration, delay) {
       var _this2 = this;
 
-      var _props$transitionName = this.props.transitionName,
-          transitionName = _props$transitionName === undefined ? '' : _props$transitionName;
+      var _props$name = this.props.name,
+          name = _props$name === undefined ? '' : _props$name;
 
       var activeClass = className + '-active';
 
-      (0, _domUtils.addClass)(this, className, transitionName);
+      (0, _domUtils.addClass)(this, className, name);
       (0, _domUtils.setTimeoutAnimationFrame)(function () {
-        return (0, _domUtils.addClass)(_this2, activeClass, transitionName);
+        return (0, _domUtils.addClass)(_this2, activeClass, name);
       }, delay);
 
-      (0, _domUtils.setTimeoutAnimationFrame)(done, timeout);
+      (0, _domUtils.setTimeoutAnimationFrame)(done, duration);
     }
   }, {
     key: 'componentDidAppear',
     value: function componentDidAppear() {
-      (0, _domUtils.removeAnimationClasses)(this, this.props.transitionName);
+      (0, _domUtils.removeAnimationClasses)(this, this.props.name);
 
-      if (this.props.onlyEnter) {
-        this.props.onEntered && this.props.onEntered();
-      } else {
-        this.props.onAppeared && this.props.onAppeared();
+      if (this.props.onlyEnter && this.props.onEnter) {
+        this.props.onEnter();
+      } else if (this.props.onAppear) {
+        this.props.onAppear();
       }
     }
   }, {
     key: 'componentDidEnter',
     value: function componentDidEnter() {
-      (0, _domUtils.removeAnimationClasses)(this, this.props.transitionName);
-      this.props.onEntered && this.props.onEntered();
+      (0, _domUtils.removeAnimationClasses)(this, this.props.name);
+
+      if (this.props.onEnter) {
+        this.props.onEnter();
+      }
     }
   }, {
     key: 'componentDidLeave',
     value: function componentDidLeave() {
-      this.props.onLeave && this.props.onLeave();
+      if (this.props.onLeave) {
+        this.props.onLeave();
+      }
     }
   }, {
     key: 'render',
@@ -136,4 +144,19 @@ var AnimatedChild = function (_React$Component) {
   return AnimatedChild;
 }(_react2.default.Component);
 
+AnimatedChild.propTypes = {
+  children: require('react').PropTypes.any.isRequired,
+  onlyEnter: require('react').PropTypes.bool,
+  name: require('react').PropTypes.string,
+  timeout: require('react').PropTypes.number,
+  appearTimeout: require('react').PropTypes.number,
+  enterTimeout: require('react').PropTypes.number,
+  leaveTimeout: require('react').PropTypes.number,
+  appearDelay: require('react').PropTypes.number,
+  enterDelay: require('react').PropTypes.number,
+  leaveDelay: require('react').PropTypes.number,
+  onAppear: require('react').PropTypes.func,
+  onEnter: require('react').PropTypes.func,
+  onLeave: require('react').PropTypes.func
+};
 exports.default = AnimatedChild;
