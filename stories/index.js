@@ -46,6 +46,8 @@ const storyComponent = ({ backgroundColor, color, dispatch, text }) =>
             dispatch({ type: 'BLUR', payload: value })
           }}
         />
+
+        <span>enter a color and blur it to change</span>
       </div>
     </AnimatedChild>
   </AnimatedTransitionGroup>
@@ -56,35 +58,13 @@ const STORY = connect(state => state)(storyComponent)
 // const stories = storiesOf('AnimatedTransitionGroup', module)
 
 describe('test', () => {
-  // const colr = color('Color', 'green')
-  const colr = 'green'
+  const colr = color('Color', 'green')
 
   const story =
     <Provider store={store}>
       <STORY backgroundColor={colr} />
     </Provider>
 
-  it('component', () => {
-    //const component = renderer.create(story)
-    expect(1).toEqual(1)
-    expect(2).toEqual(2)
-    expect(3).toEqual(3)
-    expect(1).toEqual(1)
-    //expect(component).toMatchSnapshot()
-
-    return story
-  })
-
-  it('foo', () => {
-    //const component = renderer.create(story)
-    expect(66).toEqual(66)
-    expect(55).toEqual(55)
-    //expect(component).toMatchSnapshot()
-
-    //return story
-  })
-
-  /** 
   it('blue', () => {
     store.dispatch({ type: 'CHANGE', payload: 'blue' })
     store.dispatch({ type: 'BLUR', payload: 'blue' })
@@ -92,8 +72,10 @@ describe('test', () => {
     const { color } = store.getState()
     expect(color).toEqual('blue')
 
-    //const component = renderer.create(story)
-    //expect(component).toMatchSnapshot()
+    const component = renderer.create(story)
+    expect(component).toMatchSnapshot()
+
+    return story
   })
 
   it('red', () => {
@@ -103,10 +85,11 @@ describe('test', () => {
     const { color } = store.getState()
     expect(color).toEqual('red')
 
-    //const component = renderer.create(story)
-    //expect(component).toMatchSnapshot()
+    const component = renderer.create(story)
+    expect(component).toMatchSnapshot()
+
+    return story
   })
-  **/
 }, module)
 
 
@@ -119,27 +102,18 @@ describe('test2', () => {
       <STORY backgroundColor={colr} />
     </Provider>
 
-  it('component2', () => {
-    //const component = renderer.create(story)
+  it('back equal tests', () => {
     expect(1).toEqual(1)
     expect(2).toEqual(2)
     expect(3).toEqual(3)
     expect(1).toEqual(1)
-    //expect(component).toMatchSnapshot()
-
-    return story
   })
 
-  it('foo2', () => {
-    //const component = renderer.create(story)
+  it('more equal tests', () => {
     expect(66).toEqual(66)
     expect(55).toEqual(55)
-    //expect(component).toMatchSnapshot()
-
-    //return story
   })
 
-  /** 
   it('blue', () => {
     store.dispatch({ type: 'CHANGE', payload: 'blue' })
     store.dispatch({ type: 'BLUR', payload: 'blue' })
@@ -147,8 +121,10 @@ describe('test2', () => {
     const { color } = store.getState()
     expect(color).toEqual('blue')
 
-    //const component = renderer.create(story)
-    //expect(component).toMatchSnapshot()
+    const component = renderer.create(story)
+    expect(component).toMatchSnapshot()
+
+    return story
   })
 
   it('red', () => {
@@ -158,8 +134,9 @@ describe('test2', () => {
     const { color } = store.getState()
     expect(color).toEqual('red')
 
-    //const component = renderer.create(story)
-    //expect(component).toMatchSnapshot()
+    const component = renderer.create(story)
+    expect(component).toMatchSnapshot()
+
+    return story
   })
-  **/
 }, module)

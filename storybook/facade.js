@@ -50,6 +50,9 @@ const exp = received => ({
       expect(received).toEqual(expected)
     })
   },
+  toMatchSnapshot: (expected) => {
+
+  },
 })
 
 export {

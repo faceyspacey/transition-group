@@ -21,31 +21,9 @@ exports[`test blue 1`] = `
       }
       value="blue"
     />
-  </div>
-</div>
-`;
-
-exports[`test component 1`] = `
-<div
-  className="foo"
->
-  <div
-    style={
-      Object {
-        "backgroundColor": "green",
-      }
-    }
-  >
-    <input
-      onBlur={[Function]}
-      onChange={[Function]}
-      style={
-        Object {
-          "color": undefined,
-        }
-      }
-      value=""
-    />
+    <span>
+      enter a color and blur it to change
+    </span>
   </div>
 </div>
 `;
@@ -71,6 +49,65 @@ exports[`test red 1`] = `
       }
       value="red"
     />
+    <span>
+      enter a color and blur it to change
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test2 blue 1`] = `
+<div
+  className="foo"
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "green",
+      }
+    }
+  >
+    <input
+      onBlur={[Function]}
+      onChange={[Function]}
+      style={
+        Object {
+          "color": "blue",
+        }
+      }
+      value="blue"
+    />
+    <span>
+      enter a color and blur it to change
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test2 red 1`] = `
+<div
+  className="foo"
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "green",
+      }
+    }
+  >
+    <input
+      onBlur={[Function]}
+      onChange={[Function]}
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+      value="red"
+    />
+    <span>
+      enter a color and blur it to change
+    </span>
   </div>
 </div>
 `;
