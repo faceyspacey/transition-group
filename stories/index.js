@@ -1,7 +1,6 @@
-import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { describe, it, expect, color } from '../storybook/facade'
+import { describe, it, expect } from '../storybook/facade'
 import setupStory from '../storybook/setupStory'
 
 
