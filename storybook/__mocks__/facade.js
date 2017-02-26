@@ -31,8 +31,9 @@ export const specs = (spec) => {
   spec()
 }
 
+const expec = expect
+export { expec as expect }
 
-export const exp = expect
 export const describe = jasmine.currentEnv_.describe
 export const beforeEach = jasmine.currentEnv_.beforeEach
 export const afterEach = jasmine.currentEnv_.afterEach

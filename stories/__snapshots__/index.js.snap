@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test blue 1`] = `
+exports[`AnimatedTransitionGroup 1 blue 1`] = `
 <div
   className="foo"
 >
   <div
     style={
       Object {
-        "backgroundColor": "green",
+        "backgroundColor": "pink",
       }
     }
   >
@@ -21,21 +21,27 @@ exports[`test blue 1`] = `
       }
       value="blue"
     />
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": 10,
+        }
+      }
+    >
       enter a color and blur it to change
     </span>
   </div>
 </div>
 `;
 
-exports[`test red 1`] = `
+exports[`AnimatedTransitionGroup 1 red 1`] = `
 <div
   className="foo"
 >
   <div
     style={
       Object {
-        "backgroundColor": "green",
+        "backgroundColor": "pink",
       }
     }
   >
@@ -49,21 +55,27 @@ exports[`test red 1`] = `
       }
       value="red"
     />
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": 10,
+        }
+      }
+    >
       enter a color and blur it to change
     </span>
   </div>
 </div>
 `;
 
-exports[`test2 blue 1`] = `
+exports[`AnimatedTransitionGroup 2 green 1`] = `
 <div
   className="foo"
 >
   <div
     style={
       Object {
-        "backgroundColor": "green",
+        "backgroundColor": "pink",
       }
     }
   >
@@ -72,26 +84,32 @@ exports[`test2 blue 1`] = `
       onChange={[Function]}
       style={
         Object {
-          "color": "blue",
+          "color": "green",
         }
       }
-      value="blue"
+      value="green"
     />
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": 10,
+        }
+      }
+    >
       enter a color and blur it to change
     </span>
   </div>
 </div>
 `;
 
-exports[`test2 red 1`] = `
+exports[`AnimatedTransitionGroup 2 orange 1`] = `
 <div
   className="foo"
 >
   <div
     style={
       Object {
-        "backgroundColor": "green",
+        "backgroundColor": "pink",
       }
     }
   >
@@ -100,12 +118,18 @@ exports[`test2 red 1`] = `
       onChange={[Function]}
       style={
         Object {
-          "color": "red",
+          "color": "orange",
         }
       }
-      value="red"
+      value="orange"
     />
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": 10,
+        }
+      }
+    >
       enter a color and blur it to change
     </span>
   </div>

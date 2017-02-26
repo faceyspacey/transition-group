@@ -10,7 +10,7 @@ import {
   it as itReal,
 } from 'storybook-addon-specifications'
 
-import expect from 'expect'
+import expectReal from 'expect'
 
 export {
   storiesOf,
@@ -18,7 +18,7 @@ export {
   linkTo,
 } from '@kadira/storybook'
 
-export { withKnobs, color } from '@kadira/storybook-addon-knobs'
+export { withKnobs } from '@kadira/storybook-addon-knobs'
 
 export {
   beforeEach,
@@ -30,38 +30,16 @@ export {
   xdescribe,
 } from 'storybook-addon-specifications'
 
-expect.extend({
-  toMatchSnapshot() {
-    expect.assert(
-      true,
-      'expected a snapshot',
-      'shot',
-    )
-    return this
-  },
-})
-
-const exp = received => ({
-  toEqual: (expected) => {
-    const name = `expects ${received} to equal ${expected}`
-
-    itReal(name, () => {
-      console.log('expected', name, received, expected)
-      expect(received).toEqual(expected)
-    })
-  },
-  toMatchSnapshot: (expected) => {
-
-  },
-})
-
-export {
-  exp,
-}
-
-
 export const snapshot = () => {}
 export const snap = () => {}
+export const color = (label, color) => color
+
+let stories
+
+export const describe = (name, tests) => {
+  stories = storiesOf(name, module)
+  tests()
+}
 
 export const it = (name, test) => {
   stories.addWithInfo(name, () => {
@@ -75,13 +53,22 @@ export const it = (name, test) => {
   })
 }
 
-export const describe = (name, tests, mod) => {
-  stories = storiesOf(name, mod)
-  tests()
-}
+export const expect = received => ({
+  toEqual: (expected) => {
+    const name = `expects ${received} to equal ${expected}`
 
+    itReal(name, () => {
+      expectReal(received).toEqual(expected)
+    })
+  },
+  toMatchSnapshot: () => {
+    const name = 'snapshot taken -- but only in jest or wallaby'
 
-let stories
+    itReal(name, () => {
+
+    })
+  },
+})
 
 
 /** ATTEMPTS */
@@ -138,4 +125,15 @@ export const itOLDTHREE = (name, test) => {
   }
 }
 
+
+expect.extend({
+  toMatchSnapshot() {
+    expect.assert(
+      true,
+      'expected a snapshot',
+      'shot',
+    )
+    return this
+  },
+})
 **/
