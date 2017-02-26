@@ -3,7 +3,7 @@
 import ReactDOM from 'react-dom' // eslint-disable-line
 
 
-export function addClass(component: React$Element, className: string, name: string = '') {
+export function addClass(component: React$Component<*, *, *>, className: string, name: ?string = '') {
   try {
     const element = ReactDOM.findDOMNode(component)
 
@@ -11,13 +11,13 @@ export function addClass(component: React$Element, className: string, name: stri
     element.className = `${element.className}  ${className}`
   }
   catch (e) {
-    if (process.env.NODE_ENV !== 'production' && process.env.STORYBOOK_GIT_BRANCH) {
+    if (process.env.NODE_ENV !== 'production' && !process.env.STORYBOOK_GIT_BRANCH) {
       console.warn(`AnimatedChild had the following issue adding classes: ${e.toString()}`)
     }
   }
 }
 
-export function removeAnimationClasses(component: React$Element, name: string = '') {
+export function removeAnimationClasses(component: React$Component<*, *, *>, name: ?string = '') {
   try { // dom node may have been removed if wrapped by an outer animation with a shorter duration (no big deal)
     const element = ReactDOM.findDOMNode(component)
     const classNameReg = !name
@@ -28,16 +28,17 @@ export function removeAnimationClasses(component: React$Element, name: string = 
     element.className = element.className.replace(re, '')
   }
   catch (e) {
-    if (process.env.NODE_ENV === 'production' && process.env.STORYBOOK_GIT_BRANCH) {
+    if (process.env.NODE_ENV === 'production' && !process.env.STORYBOOK_GIT_BRANCH) {
       console.warn(`AnimatedChild had the following issue removing classes: ${e.toString()}`)
     }
   }
 }
 
 export function setTimeoutAnimationFrame(func?: Function, ms?: number = 0) {
-  if (!func) return
+  const callback = func
+  if (typeof callback !== 'function') return
 
   setTimeout(() => {
-    requestAnimationFrame(func)
+    requestAnimationFrame(callback)
   }, ms)
 }

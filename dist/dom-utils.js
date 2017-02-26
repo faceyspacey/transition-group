@@ -25,7 +25,7 @@ function addClass(component, className) {
     className = name ? name + '-' + className : className;
     element.className = element.className + '  ' + className;
   } catch (e) {
-    if (process.env.NODE_ENV !== 'production' && process.env.STORYBOOK_GIT_BRANCH) {
+    if (process.env.NODE_ENV !== 'production' && !process.env.STORYBOOK_GIT_BRANCH) {
       console.warn('AnimatedChild had the following issue adding classes: ' + e.toString());
     }
   }
@@ -42,7 +42,7 @@ function removeAnimationClasses(component) {
     var re = new RegExp(classNameReg, 'g');
     element.className = element.className.replace(re, '');
   } catch (e) {
-    if (process.env.NODE_ENV === 'production' && process.env.STORYBOOK_GIT_BRANCH) {
+    if (process.env.NODE_ENV === 'production' && !process.env.STORYBOOK_GIT_BRANCH) {
       console.warn('AnimatedChild had the following issue removing classes: ' + e.toString());
     }
   }
@@ -51,9 +51,10 @@ function removeAnimationClasses(component) {
 function setTimeoutAnimationFrame(func) {
   var ms = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
-  if (!func) return;
+  var callback = func;
+  if (typeof callback !== 'function') return;
 
   setTimeout(function () {
-    requestAnimationFrame(func);
+    requestAnimationFrame(callback);
   }, ms);
 }

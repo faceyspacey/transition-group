@@ -6,13 +6,15 @@ export const storiesOf = () => {
 
   api.add = (name, func) => {
     story = func()
-    snapshot(name, story)
+    //snapshot(name, story)
     return api
   }
 
   api.addWithInfo = (name, info, func) => {
+    func = func || info
+
     story = func()
-    snapshot(name, story)
+    //snapshot(name, story)
     return api
   }
 
@@ -30,8 +32,8 @@ export const specs = (spec) => {
 }
 
 
+export const exp = expect
 export const describe = jasmine.currentEnv_.describe
-export const it = jasmine.currentEnv_.it
 export const beforeEach = jasmine.currentEnv_.beforeEach
 export const afterEach = jasmine.currentEnv_.afterEach
 export const xit = jasmine.currentEnv_.xit
@@ -39,6 +41,16 @@ export const xdescribe = jasmine.currentEnv_.xdescribe
 export const fit = jasmine.currentEnv_.fit
 export const after = () => {}
 export const before = () => {}
+export const it = (name, test) => {
+  jasmine.currentEnv_.it(name, () => {
+    const ret = test()
+
+    // storybook `it` allows for returning story component, but undefined or promises is expected in jest
+    if (typeof ret === 'object' && ret.next) {
+      return ret
+    }
+  })
+}
 
 export const color = (label, color) => color
 

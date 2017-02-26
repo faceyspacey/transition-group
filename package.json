@@ -7,8 +7,8 @@
     "dist"
   ],
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c .storybook",
-    "storybook:build": "rimraf distStoryBook && build-storybook -c .storybook -o distStorybook",
+    "storybook": "start-storybook -p 9001 -c storybook",
+    "storybook:build": "rimraf distStoryBook && build-storybook -c storybook -o distStorybook",
     "build": "babel src -d dist",
     "prepublish": "npm run clean && npm run build && npm run flow-copy",
     "flow-copy": "flow-copy-source src dist",
@@ -41,6 +41,7 @@
     "babel-preset-jest": "^19.0.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "babel-runtime": "^6.23.0",
     "enzyme": "^2.7.1",
     "enzyme-to-json": "^1.5.0",
     "eslint": "^3.7.1",
@@ -57,7 +58,9 @@
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
     "react-test-renderer": "^15.4.2",
+    "redux": "^3.6.0",
     "rimraf": "^2.6.0",
     "storybook-addon-specifications": "^1.0.15"
   },
@@ -73,9 +76,9 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "setupFiles": [
-      "<rootDir>/jestSetup.js"
-    ],
+    "moduleNameMapper": {
+      ".storybook/facade": "<rootDir>/storybook/__mocks__/facade.js"
+    },
     "moduleFileExtensions": [
       "js"
     ]

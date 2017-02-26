@@ -63,12 +63,12 @@ export default class AnimatedChild extends React.Component {
     this.animate(done, 'leave', duration, leaveDelay)
   }
 
-  animate(done: Function, className: string, duration: number, delay: number) {
+  animate(done: Function, className: string, duration: number, delay: ?number) {
     const { name = '' } = this.props
     const activeClass = `${className}-active`
 
     addClass(this, className, name)
-    setTimeoutAnimationFrame(() => addClass(this, activeClass, name), delay)
+    setTimeoutAnimationFrame(() => addClass(this, activeClass, name), delay || 0)
 
     setTimeoutAnimationFrame(done, duration)
   }

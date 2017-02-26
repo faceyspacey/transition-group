@@ -103,7 +103,7 @@ var AnimatedChild = function (_React$Component) {
       (0, _domUtils.addClass)(this, className, name);
       (0, _domUtils.setTimeoutAnimationFrame)(function () {
         return (0, _domUtils.addClass)(_this2, activeClass, name);
-      }, delay);
+      }, delay || 0);
 
       (0, _domUtils.setTimeoutAnimationFrame)(done, duration);
     }

@@ -1,52 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test 1`] = `
+exports[`test blue 1`] = `
 <div
   className="foo"
 >
   <div
     style={
       Object {
-        "backgroundColor": "blue",
-        "height": 100,
-        "width": 100,
+        "backgroundColor": "green",
       }
     }
-  />
+  >
+    <input
+      onBlur={[Function]}
+      onChange={[Function]}
+      style={
+        Object {
+          "color": "blue",
+        }
+      }
+      value="blue"
+    />
+  </div>
 </div>
 `;
 
-exports[`test Should have the Hello World label 1`] = `
-<AnimatedTransitionGroup
+exports[`test component 1`] = `
+<div
   className="foo"
-  component="div"
-  name="fade"
-  timeout={1000}
-  zeroElements={0}
 >
-  <ReactTransitionGroup
-    childFactory={[Function]}
-    className="foo"
-    component="div"
+  <div
+    style={
+      Object {
+        "backgroundColor": "green",
+      }
+    }
   >
-    <div
-      className="foo"
-    >
-      <AnimatedChild
-        name="fade"
-        timeout={1000}
-      >
-        <div
-          style={
-            Object {
-              "backgroundColor": "blue",
-              "height": 100,
-              "width": 100,
-            }
-          }
-        />
-      </AnimatedChild>
-    </div>
-  </ReactTransitionGroup>
-</AnimatedTransitionGroup>
+    <input
+      onBlur={[Function]}
+      onChange={[Function]}
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`test red 1`] = `
+<div
+  className="foo"
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "green",
+      }
+    }
+  >
+    <input
+      onBlur={[Function]}
+      onChange={[Function]}
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+      value="red"
+    />
+  </div>
+</div>
 `;

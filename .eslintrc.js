@@ -34,7 +34,8 @@ module.exports = {
       "describe": true,
       "it": true,
       "expect": true,
-      "beforeEach": true
+      "beforeEach": true,
+      "jasmine": true,
   },
   "settings": {
     "flowtype": {
@@ -298,7 +299,7 @@ module.exports = {
 
     // Prevent missing props validation in a React component definition
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
-    'react/prop-types': ['error', { ignore: ['data-hover'], customValidators: [] }],
+    'react/prop-types': [0, { ignore: ['data-hover'], customValidators: [] }],
 
     // Prevent missing React when using JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md
