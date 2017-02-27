@@ -140,7 +140,7 @@ Expect.extend({
 })
 
 /** ATTEMPTS */
-/** 
+/**
 export const describeOld = (name, tests) => {
   // const stories = storiesOf(name, module)
 
@@ -149,8 +149,6 @@ export const describeOld = (name, tests) => {
 
   specs(() => describeReal(name, tests))
 }
-
-
 
 
 let grabbingStory

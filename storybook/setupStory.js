@@ -5,8 +5,6 @@ import configureStore from './configureStore'
 import { AnimatedTransitionGroup, AnimatedChild } from '../src/index'
 
 
-
-
 export const TransitionGroupWrapper = ({ color, dispatch, text }) =>
   <AnimatedTransitionGroup
     component="div"

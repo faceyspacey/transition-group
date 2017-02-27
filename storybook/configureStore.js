@@ -1,7 +1,9 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 
 
-const reducer = (state = { text: '', types: [] }, action = {}) => {
+const reducer = (state = { text: '', color: '' }, action = {}) => {
   if (action.type === 'CHANGE') {
     return {
       ...state,
@@ -18,5 +20,10 @@ const reducer = (state = { text: '', types: [] }, action = {}) => {
   return state
 }
 
-export default () =>
-  createStore(reducer)
+export default () => {
+  const middlewares = applyMiddleware(thunk)
+  const composeEnhancers = composeWithDevTools({ name: 'AnimatedTransitionGroup' })
+
+  return createStore(reducer, composeEnhancers(middlewares))
+}
+

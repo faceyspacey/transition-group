@@ -1,15 +1,11 @@
-import React from 'react'
 import renderer from 'react-test-renderer'
-import ReactTestUtils from 'react-addons-test-utils'
 
 import { describe, it, expect } from '../storybook/facade'
-import setupStory, { TransitionGroupWrapper } from '../storybook/setupStory'
-
+import setupStory from '../storybook/setupStory'
 
 
 describe('AnimatedTransitionGroup 1', () => {
   it('blue', () => {
-    console.log('RENDER')
     const { story, store } = setupStory()
 
     store.dispatch({ type: 'CHANGE', payload: 'blue' })
@@ -26,7 +22,6 @@ describe('AnimatedTransitionGroup 1', () => {
 
   it('red', () => {
     const { story, store } = setupStory()
-
     store.dispatch({ type: 'CHANGE', payload: 'red' })
     store.dispatch({ type: 'BLUR', payload: 'red' })
 
