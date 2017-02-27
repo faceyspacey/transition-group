@@ -1,29 +1,13 @@
 import React from 'react'
-import { createStore } from 'redux'
 import { Provider, connect } from 'react-redux'
 
+import configureStore from './configureStore'
 import { AnimatedTransitionGroup, AnimatedChild } from '../src/index'
 
 
-const reducer = (state = { text: '', types: [] }, action = {}) => {
-  if (action.type === 'CHANGE') {
-    return {
-      ...state,
-      text: action.payload,
-    }
-  }
-  else if (action.type === 'BLUR') {
-    return {
-      ...state,
-      color: action.payload,
-    }
-  }
-
-  return state
-}
 
 
-const TransitionGroupWrapper = ({ color, dispatch, text }) =>
+export const TransitionGroupWrapper = ({ color, dispatch, text }) =>
   <AnimatedTransitionGroup
     component="div"
     className='foo'
@@ -52,7 +36,7 @@ const TransitionGroup = connect(state => state)(TransitionGroupWrapper)
 
 
 export default () => {
-  const store = createStore(reducer)
+  const store = configureStore()
   const story =
     <Provider store={store}>
       <TransitionGroup />

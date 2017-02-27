@@ -1,38 +1,30 @@
 import React from 'react'
 
-import { 
-  storiesOf, 
-} from '@kadira/storybook'
+import { storiesOf } from '@kadira/storybook'
+import Expect from 'expect'
 
-import {
-  specs,
-  describe as describeReal,
-  it as itReal,
-} from 'storybook-addon-specifications'
+import { specs, after, before, describe as Describe, it as It } from 'storybook-addon-specifications'
 
-import expectReal from 'expect'
-
-export {
-  storiesOf,
-  action,
-  linkTo,
-} from '@kadira/storybook'
-
+export { storiesOf, action, linkTo } from '@kadira/storybook'
 export { withKnobs } from '@kadira/storybook-addon-knobs'
 
 export {
   beforeEach,
   afterEach,
-  after,
-  before,
+  before, // not supported in jest, use beforeAll
+  after,  // not supported in jest, use afterAll
   xit,
-  fit,
   xdescribe,
 } from 'storybook-addon-specifications'
 
-export const snapshot = () => {}
-export const snap = () => {}
+export const beforeAll = before
+export const afterAll = after
 export const color = (label, color) => color
+
+// this should actually perform the `only` function at some point
+export const fdescribe = (name, tests) => describe(name, tests)
+export const fit = (name, test) => it(name, test)
+
 
 let stories
 
@@ -45,7 +37,7 @@ export const it = (name, test) => {
   stories.addWithInfo(name, () => {
     let story
 
-    specs(() => describeReal(name, () => {
+    specs(() => Describe(name, () => {
       story = test()
     }))
 
@@ -53,23 +45,99 @@ export const it = (name, test) => {
   })
 }
 
-export const expect = received => ({
-  toEqual: (expected) => {
-    const name = `expects ${received} to equal ${expected}`
 
-    itReal(name, () => {
-      expectReal(received).toEqual(expected)
+export const expect = (received) => {
+  const callExpect = (method, ...expectedArgs) => {
+    const expectedValue = expectedArgs[0] || ''
+    const receivedFormatted = formatReceived(received, method)
+    const name = `expects ${receivedFormatted} ${method} ${expectedValue}`
+
+    It(name, () => {
+      Expect(received)[method](...expectedArgs)
     })
-  },
-  toMatchSnapshot: () => {
-    const name = 'snapshot taken -- but only in jest or wallaby'
+  }
 
-    itReal(name, () => {
+  return expectMethods.reduce((expectObject, method) => {
+    expectObject[method] = callExpect.bind(null, method)
+    return expectObject
+  }, {})
+}
 
-    })
+const formatReceived = (received, method) => {
+  if (method === 'toMatchSnapshot') {
+    return 'component or value'
+  }
+  else if (typeof received === 'function') {
+    return received.toString()
+  }
+  else if (typeof received === 'object') {
+    return JSON.stringify(received, null, 1)
+  }
+
+  return received
+}
+
+
+export const snap = (received) => {
+  expect(received).toMatchSnapshot()
+}
+
+const expectMethods = [
+  'toBeAn',
+  'toBeFalsy',
+  'toBeFewerThan',
+  'toBeMoreThan',
+  'toBeTruthy',
+  'toContain',
+  'toContainKey',
+  'toContainKeys',
+  'toNotBeAn',
+  'toNotContain',
+  'toNotContainKey',
+  'toNotContainKeys',
+  'toNotInclude',
+  'toNotIncludeKey',
+  'toNotIncludeKeys',
+  'withArgs',
+  'withContext',
+  'toBe',
+  'toBeA',
+  'toBeGreaterThan',
+  'toBeGreaterThanOrEqualTo',
+  'toBeLessThan',
+  'toBeLessThanOrEqualTo',
+  'toEqual',
+  'toExclude',
+  'toExcludeKey',
+  'toExcludeKeys',
+  'toExist',
+  'toHaveBeenCalled',
+  'toHaveBeenCalledWith',
+  'toInclude',
+  'toIncludeKey',
+  'toIncludeKeys',
+  'toMatch',
+  'toNotBe',
+  'toNotBeA',
+  'toNotEqual',
+  'toNotExist',
+  'toNotHaveBeenCalled',
+  'toNotMatch',
+  'toNotThrow',
+  'toThrow',
+  'toMatchSnapshot',
+]
+
+Expect.extend({
+  toMatchSnapshot() {
+    Expect.assert(
+      true,
+      'expected a snapshot',
+      'shot',
+    )
+    return this
   },
 })
-
 
 /** ATTEMPTS */
 /** 

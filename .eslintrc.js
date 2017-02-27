@@ -35,6 +35,9 @@ module.exports = {
       "it": true,
       "expect": true,
       "beforeEach": true,
+      "afterEach": true,
+      "beforeAll": true,
+      "afterAll": true,
       "jasmine": true,
   },
   "settings": {

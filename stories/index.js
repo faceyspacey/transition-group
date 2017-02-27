@@ -1,14 +1,17 @@
+import React from 'react'
 import renderer from 'react-test-renderer'
+import ReactTestUtils from 'react-addons-test-utils'
 
 import { describe, it, expect } from '../storybook/facade'
-import setupStory from '../storybook/setupStory'
+import setupStory, { TransitionGroupWrapper } from '../storybook/setupStory'
 
 
 
 describe('AnimatedTransitionGroup 1', () => {
-  const { story, store } = setupStory()
-
   it('blue', () => {
+    console.log('RENDER')
+    const { story, store } = setupStory()
+
     store.dispatch({ type: 'CHANGE', payload: 'blue' })
     store.dispatch({ type: 'BLUR', payload: 'blue' })
 
@@ -22,6 +25,8 @@ describe('AnimatedTransitionGroup 1', () => {
   })
 
   it('red', () => {
+    const { story, store } = setupStory()
+
     store.dispatch({ type: 'CHANGE', payload: 'red' })
     store.dispatch({ type: 'BLUR', payload: 'red' })
 
@@ -51,7 +56,7 @@ describe('AnimatedTransitionGroup 1', () => {
   })
 })
 
-
+/**
 describe('AnimatedTransitionGroup 2', () => {
   const { story, store } = setupStory()
 
@@ -97,3 +102,4 @@ describe('AnimatedTransitionGroup 2', () => {
     // notice no story is returned
   })
 })
+**/
