@@ -53,6 +53,7 @@
     "expect": "^1.20.2",
     "flow-bin": "^0.38.0",
     "flow-copy-source": "^1.1.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^19.0.2",
     "json": "^9.0.4",
     "react": "^15.4.2",
@@ -78,11 +79,13 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
+    "setupTestFrameworkScriptFile": "<rootDir>/storybook/__mocks__/facade.js",
     "moduleNameMapper": {
-      ".storybook/facade": "<rootDir>/storybook/__mocks__/facade.js"
+      "styles": "identity-obj-proxy"
     },
     "moduleFileExtensions": [
-      "js"
+      "js",
+      "css"
     ]
   },
   "dependencies": {

@@ -41,7 +41,7 @@ var AnimatedTransitionGroup = function (_React$Component) {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (this.props.onEmpty && _react2.default.Children.count(nextProps.children) === this.props.zeroElements && _react2.default.Children.count(this.props.children) > this.props.zeroElements) {
-        (0, _domUtils.setTimeoutAnimationFrame)(this.props.onEmpty, this.props.timeout);
+        (0, _domUtils.setTimeoutAnimationFrame)(this.props.onEmpty, this.props.duration);
       }
 
       if (this.props.onFull && _react2.default.Children.count(nextProps.children) > this.props.zeroElements && _react2.default.Children.count(this.props.children) === this.props.zeroElements) {
@@ -53,22 +53,21 @@ var AnimatedTransitionGroup = function (_React$Component) {
     value: function render() {
       var _props = this.props,
           children = _props.children,
-          onEmpty = _props.onEmpty,
-          onFull = _props.onFull,
-          zeroElements = _props.zeroElements,
-          onlyEnter = _props.onlyEnter,
-          name = _props.name,
-          timeout = _props.timeout,
-          enterTimeout = _props.enterTimeout,
-          leaveTimeout = _props.leaveTimeout,
-          appearTimeout = _props.appearTimeout,
+          prefix = _props.prefix,
+          duration = _props.duration,
+          enterDuration = _props.enterDuration,
+          leaveDuration = _props.leaveDuration,
+          appearDuration = _props.appearDuration,
           enterDelay = _props.enterDelay,
           leaveDelay = _props.leaveDelay,
           appearDelay = _props.appearDelay,
           onAppear = _props.onAppear,
           onEnter = _props.onEnter,
           onLeave = _props.onLeave,
-          props = _objectWithoutProperties(_props, ['children', 'onEmpty', 'onFull', 'zeroElements', 'onlyEnter', 'name', 'timeout', 'enterTimeout', 'leaveTimeout', 'appearTimeout', 'enterDelay', 'leaveDelay', 'appearDelay', 'onAppear', 'onEnter', 'onLeave']);
+          onEmpty = _props.onEmpty,
+          onFull = _props.onFull,
+          zeroElements = _props.zeroElements,
+          props = _objectWithoutProperties(_props, ['children', 'prefix', 'duration', 'enterDuration', 'leaveDuration', 'appearDuration', 'enterDelay', 'leaveDelay', 'appearDelay', 'onAppear', 'onEnter', 'onLeave', 'onEmpty', 'onFull', 'zeroElements']);
 
       return _react2.default.createElement(
         _reactAddonsTransitionGroup2.default,
@@ -77,13 +76,12 @@ var AnimatedTransitionGroup = function (_React$Component) {
           if (!child) return null; // cloneElement won't work on a non-existent child (null will filter it out)
 
           return _react2.default.cloneElement(child, _extends({
-            onlyEnter: onlyEnter,
-            name: name,
-            timeout: timeout,
+            prefix: prefix,
+            duration: duration,
 
-            enterTimeout: enterTimeout,
-            leaveTimeout: leaveTimeout,
-            appearTimeout: appearTimeout,
+            enterDuration: enterDuration,
+            leaveDuration: leaveDuration,
+            appearDuration: appearDuration,
 
             enterDelay: enterDelay,
             leaveDelay: leaveDelay,
@@ -105,24 +103,23 @@ var AnimatedTransitionGroup = function (_React$Component) {
 
 AnimatedTransitionGroup.defaultProps = {
   zeroElements: 0,
-  timeout: 0
+  duration: 0
 };
 AnimatedTransitionGroup.propTypes = {
   children: require('react').PropTypes.any.isRequired,
-  onEmpty: require('react').PropTypes.func,
-  onFull: require('react').PropTypes.func,
-  zeroElements: require('react').PropTypes.number,
-  onlyEnter: require('react').PropTypes.bool,
-  name: require('react').PropTypes.string,
-  timeout: require('react').PropTypes.number,
-  appearTimeout: require('react').PropTypes.number,
-  enterTimeout: require('react').PropTypes.number,
-  leaveTimeout: require('react').PropTypes.number,
+  prefix: require('react').PropTypes.string,
+  duration: require('react').PropTypes.number,
+  appearDuration: require('react').PropTypes.number,
+  enterDuration: require('react').PropTypes.number,
+  leaveDuration: require('react').PropTypes.number,
   appearDelay: require('react').PropTypes.number,
   enterDelay: require('react').PropTypes.number,
   leaveDelay: require('react').PropTypes.number,
   onAppear: require('react').PropTypes.func,
   onEnter: require('react').PropTypes.func,
-  onLeave: require('react').PropTypes.func
+  onLeave: require('react').PropTypes.func,
+  onEmpty: require('react').PropTypes.func,
+  onFull: require('react').PropTypes.func,
+  zeroElements: require('react').PropTypes.number
 };
 exports.default = AnimatedTransitionGroup;

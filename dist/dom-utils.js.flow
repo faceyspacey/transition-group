@@ -3,11 +3,11 @@
 import ReactDOM from 'react-dom' // eslint-disable-line
 
 
-export function addClass(component: React$Component<*, *, *>, className: string, name: ?string = '') {
+export function addClass(component: React$Component<*, *, *>, className: string, prefix: ?string = '') {
   try {
     const element = ReactDOM.findDOMNode(component)
 
-    className = name ? `${name}-${className}` : className
+    className = prefix ? `${prefix}-${className}` : className
     element.className = `${element.className}  ${className}`
   }
   catch (e) {
@@ -17,12 +17,12 @@ export function addClass(component: React$Component<*, *, *>, className: string,
   }
 }
 
-export function removeAnimationClasses(component: React$Component<*, *, *>, name: ?string = '') {
+export function removeAnimationClasses(component: React$Component<*, *, *>, prefix: ?string = '') {
   try { // dom node may have been removed if wrapped by an outer animation with a shorter duration (no big deal)
     const element = ReactDOM.findDOMNode(component)
-    const classNameReg = !name
+    const classNameReg = !prefix
       ? 'enter-active|appear-active|enter|appear'
-      : `${name}-enter-active|${name}-appear-active|${name}-enter|${name}-appear`
+      : `${prefix}-enter-active|${prefix}-appear-active|${prefix}-enter|${prefix}-appear`
 
     const re = new RegExp(classNameReg, 'g')
     element.className = element.className.replace(re, '')

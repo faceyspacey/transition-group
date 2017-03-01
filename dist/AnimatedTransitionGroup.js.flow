@@ -7,17 +7,12 @@ import { setTimeoutAnimationFrame } from './dom-utils'
 
 type Props = {
   children: any,
-  onEmpty?: Function,
-  onFull?: Function,
-  zeroElements?: number,
+  prefix?: string,
+  duration?: number,
 
-  onlyEnter?: boolean,
-  name?: string,
-  timeout?: number,
-
-  appearTimeout?: number,
-  enterTimeout?: number,
-  leaveTimeout?: number,
+  appearDuration?: number,
+  enterDuration?: number,
+  leaveDuration?: number,
 
   appearDelay?: number,
   enterDelay?: number,
@@ -26,6 +21,10 @@ type Props = {
   onAppear?: Function,
   onEnter?: Function,
   onLeave?: Function,
+
+  onEmpty?: Function,
+  onFull?: Function,
+  zeroElements?: number,
 }
 
 export default class AnimatedTransitionGroup extends React.Component {
@@ -33,7 +32,7 @@ export default class AnimatedTransitionGroup extends React.Component {
 
   static defaultProps = {
     zeroElements: 0,
-    timeout: 0,
+    duration: 0,
   }
 
   componentWillReceiveProps(nextProps: Props) {
@@ -41,7 +40,7 @@ export default class AnimatedTransitionGroup extends React.Component {
         && React.Children.count(nextProps.children) === this.props.zeroElements
         && React.Children.count(this.props.children) > this.props.zeroElements
     ) {
-      setTimeoutAnimationFrame(this.props.onEmpty, this.props.timeout)
+      setTimeoutAnimationFrame(this.props.onEmpty, this.props.duration)
     }
 
     if (this.props.onFull
@@ -55,17 +54,12 @@ export default class AnimatedTransitionGroup extends React.Component {
   render() {
     const {
       children,
-      onEmpty,      // eslint-disable-line no-unused-vars
-      onFull,       // eslint-disable-line no-unused-vars
-      zeroElements, // eslint-disable-line no-unused-vars
+      prefix,
+      duration,
 
-      onlyEnter,
-      name,
-      timeout,
-
-      enterTimeout,
-      leaveTimeout,
-      appearTimeout,
+      enterDuration,
+      leaveDuration,
+      appearDuration,
 
       enterDelay,
       leaveDelay,
@@ -74,6 +68,10 @@ export default class AnimatedTransitionGroup extends React.Component {
       onAppear,
       onEnter,
       onLeave,
+
+      onEmpty,      // eslint-disable-line no-unused-vars
+      onFull,       // eslint-disable-line no-unused-vars
+      zeroElements, // eslint-disable-line no-unused-vars
 
       ...props // remaining props will only have what can be passed to <ReactTransitionGroup />
     } = this.props
@@ -85,13 +83,12 @@ export default class AnimatedTransitionGroup extends React.Component {
             if (!child) return null // cloneElement won't work on a non-existent child (null will filter it out)
 
             return React.cloneElement(child, {
-              onlyEnter,
-              name,
-              timeout,
+              prefix,
+              duration,
 
-              enterTimeout,
-              leaveTimeout,
-              appearTimeout,
+              enterDuration,
+              leaveDuration,
+              appearDuration,
 
               enterDelay,
               leaveDelay,

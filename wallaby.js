@@ -15,9 +15,9 @@ module.exports = (wallaby) => {
     files: [
       { pattern: 'src/**/*.js', load: false },
       { pattern: 'package.json', load: false },
-      { pattern: 'jestSetup.js', load: false },
       { pattern: 'stories/**/*.snap', load: false },
       { pattern: 'storybook/**/*.js', load: false },
+      { pattern: 'storybook/**/*.css', load: false, instrument: false },
     ],
 
     filesWithNoCoverageCalculated: [
@@ -37,13 +37,13 @@ module.exports = (wallaby) => {
     },
     setup(wallaby) {
       const conf = require('./package.json').jest
-      const pattern = '.storybook/facade'
-      conf.moduleNameMapper[pattern] = conf.moduleNameMapper[pattern].replace('<rootDir>', wallaby.projectCacheDir)
+
+      conf.setupTestFrameworkScriptFile = conf.setupTestFrameworkScriptFile.replace('<rootDir>', wallaby.projectCacheDir)
 
       wallaby.testFramework.configure(conf)
     },
     // runAllTestsInAffectedTestFile: true,
     // runAllTestsInAffectedTestGroup: true,
-    debug: false,
+    debug: true,
   }
 }

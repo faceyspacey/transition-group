@@ -17,12 +17,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 
 function addClass(component, className) {
-  var name = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+  var prefix = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
 
   try {
     var element = _reactDom2.default.findDOMNode(component);
 
-    className = name ? name + '-' + className : className;
+    className = prefix ? prefix + '-' + className : className;
     element.className = element.className + '  ' + className;
   } catch (e) {
     if (process.env.NODE_ENV !== 'production' && !process.env.STORYBOOK_GIT_BRANCH) {
@@ -32,12 +32,12 @@ function addClass(component, className) {
 }
 
 function removeAnimationClasses(component) {
-  var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+  var prefix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
 
   try {
     // dom node may have been removed if wrapped by an outer animation with a shorter duration (no big deal)
     var element = _reactDom2.default.findDOMNode(component);
-    var classNameReg = !name ? 'enter-active|appear-active|enter|appear' : name + '-enter-active|' + name + '-appear-active|' + name + '-enter|' + name + '-appear';
+    var classNameReg = !prefix ? 'enter-active|appear-active|enter|appear' : prefix + '-enter-active|' + prefix + '-appear-active|' + prefix + '-enter|' + prefix + '-appear';
 
     var re = new RegExp(classNameReg, 'g');
     element.className = element.className.replace(re, '');

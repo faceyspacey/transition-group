@@ -32,96 +32,61 @@ var AnimatedChild = function (_React$Component) {
   _createClass(AnimatedChild, [{
     key: 'componentWillAppear',
     value: function componentWillAppear(done) {
-      if (this.props.onlyEnter) {
-        this.handleEntrance(done);
-      } else {
-        this.handleAppear(done);
-      }
+      var _props = this.props,
+          _props$duration = _props.duration,
+          duration = _props$duration === undefined ? 0 : _props$duration,
+          appearDuration = _props.appearDuration,
+          _props$appearDelay = _props.appearDelay,
+          appearDelay = _props$appearDelay === undefined ? 0 : _props$appearDelay;
+
+      var doneTimeout = (appearDuration || duration) + appearDelay + 1;
+
+      this.animate(done, 'appear', doneTimeout, appearDelay);
     }
   }, {
     key: 'componentWillEnter',
     value: function componentWillEnter(done) {
-      this.handleEntrance(done);
+      var _props2 = this.props,
+          _props2$duration = _props2.duration,
+          duration = _props2$duration === undefined ? 0 : _props2$duration,
+          enterDuration = _props2.enterDuration,
+          _props2$enterDelay = _props2.enterDelay,
+          enterDelay = _props2$enterDelay === undefined ? 0 : _props2$enterDelay;
+
+      var doneTimeout = (enterDuration || duration) + enterDelay + 1;
+
+      this.animate(done, 'enter', doneTimeout, enterDelay);
     }
   }, {
     key: 'componentWillLeave',
     value: function componentWillLeave(done) {
-      this.handleLeave(done);
-    }
-  }, {
-    key: 'handleAppear',
-    value: function handleAppear(done) {
-      var _props = this.props,
-          _props$timeout = _props.timeout,
-          timeout = _props$timeout === undefined ? 0 : _props$timeout,
-          appearTimeout = _props.appearTimeout,
-          _props$appearDelay = _props.appearDelay,
-          appearDelay = _props$appearDelay === undefined ? 0 : _props$appearDelay;
-
-      var duration = (appearTimeout || timeout) + appearDelay + 1;
-
-      this.animate(done, 'appear', duration, appearDelay);
-    }
-  }, {
-    key: 'handleEntrance',
-    value: function handleEntrance(done) {
-      var _props2 = this.props,
-          _props2$timeout = _props2.timeout,
-          timeout = _props2$timeout === undefined ? 0 : _props2$timeout,
-          enterTimeout = _props2.enterTimeout,
-          _props2$enterDelay = _props2.enterDelay,
-          enterDelay = _props2$enterDelay === undefined ? 0 : _props2$enterDelay;
-
-      var duration = (enterTimeout || timeout) + enterDelay + 1;
-
-      this.animate(done, 'enter', duration, enterDelay);
-    }
-  }, {
-    key: 'handleLeave',
-    value: function handleLeave(done) {
       var _props3 = this.props,
-          _props3$timeout = _props3.timeout,
-          timeout = _props3$timeout === undefined ? 0 : _props3$timeout,
-          leaveTimeout = _props3.leaveTimeout,
+          _props3$duration = _props3.duration,
+          duration = _props3$duration === undefined ? 0 : _props3$duration,
+          leaveDuration = _props3.leaveDuration,
           _props3$leaveDelay = _props3.leaveDelay,
           leaveDelay = _props3$leaveDelay === undefined ? 0 : _props3$leaveDelay;
 
-      var duration = (leaveTimeout || timeout) + leaveDelay + 1;
+      var doneTimeout = (leaveDuration || duration) + leaveDelay + 1;
 
-      this.animate(done, 'leave', duration, leaveDelay);
+      this.animate(done, 'leave', doneTimeout, leaveDelay);
     }
-  }, {
-    key: 'animate',
-    value: function animate(done, className, duration, delay) {
-      var _this2 = this;
 
-      var _props$name = this.props.name,
-          name = _props$name === undefined ? '' : _props$name;
+    // called when by `done` callbacks above:
 
-      var activeClass = className + '-active';
-
-      (0, _domUtils.addClass)(this, className, name);
-      (0, _domUtils.setTimeoutAnimationFrame)(function () {
-        return (0, _domUtils.addClass)(_this2, activeClass, name);
-      }, delay || 0);
-
-      (0, _domUtils.setTimeoutAnimationFrame)(done, duration);
-    }
   }, {
     key: 'componentDidAppear',
     value: function componentDidAppear() {
-      (0, _domUtils.removeAnimationClasses)(this, this.props.name);
+      (0, _domUtils.removeAnimationClasses)(this, this.props.prefix);
 
-      if (this.props.onlyEnter && this.props.onEnter) {
-        this.props.onEnter();
-      } else if (this.props.onAppear) {
+      if (this.props.onAppear) {
         this.props.onAppear();
       }
     }
   }, {
     key: 'componentDidEnter',
     value: function componentDidEnter() {
-      (0, _domUtils.removeAnimationClasses)(this, this.props.name);
+      (0, _domUtils.removeAnimationClasses)(this, this.props.prefix);
 
       if (this.props.onEnter) {
         this.props.onEnter();
@@ -135,6 +100,23 @@ var AnimatedChild = function (_React$Component) {
       }
     }
   }, {
+    key: 'animate',
+    value: function animate(done, className, duration, delay) {
+      var _this2 = this;
+
+      var _props$prefix = this.props.prefix,
+          prefix = _props$prefix === undefined ? '' : _props$prefix;
+
+      var activeClass = className + '-active';
+
+      (0, _domUtils.addClass)(this, className, prefix);
+      (0, _domUtils.setTimeoutAnimationFrame)(function () {
+        return (0, _domUtils.addClass)(_this2, activeClass, prefix);
+      }, delay || 0, className);
+
+      (0, _domUtils.setTimeoutAnimationFrame)(done, duration, 'done'); // final param only recorded in shapshot tests
+    }
+  }, {
     key: 'render',
     value: function render() {
       return this.props.children;
@@ -146,12 +128,11 @@ var AnimatedChild = function (_React$Component) {
 
 AnimatedChild.propTypes = {
   children: require('react').PropTypes.any.isRequired,
-  onlyEnter: require('react').PropTypes.bool,
-  name: require('react').PropTypes.string,
-  timeout: require('react').PropTypes.number,
-  appearTimeout: require('react').PropTypes.number,
-  enterTimeout: require('react').PropTypes.number,
-  leaveTimeout: require('react').PropTypes.number,
+  prefix: require('react').PropTypes.string,
+  duration: require('react').PropTypes.number,
+  appearDuration: require('react').PropTypes.number,
+  enterDuration: require('react').PropTypes.number,
+  leaveDuration: require('react').PropTypes.number,
   appearDelay: require('react').PropTypes.number,
   enterDelay: require('react').PropTypes.number,
   leaveDelay: require('react').PropTypes.number,

@@ -1,137 +1,176 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AnimatedTransitionGroup 1 blue 1`] = `
-<div
-  className="foo"
->
+exports[`AnimatedTransitionGroup 1 appear 1`] = `
+Object {
+  "className": "appear",
+  "method": "addClass",
+  "name": "",
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 appear 2`] = `
+Object {
+  "className": "appear",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 0,
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 appear 3`] = `
+Object {
+  "className": "appear-active",
+  "method": "addClass",
+  "name": "",
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 appear 4`] = `
+Object {
+  "className": "done",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 1,
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 appear 5`] = `
+Object {
+  "method": "removeAnimationClasses",
+  "name": undefined,
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 appear 6`] = `
+<div>
   <div
+    className="child"
     style={
       Object {
-        "backgroundColor": "pink",
+        "backgroundColor": "blue",
       }
     }
-  >
-    <input
-      onBlur={[Function]}
-      onChange={[Function]}
-      style={
-        Object {
-          "color": "blue",
-        }
-      }
-      value="blue"
-    />
-    <span
-      style={
-        Object {
-          "paddingLeft": 10,
-        }
-      }
-    >
-      enter a color and blur it to change
-    </span>
-  </div>
+  />
 </div>
 `;
 
-exports[`AnimatedTransitionGroup 1 red 1`] = `
-<div
-  className="foo"
->
-  <div
-    style={
-      Object {
-        "backgroundColor": "pink",
-      }
-    }
-  >
-    <input
-      onBlur={[Function]}
-      onChange={[Function]}
-      style={
-        Object {
-          "color": "red",
-        }
-      }
-      value="red"
-    />
-    <span
-      style={
-        Object {
-          "paddingLeft": 10,
-        }
-      }
-    >
-      enter a color and blur it to change
-    </span>
-  </div>
-</div>
+exports[`AnimatedTransitionGroup 1 enter 1`] = `
+Object {
+  "className": "appear",
+  "method": "addClass",
+  "name": "",
+}
 `;
 
-exports[`AnimatedTransitionGroup 2 green 1`] = `
-<div
-  className="foo"
->
-  <div
-    style={
-      Object {
-        "backgroundColor": "pink",
-      }
-    }
-  >
-    <input
-      onBlur={[Function]}
-      onChange={[Function]}
-      style={
-        Object {
-          "color": "green",
-        }
-      }
-      value="green"
-    />
-    <span
-      style={
-        Object {
-          "paddingLeft": 10,
-        }
-      }
-    >
-      enter a color and blur it to change
-    </span>
-  </div>
-</div>
+exports[`AnimatedTransitionGroup 1 enter 2`] = `
+Object {
+  "className": "appear",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 0,
+}
 `;
 
-exports[`AnimatedTransitionGroup 2 orange 1`] = `
-<div
-  className="foo"
->
+exports[`AnimatedTransitionGroup 1 enter 3`] = `
+Object {
+  "className": "appear-active",
+  "method": "addClass",
+  "name": "",
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 enter 4`] = `
+Object {
+  "className": "done",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 1,
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 enter 5`] = `
+Object {
+  "method": "removeAnimationClasses",
+  "name": undefined,
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 enter 6`] = `
+Object {
+  "className": "enter",
+  "method": "addClass",
+  "name": "",
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 enter 7`] = `
+Object {
+  "className": "enter",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 0,
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 enter 8`] = `
+Object {
+  "className": "enter-active",
+  "method": "addClass",
+  "name": "",
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 enter 9`] = `
+Object {
+  "className": "done",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 1,
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 enter 10`] = `
+Object {
+  "method": "removeAnimationClasses",
+  "name": undefined,
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 enter 11`] = `
+Object {
+  "className": "leave",
+  "method": "addClass",
+  "name": "",
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 enter 12`] = `
+Object {
+  "className": "leave",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 0,
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 enter 13`] = `
+Object {
+  "className": "leave-active",
+  "method": "addClass",
+  "name": "",
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 enter 14`] = `
+Object {
+  "className": "done",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 1,
+}
+`;
+
+exports[`AnimatedTransitionGroup 1 enter 15`] = `
+<div>
   <div
+    className="child"
     style={
       Object {
-        "backgroundColor": "pink",
+        "backgroundColor": "purple",
       }
     }
-  >
-    <input
-      onBlur={[Function]}
-      onChange={[Function]}
-      style={
-        Object {
-          "color": "orange",
-        }
-      }
-      value="orange"
-    />
-    <span
-      style={
-        Object {
-          "paddingLeft": 10,
-        }
-      }
-    >
-      enter a color and blur it to change
-    </span>
-  </div>
+  />
 </div>
 `;

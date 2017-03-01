@@ -3,21 +3,15 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 
 
-const reducer = (state = { text: '', color: '' }, action = {}) => {
-  if (action.type === 'CHANGE') {
-    return {
-      ...state,
-      text: action.payload,
-    }
+const reducer = (state = { num: 0 }, action = {}) => {
+  switch (action.type) {
+    case 'SWITCH':
+      return {
+        num: state.num + 1,
+      }
+    default:
+      return state
   }
-  else if (action.type === 'BLUR') {
-    return {
-      ...state,
-      color: action.payload,
-    }
-  }
-
-  return state
 }
 
 export default () => {

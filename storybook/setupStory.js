@@ -2,46 +2,30 @@ import React from 'react'
 import { Provider, connect } from 'react-redux'
 
 import configureStore from './configureStore'
+import { connectStore } from './connectStore'
 import { AnimatedTransitionGroup, AnimatedChild } from '../src/index'
 
-
-export const TransitionGroupWrapper = ({ color, dispatch, text }) =>
-  <AnimatedTransitionGroup
-    component="div"
-    className='foo'
-    timeout={1000}
-    name='fade'
-  >
-    <AnimatedChild key={color}>
-      <div style={{ backgroundColor: 'pink' }}>
-        <input
-          style={{ color }}
-          value={text}
-          onChange={({ target: { value } }) => {
-            dispatch({ type: 'CHANGE', payload: value })
-          }}
-          onBlur={({ target: { value } }) => {
-            dispatch({ type: 'BLUR', payload: value })
-          }}
-        />
-
-        <span style={{ paddingLeft: 10 }}>enter a color and blur it to change</span>
-      </div>
-    </AnimatedChild>
-  </AnimatedTransitionGroup>
-
-const TransitionGroup = connect(state => state)(TransitionGroupWrapper)
+import './styles.css'
 
 
-export default () => {
+export default (groupProps, childProps) => {
   const store = configureStore()
-  const story =
-    <Provider store={store}>
-      <TransitionGroup />
-    </Provider>
-
-  return {
-    store,
-    story,
-  }
+  const TransitionGroup = transitionGroupHOC(groupProps, childProps)
+  return connectStore(store, TransitionGroup)
 }
+
+
+export const transitionGroupHOC = (groupProps, childProps) => {
+  const Wrapper = ({ num }) =>
+    <AnimatedTransitionGroup component="div" duration={2500} {...groupProps}>
+      <AnimatedChild key={num} {...childProps}>
+        <div className='child' style={{ backgroundColor: color(num) }} />
+      </AnimatedChild>
+    </AnimatedTransitionGroup>
+
+  return connect(state => state)(Wrapper)
+}
+
+const color = num =>
+  num % 2 === 0 ? 'blue' : 'purple'
+

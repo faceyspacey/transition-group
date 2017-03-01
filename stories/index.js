@@ -1,53 +1,43 @@
-import renderer from 'react-test-renderer'
-
-import { describe, it, expect } from '../storybook/facade'
 import setupStory from '../storybook/setupStory'
 
 
+jest.mock('../src/dom-utils', () => ({
+  addClass: (component, className, name) => {
+    expect({ method: 'addClass', className, name }).toMatchSnapshot()
+  },
+  removeAnimationClasses: (component, name) => {
+    expect({ method: 'removeAnimationClasses', name }).toMatchSnapshot()
+  },
+  setTimeoutAnimationFrame: (func, ms, className) => {
+    expect({ method: 'setTimeoutAnimationFrame', ms, className }).toMatchSnapshot()
+    func()
+  },
+}))
+
+
 describe('AnimatedTransitionGroup 1', () => {
-  it('blue', () => {
-    const { story, store } = setupStory()
+  it('appear', () => {
+    const app = setupStory()
 
-    store.dispatch({ type: 'CHANGE', payload: 'blue' })
-    store.dispatch({ type: 'BLUR', payload: 'blue' })
+    console.log(app.tree())
+    console.log(app.tree().children[0])
 
-    const { color } = store.getState()
-    expect(color).toEqual('blue')
+    app.snap()
 
-    const component = renderer.create(story)
-    expect(component).toMatchSnapshot()
-
-    return story
+    return app.story()
   })
 
-  it('red', () => {
-    const { story, store } = setupStory()
-    store.dispatch({ type: 'CHANGE', payload: 'red' })
-    store.dispatch({ type: 'BLUR', payload: 'red' })
+  it('enter', () => {
+    const app = setupStory()
 
-    const { color } = store.getState()
-    expect(color).toEqual('red')
+    app.dispatch({ type: 'SWITCH' })
 
-    const component = renderer.create(story)
-    expect(component).toMatchSnapshot()
+    console.log(app.tree())
+    console.log(app.tree().children[0])
 
-    return story
-  })
+    app.snap()
 
-  it('just tests, no story returned', () => {
-    expect(1).toEqual(1)
-    expect(2).toEqual(2)
-    expect(3).toEqual(3)
-    expect(1).toEqual(1)
-
-    // notice no story is returned
-  })
-
-  it('more equal tests', () => {
-    expect(66).toEqual(66)
-    expect(55).toEqual(55)
-
-    // notice no story is returned
+    return app.story()
   })
 })
 

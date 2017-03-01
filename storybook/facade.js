@@ -3,7 +3,17 @@ import React from 'react'
 import { storiesOf } from '@kadira/storybook'
 import Expect from 'expect'
 
-import { specs, after, before, describe as Describe, it as It } from 'storybook-addon-specifications'
+import {
+  specs,
+  beforeEach,
+  afterEach,
+  before, // not supported in jest, use beforeAll
+  after,  // not supported in jest, use afterAll
+  xit,
+  xdescribe,
+  describe as Describe,
+  it as It,
+} from 'storybook-addon-specifications'
 
 export { storiesOf, action, linkTo } from '@kadira/storybook'
 export { withKnobs } from '@kadira/storybook-addon-knobs'
@@ -11,11 +21,9 @@ export { withKnobs } from '@kadira/storybook-addon-knobs'
 export {
   beforeEach,
   afterEach,
-  before, // not supported in jest, use beforeAll
-  after,  // not supported in jest, use afterAll
   xit,
   xdescribe,
-} from 'storybook-addon-specifications'
+}
 
 export const beforeAll = before
 export const afterAll = after
@@ -138,6 +146,27 @@ Expect.extend({
     return this
   },
 })
+
+
+export const jest = {
+  mock: () => null,
+}
+
+
+
+window.jest = jest
+window.expect = expect
+window.describe = describe
+window.xdescribe = xdescribe
+window.fdescribe = fdescribe
+window.it = it
+window.xit = xit
+window.fit = fit
+window.beforeEach = beforeEach
+window.afterEach = afterEach
+window.beforeAll = beforeAll
+window.afterAll = afterAll
+
 
 /** ATTEMPTS */
 /**
