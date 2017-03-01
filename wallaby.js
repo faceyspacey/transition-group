@@ -37,9 +37,6 @@ module.exports = (wallaby) => {
     },
     setup(wallaby) {
       const conf = require('./package.json').jest
-
-      conf.setupTestFrameworkScriptFile = conf.setupTestFrameworkScriptFile.replace('<rootDir>', wallaby.projectCacheDir)
-
       wallaby.testFramework.configure(conf)
     },
     debug: true,

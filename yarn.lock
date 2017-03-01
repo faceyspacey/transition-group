@@ -2118,10 +2118,6 @@ eslint-plugin-babel@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-babel/-/eslint-plugin-babel-3.3.0.tgz#2f494aedcf6f4aa4e75b9155980837bc1fbde193"
 
-eslint-plugin-flow-vars@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flow-vars/-/eslint-plugin-flow-vars-0.5.0.tgz#a7fb78fd873c86e0e5839df3b3c90d47bc68c6d2"
-
 eslint-plugin-flowtype@^2.30.0:
   version "2.30.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.30.0.tgz#3054a265f9c8afe3046c3d41b72d32a736f9b4ae"
@@ -3342,9 +3338,9 @@ jest-snapshot@^19.0.2:
     natural-compare "^1.4.0"
     pretty-format "^19.0.0"
 
-jest-storybook-facade@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/jest-storybook-facade/-/jest-storybook-facade-0.0.5.tgz#9163197b33a7cd8f7a0d2d2149299e7ddeea8a0c"
+jest-storybook-facade@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/jest-storybook-facade/-/jest-storybook-facade-0.0.6.tgz#c861fb801e89cf51accc44d90f8d7d3eaf88761e"
 
 jest-util@^19.0.2:
   version "19.0.2"
@@ -4791,10 +4787,6 @@ reduce-function-call@^1.0.1:
 redux-devtools-extension@^2.13.0:
   version "2.13.0"
   resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.0.tgz#c8300d72630c00999302526204d47c360cc0637f"
-
-redux-thunk@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
 
 redux@^3.5.2, redux@^3.6.0:
   version "3.6.0"

@@ -1,5 +1,5 @@
-import setupStory from '../storybook/setupStory'
-import configureStore from '../storybook/configureStore'
+import createApp from '../__test-helpers__/createApp'
+import configureStore from '../__test-helpers__/configureStore'
 
 
 jest.mock('../src/dom-utils', () => ({
@@ -25,7 +25,7 @@ jest.mock('../src/dom-utils', () => ({
 
 describe('<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props', () => {
   it('appear', () => {
-    const app = setupStory()
+    const app = createApp()
 
     console.log(app.tree())
     console.log(app.tree().children[0])
@@ -36,7 +36,7 @@ describe('<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props', () => {
   })
 
   it('enter + leave', () => {
-    const app = setupStory()
+    const app = createApp()
 
     app.dispatch({ type: 'SWITCH' })
 
@@ -49,7 +49,7 @@ describe('<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props', () => {
   })
 
   it('enter + leave -- simple duration', () => {
-    const app = setupStory({ duration: 500 })
+    const app = createApp({ duration: 500 })
 
     app.dispatch({ type: 'SWITCH' })
 
@@ -66,7 +66,7 @@ describe('<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props', () => {
 describe('<AnimatedTransitionGroup /> -- all props filled', () => {
   it('appear', () => {
     const onAppear = jest.fn()
-    const app = setupStory(allProps({ onAppear }))
+    const app = createApp(allProps({ onAppear }))
 
     console.log(app.tree())
     console.log(app.tree().children[0])
@@ -84,7 +84,7 @@ describe('<AnimatedTransitionGroup /> -- all props filled', () => {
 
     store.dispatch({ type: 'EMPTY' })
 
-    const app = setupStory(allProps({ onEnter }), {}, store)
+    const app = createApp(allProps({ onEnter }), {}, store)
 
     app.dispatch({ type: 'FULL' })
 
@@ -100,7 +100,7 @@ describe('<AnimatedTransitionGroup /> -- all props filled', () => {
 
   it('leave', () => {
     const onLeave = jest.fn()
-    const app = setupStory(allProps({ onLeave }))
+    const app = createApp(allProps({ onLeave }))
 
     app.dispatch({ type: 'EMPTY' })
 
@@ -117,7 +117,7 @@ describe('<AnimatedTransitionGroup /> -- all props filled', () => {
     const store = configureStore()
     const onFull = jest.fn()
     store.dispatch({ type: 'EMPTY' })
-    const app = setupStory({ onFull }, {}, store)
+    const app = createApp({ onFull }, {}, store)
 
     console.log(app.tree())
     app.dispatch({ type: 'FULL' })
@@ -133,7 +133,7 @@ describe('<AnimatedTransitionGroup /> -- all props filled', () => {
   it('onEmpty callback', () => {
     const store = configureStore()
     const onEmpty = jest.fn()
-    const app = setupStory({ onEmpty }, {}, store)
+    const app = createApp({ onEmpty }, {}, store)
 
     console.log(app.tree())
     app.dispatch({ type: 'EMPTY' })
@@ -151,7 +151,7 @@ describe('<AnimatedTransitionGroup /> -- all props filled', () => {
 describe('<AnimatedChild /> -- all props filled', () => {
   it('appear', () => {
     const onAppear = jest.fn()
-    const app = setupStory({}, allProps({ onAppear }))
+    const app = createApp({}, allProps({ onAppear }))
 
     console.log(app.tree())
     console.log(app.tree().children[0])
@@ -169,7 +169,7 @@ describe('<AnimatedChild /> -- all props filled', () => {
 
     store.dispatch({ type: 'EMPTY' })
 
-    const app = setupStory({}, allProps({ onEnter }), store)
+    const app = createApp({}, allProps({ onEnter }), store)
 
     app.dispatch({ type: 'FULL' })
 
@@ -185,7 +185,7 @@ describe('<AnimatedChild /> -- all props filled', () => {
 
   it('leave', () => {
     const onLeave = jest.fn()
-    const app = setupStory({}, allProps({ onLeave }))
+    const app = createApp({}, allProps({ onLeave }))
 
     app.dispatch({ type: 'EMPTY' })
 

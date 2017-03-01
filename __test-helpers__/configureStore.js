@@ -1,5 +1,4 @@
-import { createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
+import { createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 
 
@@ -26,9 +25,7 @@ const reducer = (state = { num: 0, empty: false }, action = {}) => {
 }
 
 export default () => {
-  const middlewares = applyMiddleware(thunk)
-  const composeEnhancers = composeWithDevTools({ name: 'AnimatedTransitionGroup' })
-
-  return createStore(reducer, composeEnhancers(middlewares))
+  const enhancer = composeWithDevTools({ name: 'AnimatedTransitionGroup' })
+  return createStore(reducer, enhancer)
 }
 
