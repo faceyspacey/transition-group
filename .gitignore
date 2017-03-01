@@ -1,4 +1,5 @@
 node_modules/
 dist/
+distStorybook/
 .DS_Store
 npm-debug.log

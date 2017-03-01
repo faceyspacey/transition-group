@@ -39,6 +39,7 @@ module.exports = {
       "beforeAll": true,
       "afterAll": true,
       "jasmine": true,
+      "storybook":true,
   },
   "settings": {
     "flowtype": {
@@ -51,6 +52,7 @@ module.exports = {
     },
     'import/extensions': [
       '.js',
+      '.css',
     ],
     'import/core-modules': [
     ],
@@ -1142,7 +1144,7 @@ module.exports = {
       js: 'never',
       jsx: 'never',
       styl: 'never',
-      css: 'never',
+      //css: 'never',
     }],
 
     // Enforce a convention in module import order

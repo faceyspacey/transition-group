@@ -15,16 +15,16 @@ module.exports = (wallaby) => {
     files: [
       { pattern: 'src/**/*.js', load: false },
       { pattern: 'package.json', load: false },
-      { pattern: 'stories/**/*.snap', load: false },
-      { pattern: 'storybook/**/*.js', load: false },
-      { pattern: 'storybook/**/*.css', load: false, instrument: false },
+      { pattern: '__tests__/**/*.snap', load: false },
+      { pattern: '__test-helpers__/**/*.js', load: false },
+      { pattern: '__test-helpers__/**/*.css', load: false, instrument: false },
     ],
 
     filesWithNoCoverageCalculated: [
-      'storybook/**/*.js',
+      '__test-helpers__/**/*.js',
     ],
 
-    tests: ['stories/**/*.js'],
+    tests: ['__tests__/**/*.js'],
 
     env: {
       type: 'node',
@@ -42,8 +42,6 @@ module.exports = (wallaby) => {
 
       wallaby.testFramework.configure(conf)
     },
-    // runAllTestsInAffectedTestFile: true,
-    // runAllTestsInAffectedTestGroup: true,
     debug: true,
   }
 }

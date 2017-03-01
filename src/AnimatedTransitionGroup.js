@@ -6,9 +6,14 @@ import ReactTransitionGroup from 'react-addons-transition-group'
 import { setTimeoutAnimationFrame } from './dom-utils'
 
 type Props = {
-  children: any,
+  children?: any,
   prefix?: string,
   duration?: number,
+  delay?: number,
+
+  appear?: string,
+  enter?: string,
+  leave?: string,
 
   appearDuration?: number,
   enterDuration?: number,
@@ -31,8 +36,23 @@ export default class AnimatedTransitionGroup extends React.Component {
   props: Props
 
   static defaultProps = {
-    zeroElements: 0,
+    prefix: '',
     duration: 0,
+    delay: 0,
+
+    appear: 'appear',
+    enter: 'enter',
+    leave: 'leave',
+
+    appearDuration: 0,
+    enterDuration: 0,
+    leaveDuration: 0,
+
+    appearDelay: 0,
+    enterDelay: 0,
+    leaveDelay: 0,
+
+    zeroElements: 0,
   }
 
   componentWillReceiveProps(nextProps: Props) {
@@ -40,14 +60,15 @@ export default class AnimatedTransitionGroup extends React.Component {
         && React.Children.count(nextProps.children) === this.props.zeroElements
         && React.Children.count(this.props.children) > this.props.zeroElements
     ) {
-      setTimeoutAnimationFrame(this.props.onEmpty, this.props.duration)
+      const duration = this.props.duration + (this.props.leaveDelay || this.props.delay)
+      setTimeoutAnimationFrame(this.props.onEmpty, duration)
     }
 
     if (this.props.onFull
         && React.Children.count(nextProps.children) > this.props.zeroElements
         && React.Children.count(this.props.children) === this.props.zeroElements
     ) {
-      setTimeoutAnimationFrame(this.props.onFull)
+      setTimeoutAnimationFrame(this.props.onFull, 0)
     }
   }
 
@@ -56,6 +77,11 @@ export default class AnimatedTransitionGroup extends React.Component {
       children,
       prefix,
       duration,
+      delay,
+
+      appear,
+      enter,
+      leave,
 
       enterDuration,
       leaveDuration,
@@ -79,12 +105,17 @@ export default class AnimatedTransitionGroup extends React.Component {
     return (
       <ReactTransitionGroup {...props}>
         {
-          React.Children.map(children, (child) => {
+          React.Children.map(children || [], (child) => {
             if (!child) return null // cloneElement won't work on a non-existent child (null will filter it out)
 
             return React.cloneElement(child, {
               prefix,
               duration,
+              delay,
+
+              appear,
+              enter,
+              leave,
 
               enterDuration,
               leaveDuration,

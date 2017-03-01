@@ -41,9 +41,6 @@
     "babel-preset-jest": "^19.0.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
-    "babel-runtime": "^6.23.0",
-    "enzyme": "^2.7.1",
-    "enzyme-to-json": "^1.5.0",
     "eslint": "^3.7.1",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-flow-vars": "^0.5.0",
@@ -55,6 +52,8 @@
     "flow-copy-source": "^1.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^19.0.2",
+    "jest-redux-snap": "^1.0.0",
+    "jest-storybook-facade": "^0.0.5",
     "json": "^9.0.4",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
@@ -65,7 +64,8 @@
     "redux-devtools-extension": "^2.13.0",
     "redux-thunk": "^2.2.0",
     "rimraf": "^2.6.0",
-    "storybook-addon-specifications": "^1.0.15"
+    "storybook-addon-specifications": "^1.0.15",
+    "storybook-readme": "^1.3.1"
   },
   "peerDependencies": {
     "react": "15.x",
@@ -73,13 +73,7 @@
   },
   "jest": {
     "verbose": true,
-    "testMatch": [
-      "<rootDir>/stories/**/*.js"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "setupTestFrameworkScriptFile": "<rootDir>/storybook/__mocks__/facade.js",
+    "setupTestFrameworkScriptFile": "jest-storybook-facade/jest-facade.js",
     "moduleNameMapper": {
       "styles": "identity-obj-proxy"
     },

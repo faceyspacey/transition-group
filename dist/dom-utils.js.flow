@@ -3,7 +3,7 @@
 import ReactDOM from 'react-dom' // eslint-disable-line
 
 
-export function addClass(component: React$Component<*, *, *>, className: string, prefix: ?string = '') {
+export function addClass(component: React$Component<*, *, *>, className: string, prefix: string) {
   try {
     const element = ReactDOM.findDOMNode(component)
 
@@ -17,12 +17,17 @@ export function addClass(component: React$Component<*, *, *>, className: string,
   }
 }
 
-export function removeAnimationClasses(component: React$Component<*, *, *>, prefix: ?string = '') {
+export function removeAnimationClasses(
+  component: React$Component<*, *, *>,
+  prefix: string,
+  appear: string,
+  enter: string,
+) {
   try { // dom node may have been removed if wrapped by an outer animation with a shorter duration (no big deal)
     const element = ReactDOM.findDOMNode(component)
     const classNameReg = !prefix
-      ? 'enter-active|appear-active|enter|appear'
-      : `${prefix}-enter-active|${prefix}-appear-active|${prefix}-enter|${prefix}-appear`
+      ? `${enter}-active|${appear}-active|${enter}|${appear}`
+      : `${prefix}-${enter}-active|${prefix}-${appear}-active|${prefix}-${enter}|${prefix}-${appear}`
 
     const re = new RegExp(classNameReg, 'g')
     element.className = element.className.replace(re, '')
@@ -34,7 +39,7 @@ export function removeAnimationClasses(component: React$Component<*, *, *>, pref
   }
 }
 
-export function setTimeoutAnimationFrame(func?: Function, ms?: number = 0) {
+export function setTimeoutAnimationFrame(func?: Function, ms: number) {
   const callback = func
   if (typeof callback !== 'function') return
 

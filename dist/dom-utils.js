@@ -16,9 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // eslint-disable-line
 
 
-function addClass(component, className) {
-  var prefix = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
-
+function addClass(component, className, prefix) {
   try {
     var element = _reactDom2.default.findDOMNode(component);
 
@@ -31,13 +29,11 @@ function addClass(component, className) {
   }
 }
 
-function removeAnimationClasses(component) {
-  var prefix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-
+function removeAnimationClasses(component, prefix, appear, enter) {
   try {
     // dom node may have been removed if wrapped by an outer animation with a shorter duration (no big deal)
     var element = _reactDom2.default.findDOMNode(component);
-    var classNameReg = !prefix ? 'enter-active|appear-active|enter|appear' : prefix + '-enter-active|' + prefix + '-appear-active|' + prefix + '-enter|' + prefix + '-appear';
+    var classNameReg = !prefix ? enter + '-active|' + appear + '-active|' + enter + '|' + appear : prefix + '-' + enter + '-active|' + prefix + '-' + appear + '-active|' + prefix + '-' + enter + '|' + prefix + '-' + appear;
 
     var re = new RegExp(classNameReg, 'g');
     element.className = element.className.replace(re, '');
@@ -48,9 +44,7 @@ function removeAnimationClasses(component) {
   }
 }
 
-function setTimeoutAnimationFrame(func) {
-  var ms = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-
+function setTimeoutAnimationFrame(func, ms) {
   var callback = func;
   if (typeof callback !== 'function') return;
 

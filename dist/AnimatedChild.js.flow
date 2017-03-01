@@ -4,19 +4,23 @@ import React from 'react'
 import { addClass, removeAnimationClasses, setTimeoutAnimationFrame } from './dom-utils'
 
 
-
 type Props = {
   children: any,
-  prefix?: ?string,
-  duration?: ?number,
+  prefix: string,
+  duration: number,
+  delay: number,
 
-  appearDuration?: ?number,
-  enterDuration?: ?number,
-  leaveDuration?: ?number,
+  appear: string,
+  enter: string,
+  leave: string,
 
-  appearDelay?: ?number,
-  enterDelay?: ?number,
-  leaveDelay?: ?number,
+  appearDuration: number,
+  enterDuration: number,
+  leaveDuration: number,
+
+  appearDelay: number,
+  enterDelay: number,
+  leaveDelay: number,
 
   onAppear?: ?Function,
   onEnter?: ?Function,
@@ -27,34 +31,36 @@ export default class AnimatedChild extends React.Component {
   props: Props
 
   componentWillAppear(done: Function) {
-    const { duration = 0, appearDuration, appearDelay = 0 } = this.props
-    const doneTimeout = (appearDuration || duration) + appearDelay + 1
+    const { appear, appearDuration, duration, appearDelay, delay } = this.props
+    const doneTimeout = (appearDuration || duration) + (appearDelay || delay) + 1
 
-    this.animate(done, 'appear', doneTimeout, appearDelay)
+    this.animate(done, appear, doneTimeout, appearDelay || delay)
   }
   componentWillEnter(done: Function) {
-    const { duration = 0, enterDuration, enterDelay = 0 } = this.props
-    const doneTimeout = (enterDuration || duration) + enterDelay + 1
+    const { enter, enterDuration, duration, enterDelay, delay } = this.props
+    const doneTimeout = (enterDuration || duration) + (enterDelay || delay) + 1
 
-    this.animate(done, 'enter', doneTimeout, enterDelay)
+    this.animate(done, enter, doneTimeout, enterDelay || delay)
   }
   componentWillLeave(done: Function) {
-    const { duration = 0, leaveDuration, leaveDelay = 0 } = this.props
-    const doneTimeout = (leaveDuration || duration) + leaveDelay + 1
+    const { leave, leaveDuration, duration, leaveDelay, delay } = this.props
+    const doneTimeout = (leaveDuration || duration) + (leaveDelay || delay) + 1
 
-    this.animate(done, 'leave', doneTimeout, leaveDelay)
+    this.animate(done, leave, doneTimeout, leaveDelay || delay)
   }
 
   // called when by `done` callbacks above:
   componentDidAppear() {
-    removeAnimationClasses(this, this.props.prefix)
+    const { prefix, appear, enter } = this.props
+    removeAnimationClasses(this, prefix, appear, enter)
 
     if (this.props.onAppear) {
       this.props.onAppear()
     }
   }
   componentDidEnter() {
-    removeAnimationClasses(this, this.props.prefix)
+    const { prefix, appear, enter } = this.props
+    removeAnimationClasses(this, prefix, appear, enter)
 
     if (this.props.onEnter) {
       this.props.onEnter()
@@ -66,14 +72,14 @@ export default class AnimatedChild extends React.Component {
     }
   }
 
-  animate(done: Function, className: string, duration: number, delay: ?number) {
-    const { prefix = '' } = this.props
+  animate(done: Function, className: string, duration: number, delay: number) {
+    const { prefix } = this.props
     const activeClass = `${className}-active`
 
     addClass(this, className, prefix)
-    setTimeoutAnimationFrame(() => addClass(this, activeClass, prefix), delay || 0, className)
+    setTimeoutAnimationFrame(() => addClass(this, activeClass, prefix), delay, className)
 
-    setTimeoutAnimationFrame(done, duration, 'done') // final param only recorded in shapshot tests
+    setTimeoutAnimationFrame(done, duration, 'done callbacks') // final param only recorded in shapshot tests
   }
 
   render() {
