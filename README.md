@@ -1,4 +1,4 @@
-# `<AnimatedTransitionGroup />` and `<AnimatedChild>`
+# AnimatedTransitionGroup
 Like `<ReactTransitionGroup />` + callbacks, extras and child-specific customization
 
 ## Installation
