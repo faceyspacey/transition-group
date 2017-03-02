@@ -15,10 +15,10 @@ import { AnimatedTransitionGroup, AnimatedChild } from 'animated-transition-grou
 const PageSwitcher = ({ page }) =>
   <AnimatedTransitionGroup 
     component="div" 
-    timeout={500}
-    transitionName='fade'
+    duration={500}
+    prefix='fade'
   >
-    <AnimatedChild key={page}>
+    <AnimatedChild key={page} appearDelay={300} enterDelay={500} leaveDuration={1000}>
       {getComponent(page)}
     </AnimatedChild>
   </AnimatedTransitionGroup>
