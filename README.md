@@ -1,5 +1,5 @@
-# <AnimatedTransitionGroup /> and <AnimatedChild>
-like `<ReactTransitionGroup />` + callbacks, extras and child-specific customization
+# `<AnimatedTransitionGroup />` and `<AnimatedChild>`
+Like `<ReactTransitionGroup />` + callbacks, extras and child-specific customization
 
 ## Installation
 ```yarn add animated-transition-group```
