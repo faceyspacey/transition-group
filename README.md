@@ -6,7 +6,7 @@ Like `<ReactTransitionGroup />` + callbacks, extras and child-specific customiza
 
 ## Usage
 
-*<PageSwitcher /> comomponent:*
+*`<PageSwitcher />` component:*
 ```javascript
 import React from 'react'
 import { connect } from 'react-redux'
