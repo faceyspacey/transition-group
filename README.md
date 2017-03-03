@@ -1,6 +1,6 @@
 # AnimatedTransitionGroup
 
-`AnimatedTransitionGroup` is a sound answer to `<ReactTransitionGroup />` and any wishlist you might have for it. 
+`AnimatedTransitionGroup` is a sound answer to `<ReactTransitionGroup />` and any wishlist you might have had for it. 
 We suggest you become familiar with those first to truly understand its benefits:
 
 * [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html)
