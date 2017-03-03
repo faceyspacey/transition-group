@@ -3338,9 +3338,9 @@ jest-snapshot@^19.0.2:
     natural-compare "^1.4.0"
     pretty-format "^19.0.0"
 
-jest-storybook-facade@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/jest-storybook-facade/-/jest-storybook-facade-0.0.6.tgz#c861fb801e89cf51accc44d90f8d7d3eaf88761e"
+jest-storybook-facade@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/jest-storybook-facade/-/jest-storybook-facade-0.0.7.tgz#30fe957c52f92ed9958df11b2b162b0d874d96ca"
 
 jest-util@^19.0.2:
   version "19.0.2"

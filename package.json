@@ -1,6 +1,6 @@
 {
   "name": "animated-transition-group",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "like `<ReactTransitionGroup />` + callbacks, extras and child-specific customization",
   "main": "dist/index.js",
   "files": [
@@ -52,7 +52,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^19.0.2",
     "jest-redux-snap": "^1.0.0",
-    "jest-storybook-facade": "^0.0.6",
+    "jest-storybook-facade": "^0.0.7",
     "json": "^9.0.4",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
