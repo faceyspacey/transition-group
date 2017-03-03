@@ -39,7 +39,7 @@ const getComponent = page => {
 const mapState = ({ page }) => ({ page })
 export default connect(mapState)(PageSwitcher)
 ```
-*note: of course you can have as many nested `<AnimatedChild />` components as you want*
+*note: of course you can have as many nested `<AnimatedChild />` components as you want. This just happens to be a switcher :)*
 
 # API
 
