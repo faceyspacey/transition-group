@@ -89,4 +89,5 @@ the the duration and delay passed to `AnimatedTransitionGroup` (not the child) t
 
 ### zeroElements: number
 to calculate whether there are zero nested children, sometimes you need to indicate what that number is. For example,
-if you have an array of children, when the array is empty, it's counted as `1`. So you set `zeroElements={1}`.
+if you have an array of children, when the array is empty, it's counted as `1` even though no children are rendered. 
+So you set `zeroElements={1}`.
