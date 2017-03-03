@@ -68,7 +68,7 @@ const getComponent = page => {
 const mapState = ({ page }) => ({ page })
 export default connect(mapState)(PageSwitcher)
 ```
-*note: you can have as many nested `<AnimatedChild />`'s as you want. This just happens to be primarily a switcher :)*
+*note: you can have as many nested `<AnimatedChild />`'s as you want. This happens to be primarily for one child :)*
 
 The secret ingredient is obviously the `key` property passed to your children. That lets React differentiate between
 the components. More importantly it lets you define just a single component in this case, rather than require you to
