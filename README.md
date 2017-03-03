@@ -15,7 +15,7 @@ means you can provide props (such as animation duraiton, delay, etc) that apply 
 ***OR*** you can override them by passing the props to the `<AnimatedChild />` components that wrap your actual children. 
 
 *Note: unlike `ReactTransitionGroup`
-and `ReactCSSTransitionGroup` all child components are required to be wrapped in `<AnimatedChild >`.*
+and `ReactCSSTransitionGroup` all child components are required to be wrapped in `<AnimatedChild>`.*
 
 Lastly, we offer simpler prop names and a lot more customization:
 
