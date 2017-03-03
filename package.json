@@ -1,6 +1,6 @@
 {
   "name": "animated-transition-group",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "like `<ReactTransitionGroup />` + callbacks, extras and child-specific customization",
   "main": "dist/index.js",
   "files": [
