@@ -43,25 +43,25 @@ export default connect(mapState)(PageSwitcher)
 
 # API
 
-### prefix
-### duration
-### delay
+### prefix: string
+### duration: number
+### delay: number
 
-### appear
-### enter
-### leave
+### appear: string
+### enter: string
+### leave: string
 
-### enterDuration
-### leaveDuration
-### appearDuration
+### enterDuration: number
+### leaveDuration: number
+### appearDuration: number
 
-### enterDelay
-### leaveDelay
-### appearDelay
+### enterDelay: number
+### leaveDelay: number
+### appearDelay: number
 
-### onAppear
-### onEnter
-### onLeave
+### onAppear: Function
+### onEnter: Function
+### onLeave: Function
 
 
 
