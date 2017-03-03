@@ -39,12 +39,12 @@ const PageSwitcher = ({ page }) =>
   <AnimatedTransitionGroup 
     component='div'
     className='whatever'
-    duration={500}
+    duration={300}
     delay={100}
     prefix='fade'
     onEmpty={onEmpty}
   >
-    <AnimatedChild key={page} appearDelay={300} enterDelay={500} leaveDuration={1000} onLeave={onLeave}>
+    <AnimatedChild key={page} duration={500} enterDelay={500} leaveDelay={0} onLeave={onLeave}>
       {getComponent(page)}
     </AnimatedChild>
 
