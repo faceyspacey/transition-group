@@ -1,7 +1,7 @@
 # AnimatedTransitionGroup
 
 `AnimatedTransitionGroup` is a sound answer to `<ReactTransitionGroup />` and any wishlist you might have had for it. 
-We suggest you become familiar with those first to truly understand its benefits:
+We suggest you become familiar with it and its higher level CSS-oriented counterpart first to truly understand `AnimatedTransitionGroups`'s benefits:
 
 * [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html)
 * [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html#low-level-api-reacttransitiongroup)
