@@ -48,12 +48,12 @@ const PageSwitcher = ({ page }) =>
       {getComponent(page)}
     </AnimatedChild>
 
-    // don't show tab for the current page:
-    <Sidebar>
-      {page !== 'Home' && <AnimatedChild key={`${page}-tab`>HOME<AnimatedChild>}
-      {page !== 'List' && <AnimatedChild key={`${page}-tab`>LIST<AnimatedChild>}
-      {page !== 'Video' && <AnimatedChild key={`${page}-tab`>VIDEO<AnimatedChild>}
-    </Sidebar>
+    // don't show link for the current page:
+    <Links>
+      {page !== 'Home' && <AnimatedChild key={`${page}-link`>HOME<AnimatedChild>}
+      {page !== 'List' && <AnimatedChild key={`${page}-link`>LIST<AnimatedChild>}
+      {page !== 'Video' && <AnimatedChild key={`${page}-link`>VIDEO<AnimatedChild>}
+    </Links>
   </AnimatedTransitionGroup>
 
 const getComponent = page => {
