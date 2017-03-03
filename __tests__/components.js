@@ -38,12 +38,10 @@ describe('<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props', () => {
   it('enter + leave', () => {
     const app = createApp()
 
-    app.dispatch({ type: 'SWITCH' })
+    app.snap({ type: 'SWITCH' })
 
     console.log(app.tree())
     console.log(app.tree().children[0])
-
-    app.snap()
 
     return app.story()
   })
@@ -51,12 +49,10 @@ describe('<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props', () => {
   it('enter + leave -- simple duration', () => {
     const app = createApp({ duration: 500 })
 
-    app.dispatch({ type: 'SWITCH' })
+    app.snap({ type: 'SWITCH' })
 
     console.log(app.tree())
     console.log(app.tree().children[0])
-
-    app.snap()
 
     return app.story()
   })
@@ -86,14 +82,11 @@ describe('<AnimatedTransitionGroup /> -- all props filled', () => {
 
     const app = createApp(allProps({ onEnter }), {}, store)
 
-    app.dispatch({ type: 'FULL' })
+    app.snap({ type: 'FULL' })
 
     console.log(app.tree())
     console.log(app.tree().children[0])
-
     expect(onEnter).toBeCalled()
-
-    app.snap()
 
     return app.story()
   })
@@ -102,13 +95,10 @@ describe('<AnimatedTransitionGroup /> -- all props filled', () => {
     const onLeave = jest.fn()
     const app = createApp(allProps({ onLeave }))
 
-    app.dispatch({ type: 'EMPTY' })
+    app.snap({ type: 'EMPTY' })
 
     console.log(app.tree())
-
     expect(onLeave).toBeCalled()
-
-    app.snap()
 
     return app.story()
   })
@@ -120,12 +110,10 @@ describe('<AnimatedTransitionGroup /> -- all props filled', () => {
     const app = createApp({ onFull }, {}, store)
 
     console.log(app.tree())
-    app.dispatch({ type: 'FULL' })
+    app.snap({ type: 'FULL' })
 
     console.log(app.tree())
     expect(onFull).toBeCalled()
-
-    app.snap()
 
     return app.story()
   })
@@ -136,12 +124,10 @@ describe('<AnimatedTransitionGroup /> -- all props filled', () => {
     const app = createApp({ onEmpty }, {}, store)
 
     console.log(app.tree())
-    app.dispatch({ type: 'EMPTY' })
+    app.snap({ type: 'EMPTY' })
 
     console.log(app.tree())
     expect(onEmpty).toBeCalled()
-
-    app.snap()
 
     return app.story()
   })
@@ -171,14 +157,11 @@ describe('<AnimatedChild /> -- all props filled', () => {
 
     const app = createApp({}, allProps({ onEnter }), store)
 
-    app.dispatch({ type: 'FULL' })
+    app.snap({ type: 'FULL' })
 
     console.log(app.tree())
     console.log(app.tree().children[0])
-
     expect(onEnter).toBeCalled()
-
-    app.snap()
 
     return app.story()
   })
@@ -187,13 +170,10 @@ describe('<AnimatedChild /> -- all props filled', () => {
     const onLeave = jest.fn()
     const app = createApp({}, allProps({ onLeave }))
 
-    app.dispatch({ type: 'EMPTY' })
+    app.snap({ type: 'EMPTY' })
 
     console.log(app.tree())
-
     expect(onLeave).toBeCalled()
-
-    app.snap()
 
     return app.story()
   })

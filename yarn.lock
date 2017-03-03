@@ -3281,9 +3281,9 @@ jest-mock@^19.0.0:
   version "19.0.0"
   resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-19.0.0.tgz#67038641e9607ab2ce08ec4a8cb83aabbc899d01"
 
-jest-redux-snap@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/jest-redux-snap/-/jest-redux-snap-1.0.0.tgz#dbd50daad2fb9b521eb54d9c392a736af608f8dc"
+jest-redux-snap@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/jest-redux-snap/-/jest-redux-snap-1.0.3.tgz#10e11a181bc4b3c8a7398a22a115a78db2d97988"
   dependencies:
     react-addons-test-utils "^15.x"
     react-test-renderer "^15.x"

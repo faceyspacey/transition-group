@@ -54,13 +54,19 @@ exports[`<AnimatedChild /> -- all props filled appear 6`] = `
 
 exports[`<AnimatedChild /> -- all props filled enter 1`] = `
 Object {
+  "type": "FULL",
+}
+`;
+
+exports[`<AnimatedChild /> -- all props filled enter 2`] = `
+Object {
   "className": "ENTER",
   "method": "addClass",
   "name": "horizontal",
 }
 `;
 
-exports[`<AnimatedChild /> -- all props filled enter 2`] = `
+exports[`<AnimatedChild /> -- all props filled enter 3`] = `
 Object {
   "className": "ENTER",
   "method": "setTimeoutAnimationFrame",
@@ -68,7 +74,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedChild /> -- all props filled enter 3`] = `
+exports[`<AnimatedChild /> -- all props filled enter 4`] = `
 Object {
   "className": "ENTER-active",
   "method": "addClass",
@@ -76,7 +82,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedChild /> -- all props filled enter 4`] = `
+exports[`<AnimatedChild /> -- all props filled enter 5`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
@@ -84,14 +90,21 @@ Object {
 }
 `;
 
-exports[`<AnimatedChild /> -- all props filled enter 5`] = `
+exports[`<AnimatedChild /> -- all props filled enter 6`] = `
 Object {
   "method": "removeAnimationClasses",
   "name": "horizontal",
 }
 `;
 
-exports[`<AnimatedChild /> -- all props filled enter 6`] = `
+exports[`<AnimatedChild /> -- all props filled enter 7`] = `
+Object {
+  "empty": false,
+  "num": 0,
+}
+`;
+
+exports[`<AnimatedChild /> -- all props filled enter 8`] = `
 <div>
   <div
     className="child"
@@ -145,13 +158,19 @@ Object {
 
 exports[`<AnimatedChild /> -- all props filled leave 6`] = `
 Object {
+  "type": "EMPTY",
+}
+`;
+
+exports[`<AnimatedChild /> -- all props filled leave 7`] = `
+Object {
   "className": "LEAVE",
   "method": "addClass",
   "name": "horizontal",
 }
 `;
 
-exports[`<AnimatedChild /> -- all props filled leave 7`] = `
+exports[`<AnimatedChild /> -- all props filled leave 8`] = `
 Object {
   "className": "LEAVE",
   "method": "setTimeoutAnimationFrame",
@@ -159,7 +178,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedChild /> -- all props filled leave 8`] = `
+exports[`<AnimatedChild /> -- all props filled leave 9`] = `
 Object {
   "className": "LEAVE-active",
   "method": "addClass",
@@ -167,7 +186,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedChild /> -- all props filled leave 9`] = `
+exports[`<AnimatedChild /> -- all props filled leave 10`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
@@ -175,7 +194,14 @@ Object {
 }
 `;
 
-exports[`<AnimatedChild /> -- all props filled leave 10`] = `<div />`;
+exports[`<AnimatedChild /> -- all props filled leave 11`] = `
+Object {
+  "empty": true,
+  "num": 0,
+}
+`;
+
+exports[`<AnimatedChild /> -- all props filled leave 12`] = `<div />`;
 
 exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props appear 1`] = `
 Object {
@@ -270,13 +296,19 @@ Object {
 
 exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 6`] = `
 Object {
+  "type": "SWITCH",
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 7`] = `
+Object {
   "className": "enter",
   "method": "addClass",
   "name": "",
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 7`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 8`] = `
 Object {
   "className": "enter",
   "method": "setTimeoutAnimationFrame",
@@ -284,7 +316,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 8`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 9`] = `
 Object {
   "className": "enter-active",
   "method": "addClass",
@@ -292,7 +324,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 9`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 10`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
@@ -300,17 +332,9 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 10`] = `
-Object {
-  "method": "removeAnimationClasses",
-  "name": "",
-}
-`;
-
 exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 11`] = `
 Object {
-  "className": "leave",
-  "method": "addClass",
+  "method": "removeAnimationClasses",
   "name": "",
 }
 `;
@@ -318,12 +342,20 @@ Object {
 exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 12`] = `
 Object {
   "className": "leave",
+  "method": "addClass",
+  "name": "",
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 13`] = `
+Object {
+  "className": "leave",
   "method": "setTimeoutAnimationFrame",
   "ms": 0,
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 13`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 14`] = `
 Object {
   "className": "leave-active",
   "method": "addClass",
@@ -331,7 +363,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 14`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 15`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
@@ -339,7 +371,14 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 15`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 16`] = `
+Object {
+  "empty": false,
+  "num": 1,
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 17`] = `
 <div>
   <div
     className="child"
@@ -393,13 +432,19 @@ Object {
 
 exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 6`] = `
 Object {
+  "type": "SWITCH",
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 7`] = `
+Object {
   "className": "enter",
   "method": "addClass",
   "name": "",
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 7`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 8`] = `
 Object {
   "className": "enter",
   "method": "setTimeoutAnimationFrame",
@@ -407,7 +452,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 8`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 9`] = `
 Object {
   "className": "enter-active",
   "method": "addClass",
@@ -415,7 +460,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 9`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 10`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
@@ -423,17 +468,9 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 10`] = `
-Object {
-  "method": "removeAnimationClasses",
-  "name": "",
-}
-`;
-
 exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 11`] = `
 Object {
-  "className": "leave",
-  "method": "addClass",
+  "method": "removeAnimationClasses",
   "name": "",
 }
 `;
@@ -441,12 +478,20 @@ Object {
 exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 12`] = `
 Object {
   "className": "leave",
+  "method": "addClass",
+  "name": "",
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 13`] = `
+Object {
+  "className": "leave",
   "method": "setTimeoutAnimationFrame",
   "ms": 0,
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 13`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 14`] = `
 Object {
   "className": "leave-active",
   "method": "addClass",
@@ -454,7 +499,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 14`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 15`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
@@ -462,7 +507,14 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 15`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 16`] = `
+Object {
+  "empty": false,
+  "num": 1,
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 17`] = `
 <div>
   <div
     className="child"
@@ -529,13 +581,19 @@ exports[`<AnimatedTransitionGroup /> -- all props filled appear 6`] = `
 
 exports[`<AnimatedTransitionGroup /> -- all props filled enter 1`] = `
 Object {
+  "type": "FULL",
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> -- all props filled enter 2`] = `
+Object {
   "className": "ENTER",
   "method": "addClass",
   "name": "horizontal",
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled enter 2`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled enter 3`] = `
 Object {
   "className": "ENTER",
   "method": "setTimeoutAnimationFrame",
@@ -543,7 +601,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled enter 3`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled enter 4`] = `
 Object {
   "className": "ENTER-active",
   "method": "addClass",
@@ -551,7 +609,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled enter 4`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled enter 5`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
@@ -559,14 +617,21 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled enter 5`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled enter 6`] = `
 Object {
   "method": "removeAnimationClasses",
   "name": "horizontal",
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled enter 6`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled enter 7`] = `
+Object {
+  "empty": false,
+  "num": 0,
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> -- all props filled enter 8`] = `
 <div>
   <div
     className="child"
@@ -620,13 +685,19 @@ Object {
 
 exports[`<AnimatedTransitionGroup /> -- all props filled leave 6`] = `
 Object {
+  "type": "EMPTY",
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> -- all props filled leave 7`] = `
+Object {
   "className": "LEAVE",
   "method": "addClass",
   "name": "horizontal",
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled leave 7`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled leave 8`] = `
 Object {
   "className": "LEAVE",
   "method": "setTimeoutAnimationFrame",
@@ -634,7 +705,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled leave 8`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled leave 9`] = `
 Object {
   "className": "LEAVE-active",
   "method": "addClass",
@@ -642,7 +713,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled leave 9`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled leave 10`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
@@ -650,7 +721,14 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled leave 10`] = `<div />`;
+exports[`<AnimatedTransitionGroup /> -- all props filled leave 11`] = `
+Object {
+  "empty": true,
+  "num": 0,
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> -- all props filled leave 12`] = `<div />`;
 
 exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 1`] = `
 Object {
@@ -693,13 +771,19 @@ Object {
 
 exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 6`] = `
 Object {
+  "type": "EMPTY",
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 7`] = `
+Object {
   "className": undefined,
   "method": "setTimeoutAnimationFrame",
   "ms": 0,
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 7`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 8`] = `
 Object {
   "className": "leave",
   "method": "addClass",
@@ -707,7 +791,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 8`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 9`] = `
 Object {
   "className": "leave",
   "method": "setTimeoutAnimationFrame",
@@ -715,7 +799,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 9`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 10`] = `
 Object {
   "className": "leave-active",
   "method": "addClass",
@@ -723,7 +807,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 10`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 11`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
@@ -731,9 +815,22 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 11`] = `<div />`;
+exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 12`] = `
+Object {
+  "empty": true,
+  "num": 0,
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 13`] = `<div />`;
 
 exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 1`] = `
+Object {
+  "type": "FULL",
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 2`] = `
 Object {
   "className": undefined,
   "method": "setTimeoutAnimationFrame",
@@ -741,7 +838,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 2`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 3`] = `
 Object {
   "className": "enter",
   "method": "addClass",
@@ -749,7 +846,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 3`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 4`] = `
 Object {
   "className": "enter",
   "method": "setTimeoutAnimationFrame",
@@ -757,7 +854,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 4`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 5`] = `
 Object {
   "className": "enter-active",
   "method": "addClass",
@@ -765,7 +862,7 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 5`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 6`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
@@ -773,14 +870,21 @@ Object {
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 6`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 7`] = `
 Object {
   "method": "removeAnimationClasses",
   "name": "",
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 7`] = `
+exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 8`] = `
+Object {
+  "empty": false,
+  "num": 0,
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 9`] = `
 <div>
   <div
     className="child"
