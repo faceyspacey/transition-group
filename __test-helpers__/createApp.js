@@ -8,8 +8,8 @@ import { AnimatedTransitionGroup, AnimatedChild } from '../src/index'
 import './styles.css'
 
 
-export default (groupProps, childProps, store) => {
-  store = store || configureStore()
+export default (groupProps, childProps, initialAction) => {
+  const store = configureStore(initialAction)
   const TransitionGroup = transitionGroupHOC(groupProps, childProps)
   return createApp(store, TransitionGroup)
 }
