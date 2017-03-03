@@ -86,7 +86,7 @@ As for having multiple nested `AnimatedChild` components, of course also use the
 knows what to do, i.e. when to attach and detach them to/from the DOM.
 
 # API
-The below props can be applied to both `<AnimatedTransitionGroup />` and `<AnimatedChild />`. The difference is that if
+The below props can be applied to ***both*** `<AnimatedTransitionGroup />` and `<AnimatedChild />`. The difference is that if
 you provide them to `AnimatedTransitionGroup`, they will be passed down to `AnimatedChild`. And of course, if `AnimatedChild`
 supplies its own, it will override it. duh!
 
