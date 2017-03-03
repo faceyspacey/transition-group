@@ -103,17 +103,6 @@ the time in milliseconds that child components are expected to animate for
 the time in milliseconds that child components are supposed to wait before being animated. Instances won't be 
 removed from the DOM until the sum of the delay and duration has been reached.
 
-### appear: string
-### enter: string
-### leave: string
-by suppling these you can override the classes applied, e.g: `leave-active` can be `foobar-active`. These are also very
-effective if you're using *CSS Modules* and don't want to define a global class with `:global(.appear)`. Instead, do this:
-
-```javascript
-import styles from '.styles'
-<AnimatedChild appear={styles.appear} />
-```
-
 ### enterDuration: number
 ### leaveDuration: number
 ### appearDuration: number
@@ -129,6 +118,16 @@ by supplying these, you can customize the delay length (in ms) of the individual
 ### onLeave: Function
 these callbacks will of course be called for the given transition
 
+### appear: string
+### enter: string
+### leave: string
+by suppling these you can override the classes applied, e.g: `leave-active` can be `foobar-active`. These are also very
+effective if you're using *CSS Modules* and don't want to define a global class with `:global(.appear)`. Instead, do this:
+
+```javascript
+import styles from '.styles'
+<AnimatedChild appear={styles.appear} />
+```
 
 ## AnimatedTransitionGroup only:
 The following props are only available on `<AnimatedTransitionGroup />`:
