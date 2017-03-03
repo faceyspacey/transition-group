@@ -1,6 +1,24 @@
 # AnimatedTransitionGroup
-Like `<ReactTransitionGroup />` + callbacks, extras and child-specific customization
 
+`AnimatedTransitionGroup` is a sound answer to `<ReactTransitionGroup />` and any wishlist you might have for it. 
+We suggest you become familiar with those first to truly understand its benefits:
+
+* [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html)
+* [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html#low-level-api-reacttransitiongroup)
+
+
+The biggest problem it solves is that you can both provide callbacks for the 3 transitions (`appear`, `enter`, `leave`) AND 
+have your css classes applied. `ReactCSSTransitionGroup` does not allow for callbacks.
+
+However, we've taken it one step farther to allow you to customize each individual child component rendered within the group. So that
+means you can provide props (such as animation duraiton, delay, etc) that apply to all children by setting them at the group level,
+OR you can override them by passing the props to the `<AnimatedChild />` components that wrap your actual children.
+
+Lastly, we offer simpler prop names and a lot more customization:
+
+* **duration** (`duration`, `appearDuration`, `enterDuration`, `lDelayDuration`)
+* **class names** (the `appear`, `enter`, and `leave` props)
+* **and a prefix** (prepended to all classes)
 
 ## Installation
 ```yarn add animated-transition-group```
