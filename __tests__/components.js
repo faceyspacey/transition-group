@@ -75,10 +75,8 @@ describe('<AnimatedTransitionGroup /> -- all props filled', () => {
   })
 
   it('enter', () => {
-    const store = configureStore()
+    const store = configureStore({ type: 'EMPTY' })
     const onEnter = jest.fn()
-
-    store.dispatch({ type: 'EMPTY' })
 
     const app = createApp(allProps({ onEnter }), {}, store)
 
@@ -104,9 +102,8 @@ describe('<AnimatedTransitionGroup /> -- all props filled', () => {
   })
 
   it('onFull callback', () => {
-    const store = configureStore()
+    const store = configureStore({ type: 'EMPTY' })
     const onFull = jest.fn()
-    store.dispatch({ type: 'EMPTY' })
     const app = createApp({ onFull }, {}, store)
 
     console.log(app.tree())
@@ -150,11 +147,8 @@ describe('<AnimatedChild /> -- all props filled', () => {
   })
 
   it('enter', () => {
-    const store = configureStore()
+    const store = configureStore({ type: 'EMPTY' })
     const onEnter = jest.fn()
-
-    store.dispatch({ type: 'EMPTY' })
-
     const app = createApp({}, allProps({ onEnter }), store)
 
     app.snap({ type: 'FULL' })
