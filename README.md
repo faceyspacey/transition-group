@@ -106,7 +106,13 @@ removed from the DOM until the sum of the delay and duration has been reached.
 ### appear: string
 ### enter: string
 ### leave: string
-by suppling these you can override the classes applied, e.g: `leave-active` can be `foobar-active`
+by suppling these you can override the classes applied, e.g: `leave-active` can be `foobar-active`. These are also very
+effective if you're using *CSS Modules* and don't want to define a global class with `:global(.appear)`. Instead, do this:
+
+```javascript
+import styles from '.styles'
+<AnimatedChild appear={styles.appear} />
+```
 
 ### enterDuration: number
 ### leaveDuration: number
