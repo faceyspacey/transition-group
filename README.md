@@ -74,11 +74,19 @@ by supplying these, you can customize the delay length (in ms) of the individual
 ### onAppear: Function
 ### onEnter: Function
 ### onLeave: Function
-
+these callbacks will of course be called for the given transition
 
 
 ## AnimatedTransitionGroup only:
+The following props are only available on `<AnimatedTransitionGroup />`:
 
-### onEmpty
-### onFull
-### zeroElements
+### onFull: Function
+called when the first `AnimatedChild` renders within `AnimatedTransitionGroup`
+
+### onEmpty: Function
+called when there are no nested `<AnimatedChild />` components, after the component animates its departure, using
+the the duration and delay passed to `AnimatedTransitionGroup` (not the child) to calculate that time.
+
+### zeroElements: number
+to calculate whether there are zero nested children, sometimes you need to indicate what that number is. For example,
+if you have an array of children, when the array is empty, it's counted as `1`. So you set `zeroElements={1}`.
