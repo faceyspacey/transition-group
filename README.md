@@ -130,7 +130,7 @@ import styles from '.styles'
 ```
 
 ## AnimatedTransitionGroup only:
-The following props are only available on `<AnimatedTransitionGroup />`:
+The following props are ***only*** available on `<AnimatedTransitionGroup />`:
 
 ### onFull: Function
 called when the first `AnimatedChild` renders within `AnimatedTransitionGroup`
