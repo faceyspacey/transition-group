@@ -32,14 +32,19 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { AnimatedTransitionGroup, AnimatedChild } from 'animated-transition-group'
 
+const onLeave = () => console.log('left')
+const onEmpty = () => console.log('group empty')
+
 const PageSwitcher = ({ page }) =>
   <AnimatedTransitionGroup 
-    component="div" 
+    component='div'
+    className='whatever'
     duration={500}
     delay={100}
     prefix='fade'
+    onEmpty={onEmpty}
   >
-    <AnimatedChild key={page} appearDelay={300} enterDelay={500} leaveDuration={1000}>
+    <AnimatedChild key={page} appearDelay={300} enterDelay={500} leaveDuration={1000} onLeave={onLeave}>
       {getComponent(page)}
     </AnimatedChild>
   </AnimatedTransitionGroup>
