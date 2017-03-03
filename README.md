@@ -7,7 +7,7 @@ We suggest you become familiar with it and its higher level CSS-oriented counter
 * [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html#low-level-api-reacttransitiongroup)
 
 
-The biggest problem it solves is that you can ***both*** provide callbacks for the 3 transitions (`appear`, `enter`, `leave`) ***AND***
+The biggest problem `AnimatedTransitionGroup` solves is that you can ***both*** provide callbacks for the 3 transitions (`appear`, `enter`, `leave`) ***AND***
 have your css classes applied. `ReactCSSTransitionGroup` does not allow for callbacks.
 
 However, we've taken it one step farther to allow you to customize each individual child component rendered within the group. So that
