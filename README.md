@@ -44,6 +44,8 @@ export default connect(mapState)(PageSwitcher)
 # API
 
 ### prefix: string
+the string pre-pended to all classes like this: `myPrefix-appear`, `myPrefix-appear-active`, `myPrefix-enter`, etc
+
 ### duration: number
 ### delay: number
 
