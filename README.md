@@ -62,7 +62,9 @@ export default connect(mapState)(PageSwitcher)
 
 The secret ingredient is obviously the `key` property passed to your children. That lets React differentiate between
 the components. More importantly it lets you define just a single component in this case, rather than require you to
-hack something together that has 2 components nested in the code at once. React just knows what to do. The `ReactTransitionGroup`
+hack something together that has 2 components nested in the code at once. React just knows what to do. 
+
+The `ReactTransitionGroup`
 toolset hasn't received enough credit in my opinion--partly because the flaws our component here solves--but we believe the abstraction
 it provides to use state to determine when components should not be there, while keeping the concept of animations + duration
 embedded in the dom, makes it world class. 
