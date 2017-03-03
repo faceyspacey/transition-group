@@ -84,7 +84,7 @@ The following props are only available on `<AnimatedTransitionGroup />`:
 called when the first `AnimatedChild` renders within `AnimatedTransitionGroup`
 
 ### onEmpty: Function
-called when there are no nested `<AnimatedChild />` components, after the component animates its departure, using
+called when there are no nested `<AnimatedChild />` components. It is called after the component animates its departure, using
 the the duration and delay passed to `AnimatedTransitionGroup` (not the child) to calculate that time.
 
 ### zeroElements: number
