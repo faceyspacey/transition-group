@@ -12,7 +12,10 @@ have your css classes applied. `ReactCSSTransitionGroup` does not allow for call
 
 However, we've taken it one step farther to allow you to customize each individual child component rendered within the group. So that
 means you can provide props (such as animation duraiton, delay, etc) that apply to all children by setting them at the group level,
-***OR*** you can override them by passing the props to the `<AnimatedChild />` components that wrap your actual children.
+***OR*** you can override them by passing the props to the `<AnimatedChild />` components that wrap your actual children. 
+
+*Note: unlike `ReactTransitionGroup`
+and `ReactCSSTransitionGroup` all child components are required to be wrapped in `<AnimatedChild >`.*
 
 Lastly, we offer simpler prop names and a lot more customization:
 
