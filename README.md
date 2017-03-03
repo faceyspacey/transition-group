@@ -49,11 +49,11 @@ const PageSwitcher = ({ page }) =>
     </AnimatedChild>
 
     // don't show link for the current page:
-    <Links>
+    <LinkRow>
       {page !== 'Home' && <AnimatedChild key={`${page}-link`>HOME<AnimatedChild>}
       {page !== 'List' && <AnimatedChild key={`${page}-link`>LIST<AnimatedChild>}
       {page !== 'Video' && <AnimatedChild key={`${page}-link`>VIDEO<AnimatedChild>}
-    </Links>
+    </LinkRow>
   </AnimatedTransitionGroup>
 
 const getComponent = page => {
