@@ -47,6 +47,11 @@ const PageSwitcher = ({ page }) =>
     <AnimatedChild key={page} appearDelay={300} enterDelay={500} leaveDuration={1000} onLeave={onLeave}>
       {getComponent(page)}
     </AnimatedChild>
+
+    // don't show tab for the current page:
+    {!page === 'Home' && <AnimatedChild key={`${page}-tab`>HOME<AnimatedChild>}
+    {!page === 'List' && <AnimatedChild key={`${page}-tab`>LIST<AnimatedChild>}
+    {!page === 'Video' && <AnimatedChild key={`${page}-tab`>VIDEO<AnimatedChild>}
   </AnimatedTransitionGroup>
 
 const getComponent = page => {
