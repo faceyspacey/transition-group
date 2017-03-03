@@ -66,7 +66,7 @@ hack something together that has 2 components nested in the code at once. React 
 
 The `ReactTransitionGroup`
 toolset hasn't received enough credit in my opinion--partly because the flaws our component here solves--but we believe the abstraction
-it provides to use state to determine when components should not be there, while keeping the concept of duration embedded in the DOM *separate*, 
+it provides to use state to determine when components should not be there, while keeping the concept of the actual duration embedded in the DOM *separate*, 
 makes it world class. 
 
 As for having multiple nested `AnimatedChild` components, of course also use the `key` prop to uniquely identify them so React
