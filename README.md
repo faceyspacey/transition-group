@@ -64,10 +64,12 @@ by suppling these you can override the classes applied, e.g: `leave-active` can 
 ### enterDuration: number
 ### leaveDuration: number
 ### appearDuration: number
+by supplying these, you can customize the duration length (in ms) of the individual transition
 
 ### enterDelay: number
 ### leaveDelay: number
 ### appearDelay: number
+by supplying these, you can customize the delay length (in ms) of the individual transition
 
 ### onAppear: Function
 ### onEnter: Function
