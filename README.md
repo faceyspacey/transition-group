@@ -16,7 +16,8 @@ means you can provide props (such as animation duraiton, delay, etc) that apply 
 
 Lastly, we offer simpler prop names and a lot more customization:
 
-* **duration** (`duration`, `appearDuration`, `enterDuration`, `lDelayDuration`)
+* **duration** (`duration`, `appearDuration`, `enterDuration`, `leaveDuration`)
+* **delay** (`delay`, `appearDelay`, `enterDelay`, `leaveDelay`)
 * **class names** (the `appear`, `enter`, and `leave` props)
 * **and a prefix** (prepended to all classes)
 
