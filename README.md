@@ -42,16 +42,24 @@ export default connect(mapState)(PageSwitcher)
 *note: you can have as many nested `<AnimatedChild />`'s as you want. This just happens to be a switcher :)*
 
 # API
+The below props can be applied to both `<AnimatedTransitionGroup />` and `<AnimatedChild />`. The difference is that if
+you provide them to `AnimatedTransitionGroup`, they will be passed down to `AnimatedChild`. And of course, if `AnimatedChild`
+supplies its own, it will override it. duh!
 
 ### prefix: string
-the string pre-pended to all classes like this: `myPrefix-appear`, `myPrefix-appear-active`, `myPrefix-enter`, etc
+the string prepended to all classes like this: `myPrefix-appear`, `myPrefix-appear-active`, `myPrefix-enter`, etc
 
 ### duration: number
+the time in milliseconds that child components are expected to animate for
+
 ### delay: number
+the time in milliseconds that child components are supposed to wait before being animated. Instances won't be 
+removed from the DOM until the sum of the delay and duration has been reached.
 
 ### appear: string
 ### enter: string
 ### leave: string
+by suppling these you can override the classes applied, e.g: `leave-active` can be `foobar-active`
 
 ### enterDuration: number
 ### leaveDuration: number
