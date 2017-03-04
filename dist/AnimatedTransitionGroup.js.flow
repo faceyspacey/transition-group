@@ -60,7 +60,7 @@ export default class AnimatedTransitionGroup extends React.Component {
         && React.Children.count(nextProps.children) === this.props.zeroElements
         && React.Children.count(this.props.children) > this.props.zeroElements
     ) {
-      const duration = this.props.duration + (this.props.leaveDelay || this.props.delay)
+      const duration = (this.props.leaveDuration || this.props.duration) + (this.props.leaveDelay || this.props.delay)
       setTimeoutAnimationFrame(this.props.onEmpty, duration)
     }
 

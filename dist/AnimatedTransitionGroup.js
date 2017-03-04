@@ -41,7 +41,7 @@ var AnimatedTransitionGroup = function (_React$Component) {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (this.props.onEmpty && _react2.default.Children.count(nextProps.children) === this.props.zeroElements && _react2.default.Children.count(this.props.children) > this.props.zeroElements) {
-        var _duration = this.props.duration + (this.props.leaveDelay || this.props.delay);
+        var _duration = (this.props.leaveDuration || this.props.duration) + (this.props.leaveDelay || this.props.delay);
         (0, _domUtils.setTimeoutAnimationFrame)(this.props.onEmpty, _duration);
       }
 

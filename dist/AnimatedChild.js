@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -30,14 +32,37 @@ var AnimatedChild = function (_React$Component) {
   }
 
   _createClass(AnimatedChild, [{
+    key: 'getDefaultProps',
+    value: function getDefaultProps() {
+      return _extends({
+        prefix: '',
+        duration: 0,
+        delay: 0,
+
+        appear: 'appear',
+        enter: 'enter',
+        leave: 'leave',
+
+        appearDuration: 0,
+        enterDuration: 0,
+        leaveDuration: 0,
+
+        appearDelay: 0,
+        enterDelay: 0,
+        leaveDelay: 0,
+
+        zeroElements: 0
+      }, this.props);
+    }
+  }, {
     key: 'componentWillAppear',
     value: function componentWillAppear(done) {
-      var _props = this.props,
-          appear = _props.appear,
-          appearDuration = _props.appearDuration,
-          duration = _props.duration,
-          appearDelay = _props.appearDelay,
-          delay = _props.delay;
+      var _getDefaultProps = this.getDefaultProps(),
+          appear = _getDefaultProps.appear,
+          appearDuration = _getDefaultProps.appearDuration,
+          duration = _getDefaultProps.duration,
+          appearDelay = _getDefaultProps.appearDelay,
+          delay = _getDefaultProps.delay;
 
       var doneTimeout = (appearDuration || duration) + (appearDelay || delay) + 1;
 
@@ -46,12 +71,12 @@ var AnimatedChild = function (_React$Component) {
   }, {
     key: 'componentWillEnter',
     value: function componentWillEnter(done) {
-      var _props2 = this.props,
-          enter = _props2.enter,
-          enterDuration = _props2.enterDuration,
-          duration = _props2.duration,
-          enterDelay = _props2.enterDelay,
-          delay = _props2.delay;
+      var _getDefaultProps2 = this.getDefaultProps(),
+          enter = _getDefaultProps2.enter,
+          enterDuration = _getDefaultProps2.enterDuration,
+          duration = _getDefaultProps2.duration,
+          enterDelay = _getDefaultProps2.enterDelay,
+          delay = _getDefaultProps2.delay;
 
       var doneTimeout = (enterDuration || duration) + (enterDelay || delay) + 1;
 
@@ -60,12 +85,12 @@ var AnimatedChild = function (_React$Component) {
   }, {
     key: 'componentWillLeave',
     value: function componentWillLeave(done) {
-      var _props3 = this.props,
-          leave = _props3.leave,
-          leaveDuration = _props3.leaveDuration,
-          duration = _props3.duration,
-          leaveDelay = _props3.leaveDelay,
-          delay = _props3.delay;
+      var _getDefaultProps3 = this.getDefaultProps(),
+          leave = _getDefaultProps3.leave,
+          leaveDuration = _getDefaultProps3.leaveDuration,
+          duration = _getDefaultProps3.duration,
+          leaveDelay = _getDefaultProps3.leaveDelay,
+          delay = _getDefaultProps3.delay;
 
       var doneTimeout = (leaveDuration || duration) + (leaveDelay || delay) + 1;
 
@@ -77,10 +102,10 @@ var AnimatedChild = function (_React$Component) {
   }, {
     key: 'componentDidAppear',
     value: function componentDidAppear() {
-      var _props4 = this.props,
-          prefix = _props4.prefix,
-          appear = _props4.appear,
-          enter = _props4.enter;
+      var _getDefaultProps4 = this.getDefaultProps(),
+          prefix = _getDefaultProps4.prefix,
+          appear = _getDefaultProps4.appear,
+          enter = _getDefaultProps4.enter;
 
       (0, _domUtils.removeAnimationClasses)(this, prefix, appear, enter);
 
@@ -91,10 +116,10 @@ var AnimatedChild = function (_React$Component) {
   }, {
     key: 'componentDidEnter',
     value: function componentDidEnter() {
-      var _props5 = this.props,
-          prefix = _props5.prefix,
-          appear = _props5.appear,
-          enter = _props5.enter;
+      var _getDefaultProps5 = this.getDefaultProps(),
+          prefix = _getDefaultProps5.prefix,
+          appear = _getDefaultProps5.appear,
+          enter = _getDefaultProps5.enter;
 
       (0, _domUtils.removeAnimationClasses)(this, prefix, appear, enter);
 
@@ -114,7 +139,8 @@ var AnimatedChild = function (_React$Component) {
     value: function animate(done, className, duration, delay) {
       var _this2 = this;
 
-      var prefix = this.props.prefix;
+      var _props$prefix = this.props.prefix,
+          prefix = _props$prefix === undefined ? '' : _props$prefix;
 
       var activeClass = className + '-active';
 
@@ -137,18 +163,18 @@ var AnimatedChild = function (_React$Component) {
 
 AnimatedChild.propTypes = {
   children: require('react').PropTypes.any.isRequired,
-  prefix: require('react').PropTypes.string.isRequired,
-  duration: require('react').PropTypes.number.isRequired,
-  delay: require('react').PropTypes.number.isRequired,
-  appear: require('react').PropTypes.string.isRequired,
-  enter: require('react').PropTypes.string.isRequired,
-  leave: require('react').PropTypes.string.isRequired,
-  appearDuration: require('react').PropTypes.number.isRequired,
-  enterDuration: require('react').PropTypes.number.isRequired,
-  leaveDuration: require('react').PropTypes.number.isRequired,
-  appearDelay: require('react').PropTypes.number.isRequired,
-  enterDelay: require('react').PropTypes.number.isRequired,
-  leaveDelay: require('react').PropTypes.number.isRequired,
+  prefix: require('react').PropTypes.string,
+  duration: require('react').PropTypes.number,
+  delay: require('react').PropTypes.number,
+  appear: require('react').PropTypes.string,
+  enter: require('react').PropTypes.string,
+  leave: require('react').PropTypes.string,
+  appearDuration: require('react').PropTypes.number,
+  enterDuration: require('react').PropTypes.number,
+  leaveDuration: require('react').PropTypes.number,
+  appearDelay: require('react').PropTypes.number,
+  enterDelay: require('react').PropTypes.number,
+  leaveDelay: require('react').PropTypes.number,
   onAppear: require('react').PropTypes.func,
   onEnter: require('react').PropTypes.func,
   onLeave: require('react').PropTypes.func
