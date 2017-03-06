@@ -32,8 +32,8 @@ var AnimatedChild = function (_React$Component) {
   }
 
   _createClass(AnimatedChild, [{
-    key: 'getDefaultProps',
-    value: function getDefaultProps() {
+    key: 'prepDefaultProps',
+    value: function prepDefaultProps() {
       return _extends({
         prefix: '',
         duration: 0,
@@ -57,12 +57,12 @@ var AnimatedChild = function (_React$Component) {
   }, {
     key: 'componentWillAppear',
     value: function componentWillAppear(done) {
-      var _getDefaultProps = this.getDefaultProps(),
-          appear = _getDefaultProps.appear,
-          appearDuration = _getDefaultProps.appearDuration,
-          duration = _getDefaultProps.duration,
-          appearDelay = _getDefaultProps.appearDelay,
-          delay = _getDefaultProps.delay;
+      var _prepDefaultProps = this.prepDefaultProps(),
+          appear = _prepDefaultProps.appear,
+          appearDuration = _prepDefaultProps.appearDuration,
+          duration = _prepDefaultProps.duration,
+          appearDelay = _prepDefaultProps.appearDelay,
+          delay = _prepDefaultProps.delay;
 
       var doneTimeout = (appearDuration || duration) + (appearDelay || delay) + 1;
 
@@ -71,12 +71,12 @@ var AnimatedChild = function (_React$Component) {
   }, {
     key: 'componentWillEnter',
     value: function componentWillEnter(done) {
-      var _getDefaultProps2 = this.getDefaultProps(),
-          enter = _getDefaultProps2.enter,
-          enterDuration = _getDefaultProps2.enterDuration,
-          duration = _getDefaultProps2.duration,
-          enterDelay = _getDefaultProps2.enterDelay,
-          delay = _getDefaultProps2.delay;
+      var _prepDefaultProps2 = this.prepDefaultProps(),
+          enter = _prepDefaultProps2.enter,
+          enterDuration = _prepDefaultProps2.enterDuration,
+          duration = _prepDefaultProps2.duration,
+          enterDelay = _prepDefaultProps2.enterDelay,
+          delay = _prepDefaultProps2.delay;
 
       var doneTimeout = (enterDuration || duration) + (enterDelay || delay) + 1;
 
@@ -85,12 +85,12 @@ var AnimatedChild = function (_React$Component) {
   }, {
     key: 'componentWillLeave',
     value: function componentWillLeave(done) {
-      var _getDefaultProps3 = this.getDefaultProps(),
-          leave = _getDefaultProps3.leave,
-          leaveDuration = _getDefaultProps3.leaveDuration,
-          duration = _getDefaultProps3.duration,
-          leaveDelay = _getDefaultProps3.leaveDelay,
-          delay = _getDefaultProps3.delay;
+      var _prepDefaultProps3 = this.prepDefaultProps(),
+          leave = _prepDefaultProps3.leave,
+          leaveDuration = _prepDefaultProps3.leaveDuration,
+          duration = _prepDefaultProps3.duration,
+          leaveDelay = _prepDefaultProps3.leaveDelay,
+          delay = _prepDefaultProps3.delay;
 
       var doneTimeout = (leaveDuration || duration) + (leaveDelay || delay) + 1;
 
@@ -102,10 +102,10 @@ var AnimatedChild = function (_React$Component) {
   }, {
     key: 'componentDidAppear',
     value: function componentDidAppear() {
-      var _getDefaultProps4 = this.getDefaultProps(),
-          prefix = _getDefaultProps4.prefix,
-          appear = _getDefaultProps4.appear,
-          enter = _getDefaultProps4.enter;
+      var _prepDefaultProps4 = this.prepDefaultProps(),
+          prefix = _prepDefaultProps4.prefix,
+          appear = _prepDefaultProps4.appear,
+          enter = _prepDefaultProps4.enter;
 
       (0, _domUtils.removeAnimationClasses)(this, prefix, appear, enter);
 
@@ -116,10 +116,10 @@ var AnimatedChild = function (_React$Component) {
   }, {
     key: 'componentDidEnter',
     value: function componentDidEnter() {
-      var _getDefaultProps5 = this.getDefaultProps(),
-          prefix = _getDefaultProps5.prefix,
-          appear = _getDefaultProps5.appear,
-          enter = _getDefaultProps5.enter;
+      var _prepDefaultProps5 = this.prepDefaultProps(),
+          prefix = _prepDefaultProps5.prefix,
+          appear = _prepDefaultProps5.appear,
+          enter = _prepDefaultProps5.enter;
 
       (0, _domUtils.removeAnimationClasses)(this, prefix, appear, enter);
 

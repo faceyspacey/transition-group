@@ -30,7 +30,7 @@ type Props = {
 export default class AnimatedChild extends React.Component {
   props: Props
 
-  getDefaultProps() {
+  prepDefaultProps() {
     return {
       prefix: '',
       duration: 0,
@@ -54,19 +54,19 @@ export default class AnimatedChild extends React.Component {
   }
 
   componentWillAppear(done: Function) {
-    const { appear, appearDuration, duration, appearDelay, delay } = this.getDefaultProps()
+    const { appear, appearDuration, duration, appearDelay, delay } = this.prepDefaultProps()
     const doneTimeout = (appearDuration || duration) + (appearDelay || delay) + 1
 
     this.animate(done, appear, doneTimeout, appearDelay || delay)
   }
   componentWillEnter(done: Function) {
-    const { enter, enterDuration, duration, enterDelay, delay } = this.getDefaultProps()
+    const { enter, enterDuration, duration, enterDelay, delay } = this.prepDefaultProps()
     const doneTimeout = (enterDuration || duration) + (enterDelay || delay) + 1
 
     this.animate(done, enter, doneTimeout, enterDelay || delay)
   }
   componentWillLeave(done: Function) {
-    const { leave, leaveDuration, duration, leaveDelay, delay } = this.getDefaultProps()
+    const { leave, leaveDuration, duration, leaveDelay, delay } = this.prepDefaultProps()
     const doneTimeout = (leaveDuration || duration) + (leaveDelay || delay) + 1
 
     this.animate(done, leave, doneTimeout, leaveDelay || delay)
@@ -74,7 +74,7 @@ export default class AnimatedChild extends React.Component {
 
   // called when by `done` callbacks above:
   componentDidAppear() {
-    const { prefix, appear, enter } = this.getDefaultProps()
+    const { prefix, appear, enter } = this.prepDefaultProps()
     removeAnimationClasses(this, prefix, appear, enter)
 
     if (this.props.onAppear) {
@@ -82,7 +82,7 @@ export default class AnimatedChild extends React.Component {
     }
   }
   componentDidEnter() {
-    const { prefix, appear, enter } = this.getDefaultProps()
+    const { prefix, appear, enter } = this.prepDefaultProps()
     removeAnimationClasses(this, prefix, appear, enter)
 
     if (this.props.onEnter) {

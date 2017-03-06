@@ -26,7 +26,7 @@ const reducer = (state = { num: 0, empty: false }, action = {}) => {
 
 export default (initialAction) => {
   const enhancer = composeWithDevTools({ name: 'AnimatedTransitionGroup' })
-  const store = createStore(reducer, enhancer)
+  const store = createStore(reducer, enhancer())
 
   if (initialAction) {
     store.dispatch(initialAction)
