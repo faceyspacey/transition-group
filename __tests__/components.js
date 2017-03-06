@@ -31,7 +31,7 @@ describe('<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props', () => {
     console.log(app.tree().children[0])
 
     app.snap()
-    console.log(6339)
+
     return app.story()
   })
 
