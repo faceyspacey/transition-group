@@ -1,5 +1,7 @@
-node_modules/
-dist/
-distStorybook/
+node_modules
+dist
+distStorybook
 .DS_Store
 npm-debug.log
+*.log
+.vscode
