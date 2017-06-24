@@ -3,9 +3,6 @@
   "version": "1.0.15",
   "description": "like `<ReactTransitionGroup />` + callbacks, extras and child-specific customization",
   "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "storybook": "start-storybook -p 9001 -c storybook",
     "storybook:build": "rimraf distStoryBook && build-storybook -c storybook -o distStorybook",
