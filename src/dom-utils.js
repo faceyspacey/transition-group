@@ -39,11 +39,11 @@ export function removeAnimationClasses(
   }
 }
 
-export function setTimeoutAnimationFrame(func?: Function, ms: number) {
+export function setTimeoutAnimationFrame(func?: Function, ms: number = 0) {
   const callback = func
   if (typeof callback !== 'function') return
 
   setTimeout(() => {
     requestAnimationFrame(callback)
-  }, ms)
+  }, ms + 17)
 }
