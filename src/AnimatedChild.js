@@ -102,11 +102,11 @@ export default class AnimatedChild extends React.Component {
     // the class the dom node appears with
     addClass(this, className, prefix)
 
-    // the class applied at least 17ms (1 animation frame) later to trigger animation
-    setTimeoutAnimationFrame(() => addClass(this, activeClass, prefix), delay + 17, className)
+    // the class applied at least 34ms (2 animation frames) later to trigger animation
+    setTimeoutAnimationFrame(() => addClass(this, activeClass, prefix), delay + 34, className)
 
     // will trigger `ComponentDid..` methods and remove all classes + fire callbacks
-    setTimeoutAnimationFrame(done, duration, 'done callbacks') // final param only recorded in shapshot tests
+    setTimeoutAnimationFrame(done, duration + 34, 'done callbacks') // final param only recorded in shapshot tests
   }
 
   render() {

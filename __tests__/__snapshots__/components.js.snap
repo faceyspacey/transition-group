@@ -12,7 +12,7 @@ exports[`<AnimatedChild /> -- all props filled appear 2`] = `
 Object {
   "className": "APPEAR",
   "method": "setTimeoutAnimationFrame",
-  "ms": 27,
+  "ms": 44,
 }
 `;
 
@@ -28,7 +28,7 @@ exports[`<AnimatedChild /> -- all props filled appear 4`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 677,
+  "ms": 711,
 }
 `;
 
@@ -70,7 +70,7 @@ exports[`<AnimatedChild /> -- all props filled enter 3`] = `
 Object {
   "className": "ENTER",
   "method": "setTimeoutAnimationFrame",
-  "ms": 37,
+  "ms": 54,
 }
 `;
 
@@ -86,7 +86,7 @@ exports[`<AnimatedChild /> -- all props filled enter 5`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 688,
+  "ms": 722,
 }
 `;
 
@@ -129,7 +129,7 @@ exports[`<AnimatedChild /> -- all props filled leave 2`] = `
 Object {
   "className": "APPEAR",
   "method": "setTimeoutAnimationFrame",
-  "ms": 27,
+  "ms": 44,
 }
 `;
 
@@ -145,7 +145,7 @@ exports[`<AnimatedChild /> -- all props filled leave 4`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 677,
+  "ms": 711,
 }
 `;
 
@@ -174,7 +174,7 @@ exports[`<AnimatedChild /> -- all props filled leave 8`] = `
 Object {
   "className": "LEAVE",
   "method": "setTimeoutAnimationFrame",
-  "ms": 47,
+  "ms": 64,
 }
 `;
 
@@ -190,7 +190,7 @@ exports[`<AnimatedChild /> -- all props filled leave 10`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 699,
+  "ms": 733,
 }
 `;
 
@@ -215,7 +215,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props appear 2`] 
 Object {
   "className": "appear",
   "method": "setTimeoutAnimationFrame",
-  "ms": 17,
+  "ms": 34,
 }
 `;
 
@@ -231,7 +231,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props appear 4`] 
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 1,
+  "ms": 35,
 }
 `;
 
@@ -267,7 +267,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + lea
 Object {
   "className": "appear",
   "method": "setTimeoutAnimationFrame",
-  "ms": 17,
+  "ms": 34,
 }
 `;
 
@@ -283,7 +283,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + lea
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 501,
+  "ms": 535,
 }
 `;
 
@@ -312,7 +312,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + lea
 Object {
   "className": "enter",
   "method": "setTimeoutAnimationFrame",
-  "ms": 17,
+  "ms": 34,
 }
 `;
 
@@ -328,7 +328,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + lea
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 501,
+  "ms": 535,
 }
 `;
 
@@ -351,7 +351,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + lea
 Object {
   "className": "leave",
   "method": "setTimeoutAnimationFrame",
-  "ms": 17,
+  "ms": 34,
 }
 `;
 
@@ -367,7 +367,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + lea
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 501,
+  "ms": 535,
 }
 `;
 
@@ -403,7 +403,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + lea
 Object {
   "className": "appear",
   "method": "setTimeoutAnimationFrame",
-  "ms": 17,
+  "ms": 34,
 }
 `;
 
@@ -419,7 +419,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + lea
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 1,
+  "ms": 35,
 }
 `;
 
@@ -448,7 +448,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + lea
 Object {
   "className": "enter",
   "method": "setTimeoutAnimationFrame",
-  "ms": 17,
+  "ms": 34,
 }
 `;
 
@@ -464,7 +464,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + lea
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 1,
+  "ms": 35,
 }
 `;
 
@@ -487,7 +487,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + lea
 Object {
   "className": "leave",
   "method": "setTimeoutAnimationFrame",
-  "ms": 17,
+  "ms": 34,
 }
 `;
 
@@ -503,7 +503,7 @@ exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + lea
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 1,
+  "ms": 35,
 }
 `;
 
@@ -539,7 +539,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled appear 2`] = `
 Object {
   "className": "APPEAR",
   "method": "setTimeoutAnimationFrame",
-  "ms": 27,
+  "ms": 44,
 }
 `;
 
@@ -555,7 +555,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled appear 4`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 677,
+  "ms": 711,
 }
 `;
 
@@ -597,7 +597,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled enter 3`] = `
 Object {
   "className": "ENTER",
   "method": "setTimeoutAnimationFrame",
-  "ms": 37,
+  "ms": 54,
 }
 `;
 
@@ -613,7 +613,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled enter 5`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 688,
+  "ms": 722,
 }
 `;
 
@@ -656,7 +656,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled leave 2`] = `
 Object {
   "className": "APPEAR",
   "method": "setTimeoutAnimationFrame",
-  "ms": 27,
+  "ms": 44,
 }
 `;
 
@@ -672,7 +672,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled leave 4`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 677,
+  "ms": 711,
 }
 `;
 
@@ -701,7 +701,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled leave 8`] = `
 Object {
   "className": "LEAVE",
   "method": "setTimeoutAnimationFrame",
-  "ms": 47,
+  "ms": 64,
 }
 `;
 
@@ -717,7 +717,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled leave 10`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 699,
+  "ms": 733,
 }
 `;
 
@@ -742,7 +742,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 2`] = 
 Object {
   "className": "appear",
   "method": "setTimeoutAnimationFrame",
-  "ms": 17,
+  "ms": 34,
 }
 `;
 
@@ -758,7 +758,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 4`] = 
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 1,
+  "ms": 35,
 }
 `;
 
@@ -795,7 +795,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 9`] = 
 Object {
   "className": "leave",
   "method": "setTimeoutAnimationFrame",
-  "ms": 17,
+  "ms": 34,
 }
 `;
 
@@ -811,7 +811,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 11`] =
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 1,
+  "ms": 35,
 }
 `;
 
@@ -850,7 +850,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 4`] = `
 Object {
   "className": "enter",
   "method": "setTimeoutAnimationFrame",
-  "ms": 17,
+  "ms": 34,
 }
 `;
 
@@ -866,7 +866,7 @@ exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 6`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
-  "ms": 1,
+  "ms": 35,
 }
 `;
 

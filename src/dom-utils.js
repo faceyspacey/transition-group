@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom' // eslint-disable-line
 
 export function addClass(component: React$Component<*, *, *>, className: string, prefix: string) {
   try {
+    // the original CSSTransition group did this (even in componentWillAppear/Enter)
+    // clearly the element exists at this point in the lifecycle before added to the DOM
     const element = ReactDOM.findDOMNode(component)
 
     className = prefix ? `${prefix}-${className}` : className
