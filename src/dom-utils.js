@@ -45,5 +45,5 @@ export function setTimeoutAnimationFrame(func?: Function, ms: number = 0) {
 
   setTimeout(() => {
     requestAnimationFrame(callback)
-  }, ms + 17)
+  }, ms)
 }

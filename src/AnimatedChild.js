@@ -72,7 +72,7 @@ export default class AnimatedChild extends React.Component {
     this.animate(done, leave, doneTimeout, leaveDelay || delay)
   }
 
-  // called when by `done` callbacks above:
+  // triggered by `done` callbacks above:
   componentDidAppear() {
     const { prefix, appear, enter } = this.prepDefaultProps()
     removeAnimationClasses(this, prefix, appear, enter)
@@ -99,9 +99,13 @@ export default class AnimatedChild extends React.Component {
     const { prefix = '' } = this.props
     const activeClass = `${className}-active`
 
+    // the class the dom node appears with
     addClass(this, className, prefix)
-    setTimeoutAnimationFrame(() => addClass(this, activeClass, prefix), delay, className)
 
+    // the class applied at least 17ms (1 animation frame) later to trigger animation
+    setTimeoutAnimationFrame(() => addClass(this, activeClass, prefix), delay + 17, className)
+
+    // will trigger `ComponentDid..` methods and remove all classes + fire callbacks
     setTimeoutAnimationFrame(done, duration, 'done callbacks') // final param only recorded in shapshot tests
   }
 
