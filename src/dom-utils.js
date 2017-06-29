@@ -24,12 +24,13 @@ export function removeAnimationClasses(
   prefix: string,
   appear: string,
   enter: string,
+  leave: string,
 ) {
   try { // dom node may have been removed if wrapped by an outer animation with a shorter duration (no big deal)
     const element = ReactDOM.findDOMNode(component)
     const classNameReg = !prefix
-      ? `${enter}-active|${appear}-active|${enter}|${appear}`
-      : `${prefix}-${enter}-active|${prefix}-${appear}-active|${prefix}-${enter}|${prefix}-${appear}`
+      ? `${enter}-active|${appear}-active|${leave}-active|${enter}|${appear}|${leave}`
+      : `${prefix}-${enter}-active|${prefix}-${appear}-active|${prefix}-${leave}-active|${prefix}-${enter}|${prefix}-${appear}|${prefix}-${leave}`
 
     const re = new RegExp(classNameReg, 'g')
     element.className = element.className.replace(re, '')

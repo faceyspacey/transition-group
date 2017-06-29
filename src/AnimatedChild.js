@@ -74,22 +74,25 @@ export default class AnimatedChild extends React.Component {
 
   // triggered by `done` callbacks above:
   componentDidAppear() {
-    const { prefix, appear, enter } = this.prepDefaultProps()
-    removeAnimationClasses(this, prefix, appear, enter)
+    const { prefix, appear, enter, leave } = this.prepDefaultProps()
+    removeAnimationClasses(this, prefix, appear, enter, leave)
 
     if (this.props.onAppear) {
       this.props.onAppear()
     }
   }
   componentDidEnter() {
-    const { prefix, appear, enter } = this.prepDefaultProps()
-    removeAnimationClasses(this, prefix, appear, enter)
+    const { prefix, appear, enter, leave } = this.prepDefaultProps()
+    removeAnimationClasses(this, prefix, appear, enter, leave)
 
     if (this.props.onEnter) {
       this.props.onEnter()
     }
   }
   componentDidLeave() {
+    const { prefix, appear, enter, leave } = this.prepDefaultProps()
+    removeAnimationClasses(this, prefix, appear, enter, leave)
+
     if (this.props.onLeave) {
       this.props.onLeave()
     }

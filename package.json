@@ -2,7 +2,7 @@
   "name": "animated-transition-group",
   "version": "1.0.19",
   "description": "like `<ReactTransitionGroup />` + callbacks, extras and child-specific customization",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
     "storybook": "start-storybook -p 9001 -c storybook",
     "storybook:build": "rimraf distStoryBook && build-storybook -c storybook -o distStorybook",

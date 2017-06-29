@@ -5,6 +5,8 @@ import ReactTransitionGroup from 'react-addons-transition-group'
 
 import { setTimeoutAnimationFrame } from './dom-utils'
 
+let lastUpdate = new Date()
+
 type Props = {
   children?: any,
   prefix?: string,
@@ -30,6 +32,7 @@ type Props = {
   onEmpty?: Function,
   onFull?: Function,
   zeroElements?: number,
+  debounce?: number,
 }
 
 export default class AnimatedTransitionGroup extends React.Component {
@@ -53,6 +56,7 @@ export default class AnimatedTransitionGroup extends React.Component {
     leaveDelay: 0,
 
     zeroElements: 0,
+    debounce: 0,
   }
 
   componentWillReceiveProps(nextProps: Props) {
@@ -70,6 +74,22 @@ export default class AnimatedTransitionGroup extends React.Component {
     ) {
       setTimeoutAnimationFrame(this.props.onFull, 0)
     }
+  }
+
+  // simple debounce mechanism that works
+  shouldComponentUpdate(nextProps: Props) {
+    if (!nextProps.debounce) return true
+
+    const latestChange = new Date()
+    const delta = latestChange - lastUpdate
+
+    if (delta < nextProps.debounce) {
+      setTimeout(() => this.setState({}), delta + 34) // 34 is 2 animation frames just like the animations do
+      return false
+    }
+
+    lastUpdate = new Date()
+    return true
   }
 
   render() {
@@ -98,6 +118,7 @@ export default class AnimatedTransitionGroup extends React.Component {
       onEmpty,      // eslint-disable-line no-unused-vars
       onFull,       // eslint-disable-line no-unused-vars
       zeroElements, // eslint-disable-line no-unused-vars
+      debounce,     // eslint-disable-line no-unused-vars
 
       ...props // remaining props will only have what can be passed to <ReactTransitionGroup />
     } = this.props

@@ -196,12 +196,19 @@ Object {
 
 exports[`<AnimatedChild /> -- all props filled leave 11`] = `
 Object {
+  "method": "removeAnimationClasses",
+  "name": "horizontal",
+}
+`;
+
+exports[`<AnimatedChild /> -- all props filled leave 12`] = `
+Object {
   "empty": true,
   "num": 0,
 }
 `;
 
-exports[`<AnimatedChild /> -- all props filled leave 12`] = `<div />`;
+exports[`<AnimatedChild /> -- all props filled leave 13`] = `<div />`;
 
 exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props appear 1`] = `
 Object {
@@ -373,12 +380,19 @@ Object {
 
 exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 16`] = `
 Object {
+  "method": "removeAnimationClasses",
+  "name": "",
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 17`] = `
+Object {
   "empty": false,
   "num": 1,
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 17`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave -- simple duration 18`] = `
 <div>
   <div
     className="child"
@@ -509,12 +523,19 @@ Object {
 
 exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 16`] = `
 Object {
+  "method": "removeAnimationClasses",
+  "name": "",
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 17`] = `
+Object {
   "empty": false,
   "num": 1,
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 17`] = `
+exports[`<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props enter + leave 18`] = `
 <div>
   <div
     className="child"
@@ -723,12 +744,19 @@ Object {
 
 exports[`<AnimatedTransitionGroup /> -- all props filled leave 11`] = `
 Object {
+  "method": "removeAnimationClasses",
+  "name": "horizontal",
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> -- all props filled leave 12`] = `
+Object {
   "empty": true,
   "num": 0,
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled leave 12`] = `<div />`;
+exports[`<AnimatedTransitionGroup /> -- all props filled leave 13`] = `<div />`;
 
 exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 1`] = `
 Object {
@@ -817,12 +845,19 @@ Object {
 
 exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 12`] = `
 Object {
+  "method": "removeAnimationClasses",
+  "name": "",
+}
+`;
+
+exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 13`] = `
+Object {
   "empty": true,
   "num": 0,
 }
 `;
 
-exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 13`] = `<div />`;
+exports[`<AnimatedTransitionGroup /> -- all props filled onEmpty callback 14`] = `<div />`;
 
 exports[`<AnimatedTransitionGroup /> -- all props filled onFull callback 1`] = `
 Object {
