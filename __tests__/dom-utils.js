@@ -7,7 +7,7 @@ jest.mock('react-dom', () => ({
 
 describe('dom-utils', () => {
   it('addClass', () => {
-    const component = { className: 'currentClassName' }
+    const component = { className: 'currentClassName', _mounted: true }
     addClass(component, 'appear', 'prefix')
 
     console.log(component)
@@ -15,7 +15,7 @@ describe('dom-utils', () => {
   })
 
   it('removeAnimationClasses', () => {
-    const component = { className: 'appear enter appear-active enter-active' }
+    const component = { className: 'appear enter appear-active enter-active', _mounted: true }
 
     removeAnimationClasses(component, '', 'appear', 'enter')
 
@@ -24,7 +24,7 @@ describe('dom-utils', () => {
   })
 
   it('removeAnimationClasses -- with prefix', () => {
-    const component = { className: 'prefix-appear prefix-appear-active prefix-enter prefix-enter-active' }
+    const component = { className: 'prefix-appear prefix-appear-active prefix-enter prefix-enter-active', _mounted: true }
 
     removeAnimationClasses(component, 'prefix', 'appear', 'enter')
 
