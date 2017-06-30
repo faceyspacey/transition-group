@@ -329,7 +329,7 @@ module.exports = {
 
     // Enforce component methods order
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md
-    'react/sort-comp': ['error', {
+    'react/sort-comp': [1, {
       order: [
         'props',
         'state',

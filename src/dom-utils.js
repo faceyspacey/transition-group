@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom' // eslint-disable-line
 
 
 export function addClass(component: React$Component<*, *, *>, className: string, prefix: string) {
+  if (!component._mounted) return
+
   try {
     // the original CSSTransition group did this (even in componentWillAppear/Enter)
     // clearly the element exists at this point in the lifecycle before added to the DOM
@@ -26,6 +28,8 @@ export function removeAnimationClasses(
   enter: string,
   leave: string,
 ) {
+  if (!component._mounted) return
+
   try { // dom node may have been removed if wrapped by an outer animation with a shorter duration (no big deal)
     const element = ReactDOM.findDOMNode(component)
     const classNameReg = !prefix

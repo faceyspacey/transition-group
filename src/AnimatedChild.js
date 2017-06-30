@@ -29,6 +29,15 @@ type Props = {
 
 export default class AnimatedChild extends React.Component {
   props: Props
+  _mounted: boolean
+
+  componentWillMount() {
+    this._mounted = true
+  }
+
+  componentWillUnmount() {
+    this._mounted = false
+  }
 
   prepDefaultProps() {
     return {
