@@ -262,7 +262,7 @@ exports[`<TransitionGroup /> + <Transition /> -- no props appear 6`] = `
 </div>
 `;
 
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 1`] = `
+exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration (debounced) 1`] = `
 Object {
   "className": "appear",
   "method": "addClass",
@@ -270,7 +270,7 @@ Object {
 }
 `;
 
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 2`] = `
+exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration (debounced) 2`] = `
 Object {
   "className": "appear",
   "method": "setTimeoutAnimationFrame",
@@ -278,7 +278,7 @@ Object {
 }
 `;
 
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 3`] = `
+exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration (debounced) 3`] = `
 Object {
   "className": "appear-active",
   "method": "addClass",
@@ -286,7 +286,7 @@ Object {
 }
 `;
 
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 4`] = `
+exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration (debounced) 4`] = `
 Object {
   "className": "done callbacks",
   "method": "setTimeoutAnimationFrame",
@@ -294,111 +294,33 @@ Object {
 }
 `;
 
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 5`] = `
+exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration (debounced) 5`] = `
 Object {
   "method": "removeAnimationClasses",
   "name": "",
 }
 `;
 
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 6`] = `
+exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration (debounced) 6`] = `
 Object {
   "type": "SWITCH",
 }
 `;
 
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 7`] = `
-Object {
-  "className": "enter",
-  "method": "addClass",
-  "name": "",
-}
-`;
-
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 8`] = `
-Object {
-  "className": "enter",
-  "method": "setTimeoutAnimationFrame",
-  "ms": 34,
-}
-`;
-
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 9`] = `
-Object {
-  "className": "enter-active",
-  "method": "addClass",
-  "name": "",
-}
-`;
-
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 10`] = `
-Object {
-  "className": "done callbacks",
-  "method": "setTimeoutAnimationFrame",
-  "ms": 535,
-}
-`;
-
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 11`] = `
-Object {
-  "method": "removeAnimationClasses",
-  "name": "",
-}
-`;
-
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 12`] = `
-Object {
-  "className": "leave",
-  "method": "addClass",
-  "name": "",
-}
-`;
-
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 13`] = `
-Object {
-  "className": "leave",
-  "method": "setTimeoutAnimationFrame",
-  "ms": 34,
-}
-`;
-
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 14`] = `
-Object {
-  "className": "leave-active",
-  "method": "addClass",
-  "name": "",
-}
-`;
-
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 15`] = `
-Object {
-  "className": "done callbacks",
-  "method": "setTimeoutAnimationFrame",
-  "ms": 535,
-}
-`;
-
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 16`] = `
-Object {
-  "method": "removeAnimationClasses",
-  "name": "",
-}
-`;
-
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 17`] = `
+exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration (debounced) 7`] = `
 Object {
   "empty": false,
   "num": 1,
 }
 `;
 
-exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration 18`] = `
+exports[`<TransitionGroup /> + <Transition /> -- no props enter + leave -- simple duration (debounced) 8`] = `
 <div>
   <div
     className="child"
     style={
       Object {
-        "backgroundColor": "purple",
+        "backgroundColor": "blue",
       }
     }
   />

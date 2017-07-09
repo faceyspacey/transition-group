@@ -46,7 +46,7 @@ describe('<TransitionGroup /> + <Transition /> -- no props', () => {
     return app.story()
   })
 
-  it('enter + leave -- simple duration', () => {
+  it('enter + leave -- simple duration (debounced)', () => {
     const app = createApp({ duration: 500 })
 
     app.snap({ type: 'SWITCH' })

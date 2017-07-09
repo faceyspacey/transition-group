@@ -32,7 +32,6 @@ type Props = {
   onEmpty?: Function,
   onFull?: Function,
   zeroElements?: number,
-  debounce?: number,
 }
 
 export default class TransitionGroup extends React.Component {
@@ -56,7 +55,6 @@ export default class TransitionGroup extends React.Component {
     leaveDelay: 0,
 
     zeroElements: 0,
-    debounce: 0,
   }
 
   componentWillReceiveProps(nextProps: Props) {
@@ -76,21 +74,26 @@ export default class TransitionGroup extends React.Component {
     }
   }
 
-  // // simple debounce mechanism that works
-  // shouldComponentUpdate(nextProps: Props) {
-  //   if (!nextProps.debounce) return true
+  // simple debounce mechanism that works
+  shouldComponentUpdate(nextProps: Props) {
+    const shouldDebounce = (
+      React.Children.count(nextProps.children) === 1 &&
+      React.Children.count(this.props.children) === 1
+    )
 
-  //   const latestChange = new Date()
-  //   const delta = latestChange - lastUpdate
+    if (!shouldDebounce) return true
 
-  //   if (delta < nextProps.debounce) {
-  //     setTimeout(() => this.setState({}), delta + 34) // 34 is 2 animation frames just like the animations do
-  //     return false
-  //   }
+    const latestChange = new Date()
+    const delta = latestChange - lastUpdate
 
-  //   lastUpdate = new Date()
-  //   return true
-  // }
+    if (delta < (nextProps.duration || 0)) {
+      setTimeout(() => this.setState({}), delta + 34) // 34 is 2 animation frames just like the animations do
+      return false
+    }
+
+    lastUpdate = new Date()
+    return true
+  }
 
   render() {
     const {
@@ -118,7 +121,6 @@ export default class TransitionGroup extends React.Component {
       onEmpty,      // eslint-disable-line no-unused-vars
       onFull,       // eslint-disable-line no-unused-vars
       zeroElements, // eslint-disable-line no-unused-vars
-      debounce,     // eslint-disable-line no-unused-vars
 
       ...props // remaining props will only have what can be passed to <ReactTransitionGroup />
     } = this.props

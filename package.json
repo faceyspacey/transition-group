@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/faceyspacey/animated-transition-group.git"
+    "url": "git+https://github.com/faceyspacey/transition-group.git"
   },
   "author": "James Gillmore <james@faceyspacey.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/faceyspacey/animated-transition-group/issues"
+    "url": "https://github.com/faceyspacey/transition-group/issues"
   },
-  "homepage": "https://github.com/faceyspacey/animated-transition-group#readme",
+  "homepage": "https://github.com/faceyspacey/transition-group#readme",
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "^3.3.0",
     "@kadira/storybook": "^2.35.3",
