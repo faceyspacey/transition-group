@@ -1,21 +1,21 @@
-# AnimatedTransitionGroup
+# TransitionGroup
 
-`AnimatedTransitionGroup` is a sound answer to `<ReactTransitionGroup />` and any wishlist you might have had for it. 
-We suggest you become familiar with it and its higher level CSS-oriented counterpart first to truly understand `AnimatedTransitionGroups`'s benefits:
+`TransitionGroup` is a sound answer to `<ReactTransitionGroup />` and any wishlist you might have had for it. 
+We suggest you become familiar with it and its higher level CSS-oriented counterpart first to truly understand `TransitionGroups`'s benefits:
 
 * [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html)
 * [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html#low-level-api-reacttransitiongroup)
 
 
-The biggest problem `AnimatedTransitionGroup` solves is that you can ***both*** provide callbacks for the 3 transitions (`appear`, `enter`, `leave`) ***AND***
+The biggest problem `TransitionGroup` solves is that you can ***both*** provide callbacks for the 3 transitions (`appear`, `enter`, `leave`) ***AND***
 have your css classes applied. `ReactCSSTransitionGroup` does not allow for callbacks.
 
 However, we've taken it one step farther to allow you to customize each individual child component rendered within the group. So that
 means you can provide props (such as animation duraiton, delay, etc) that apply to all children by setting them at the group level,
-***OR*** you can override them by passing the props to the `<AnimatedChild />` components that wrap your actual children. 
+***OR*** you can override them by passing the props to the `<Transition />` components that wrap your actual children. 
 
 *Note: unlike `ReactTransitionGroup`
-and `ReactCSSTransitionGroup` all child components are required to be wrapped in `<AnimatedChild>`.*
+and `ReactCSSTransitionGroup` all child components are required to be wrapped in `<Transition>`.*
 
 Lastly, we offer simpler prop names and a lot more customization:
 
@@ -34,13 +34,13 @@ Lastly, we offer simpler prop names and a lot more customization:
 ```javascript
 import React from 'react'
 import { connect } from 'react-redux'
-import { AnimatedTransitionGroup, AnimatedChild } from 'animated-transition-group'
+import { TransitionGroup, Transition } from 'animated-transition-group'
 
 const onLeave = () => console.log('left')
 const onEmpty = () => console.log('group empty')
 
 const PageSwitcher = ({ page }) =>
-  <AnimatedTransitionGroup 
+  <TransitionGroup 
     component='div'
     className='whatever'
     duration={300}
@@ -49,17 +49,17 @@ const PageSwitcher = ({ page }) =>
     debounce={300}
     onEmpty={onEmpty}
   >
-    <AnimatedChild key={page} duration={500} enterDelay={500} leaveDelay={0} onLeave={onLeave}>
+    <Transition key={page} duration={500} enterDelay={500} leaveDelay={0} onLeave={onLeave}>
       {getComponent(page)}
-    </AnimatedChild>
+    </Transition>
 
     // don't show link for the current page:
     <LinkRow>
-      {page !== 'Home' && <AnimatedChild key={`${page}-link`>HOME<AnimatedChild>}
-      {page !== 'List' && <AnimatedChild key={`${page}-link`>LIST<AnimatedChild>}
-      {page !== 'Video' && <AnimatedChild key={`${page}-link`>VIDEO<AnimatedChild>}
+      {page !== 'Home' && <Transition key={`${page}-link`>HOME<Transition>}
+      {page !== 'List' && <Transition key={`${page}-link`>LIST<Transition>}
+      {page !== 'Video' && <Transition key={`${page}-link`>VIDEO<Transition>}
     </LinkRow>
-  </AnimatedTransitionGroup>
+  </TransitionGroup>
 
 const getComponent = page => {
   switch(page) {
@@ -75,7 +75,7 @@ const getComponent = page => {
 const mapState = ({ page }) => ({ page })
 export default connect(mapState)(PageSwitcher)
 ```
-*note: you can have as many nested `<AnimatedChild />`'s as you want. This happens to be primarily for one child :)*
+*note: you can have as many nested `<Transition />`'s as you want. This happens to be primarily for one child :)*
 
 The secret ingredient is obviously the `key` property passed to your children. That lets React differentiate between
 the components. More importantly it lets you define just a single component in this case, rather than require you to
@@ -87,12 +87,12 @@ it provides to use state to determine when components should and should not be t
 duration embedded in the DOM *separate*, makes it world class. It allows you to render from state, just as you would hope...*and
 without any hacked solutions or trickery.*
 
-As for having multiple nested `AnimatedChild` components, of course also use the `key` prop to uniquely identify them so React
+As for having multiple nested `Transition` components, of course also use the `key` prop to uniquely identify them so React
 knows what to do, i.e. when to attach and detach them to/from the DOM.
 
 # API
-The below props can be applied to ***both*** `<AnimatedTransitionGroup />` and `<AnimatedChild />`. The difference is that if
-you provide them to `AnimatedTransitionGroup`, they will be passed down to `AnimatedChild`. And of course, if `AnimatedChild`
+The below props can be applied to ***both*** `<TransitionGroup />` and `<Transition />`. The difference is that if
+you provide them to `TransitionGroup`, they will be passed down to `Transition`. And of course, if `Transition`
 supplies its own, it will override it. duh!
 
 ### prefix: string
@@ -128,18 +128,18 @@ effective if you're using *CSS Modules* and don't want to define a global class 
 
 ```javascript
 import styles from '.styles'
-<AnimatedChild appear={styles.appear} />
+<Transition appear={styles.appear} />
 ```
 
-## AnimatedTransitionGroup only:
-The following props are ***only*** available on `<AnimatedTransitionGroup />`:
+## TransitionGroup only:
+The following props are ***only*** available on `<TransitionGroup />`:
 
 ### onFull: Function
-called when the first `AnimatedChild` renders within `AnimatedTransitionGroup`
+called when the first `Transition` renders within `TransitionGroup`
 
 ### onEmpty: Function
-called when there are no nested `<AnimatedChild />` components. It is called after the final component animates its departure, using
-the the duration and delay passed to `AnimatedTransitionGroup` (not the child) to calculate that time.
+called when there are no nested `<Transition />` components. It is called after the final component animates its departure, using
+the the duration and delay passed to `TransitionGroup` (not the child) to calculate that time.
 
 ### zeroElements: number
 to calculate whether there are zero nested children, sometimes you need to indicate what that number is. For example,

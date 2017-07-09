@@ -23,7 +23,7 @@ jest.mock('../src/dom-utils', () => ({
 }))
 
 
-describe('<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props', () => {
+describe('<TransitionGroup /> + <Transition /> -- no props', () => {
   it('appear', () => {
     const app = createApp()
 
@@ -59,7 +59,7 @@ describe('<AnimatedTransitionGroup /> + <AnimatedChild /> -- no props', () => {
 })
 
 
-describe('<AnimatedTransitionGroup /> -- all props filled', () => {
+describe('<TransitionGroup /> -- all props filled', () => {
   it('appear', () => {
     const onAppear = jest.fn()
     const app = createApp(allProps({ onAppear }))
@@ -127,7 +127,7 @@ describe('<AnimatedTransitionGroup /> -- all props filled', () => {
 })
 
 
-describe('<AnimatedChild /> -- all props filled', () => {
+describe('<Transition /> -- all props filled', () => {
   it('appear', () => {
     const onAppear = jest.fn()
     const app = createApp({}, allProps({ onAppear }))

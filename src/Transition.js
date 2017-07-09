@@ -27,7 +27,7 @@ type Props = {
   onLeave?: ?Function,
 }
 
-export default class AnimatedChild extends React.Component {
+export default class Transition extends React.Component {
   props: Props
   _mounted: boolean
 

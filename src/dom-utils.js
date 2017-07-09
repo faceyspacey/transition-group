@@ -16,7 +16,7 @@ export function addClass(component: React$Component<*, *, *>, className: string,
   }
   catch (e) {
     if (process.env.NODE_ENV !== 'production' && !process.env.STORYBOOK_GIT_BRANCH) {
-      console.warn(`AnimatedChild had the following issue adding classes: ${e.toString()}`)
+      console.warn(`Transition had the following issue adding classes: ${e.toString()}`)
     }
   }
 }
@@ -41,7 +41,7 @@ export function removeAnimationClasses(
   }
   catch (e) {
     if (process.env.NODE_ENV === 'production' && !process.env.STORYBOOK_GIT_BRANCH) {
-      console.warn(`AnimatedChild had the following issue removing classes: ${e.toString()}`)
+      console.warn(`Transition had the following issue removing classes: ${e.toString()}`)
     }
   }
 }

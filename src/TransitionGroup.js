@@ -35,7 +35,7 @@ type Props = {
   debounce?: number,
 }
 
-export default class AnimatedTransitionGroup extends React.Component {
+export default class TransitionGroup extends React.Component {
   props: Props
 
   static defaultProps = {
@@ -76,21 +76,21 @@ export default class AnimatedTransitionGroup extends React.Component {
     }
   }
 
-  // simple debounce mechanism that works
-  shouldComponentUpdate(nextProps: Props) {
-    if (!nextProps.debounce) return true
+  // // simple debounce mechanism that works
+  // shouldComponentUpdate(nextProps: Props) {
+  //   if (!nextProps.debounce) return true
 
-    const latestChange = new Date()
-    const delta = latestChange - lastUpdate
+  //   const latestChange = new Date()
+  //   const delta = latestChange - lastUpdate
 
-    if (delta < nextProps.debounce) {
-      setTimeout(() => this.setState({}), delta + 34) // 34 is 2 animation frames just like the animations do
-      return false
-    }
+  //   if (delta < nextProps.debounce) {
+  //     setTimeout(() => this.setState({}), delta + 34) // 34 is 2 animation frames just like the animations do
+  //     return false
+  //   }
 
-    lastUpdate = new Date()
-    return true
-  }
+  //   lastUpdate = new Date()
+  //   return true
+  // }
 
   render() {
     const {
