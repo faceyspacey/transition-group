@@ -23,7 +23,6 @@ Lastly, we offer simpler prop names and a lot more customization:
 * **delay** (`delay`, `appearDelay`, `enterDelay`, `leaveDelay`)
 * **class names** (the `appear`, `enter`, and `leave` props)
 * **a prefix** (prepended to all classes)
-* **and a debounce value**
 
 ## Installation
 ```yarn add animated-transition-group```
@@ -46,7 +45,6 @@ const PageSwitcher = ({ page }) =>
     duration={300}
     delay={100}
     prefix='fade'
-    debounce={300}
     onEmpty={onEmpty}
   >
     <Transition key={page} duration={500} enterDelay={500} leaveDelay={0} onLeave={onLeave}>
