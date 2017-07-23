@@ -145,6 +145,3 @@ the the duration and delay passed to `TransitionGroup` (not the child) to calcul
 to calculate whether there are zero nested children, sometimes you need to indicate what that number is. For example,
 if you have an array of children, when the array is empty, it's counted as `1` even though no children are rendered. 
 So you set `zeroElements={1}`.
-
-### debounce: number
-used primarily if you have a *"switcher"* style component (such as on the [Redux-First Router Demo](https://github.com/faceyspacey/redux-first-router-demo)) that transitions between one component at a time. During this scenario, the user may go back and forth really quickly between the same 2 components. Animations can get janky because. To prevent this, set `debounce` to the same value as the `duration`, and page changes will be queued. 
