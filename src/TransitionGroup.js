@@ -25,6 +25,10 @@ type Props = {
   enterDelay?: number,
   leaveDelay?: number,
 
+  onBeforeAppear?: Function,
+  onBeforeEnter?: Function,
+  onBeforeLeave?: Function,
+
   onAppear?: Function,
   onEnter?: Function,
   onLeave?: Function,
@@ -118,6 +122,10 @@ export default class TransitionGroup extends React.Component {
       onEnter,
       onLeave,
 
+      onBeforeAppear,
+      onBeforeEnter,
+      onBeforeLeave,
+
       onEmpty,      // eslint-disable-line no-unused-vars
       onFull,       // eslint-disable-line no-unused-vars
       zeroElements, // eslint-disable-line no-unused-vars
@@ -151,6 +159,10 @@ export default class TransitionGroup extends React.Component {
               onAppear,
               onEnter,
               onLeave,
+
+              onBeforeAppear,
+              onBeforeEnter,
+              onBeforeLeave,
               ...child.props,
             })
           }).filter(child => child)
