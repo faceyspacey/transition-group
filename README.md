@@ -121,7 +121,7 @@ these callbacks will of course be called for the given transition
 ### onBeforeAppear: Function
 ### onBeforeEnter: Function
 ### onBeforeLeave: Function
-these callbacks will of course be called for the before their respective transition happens
+these callbacks will of course be called before their respective transition happens
 
 ### appear: string
 ### enter: string
