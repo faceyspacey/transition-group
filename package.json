@@ -1,6 +1,6 @@
 {
   "name": "transition-group",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "like `<ReactTransitionGroup />` + callbacks, extras and child-specific customization",
   "main": "dist/index.js",
   "scripts": {
