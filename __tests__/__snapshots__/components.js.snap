@@ -52,6 +52,216 @@ exports[`<Transition /> -- all props filled appear 6`] = `
 </div>
 `;
 
+exports[`<Transition /> -- all props filled beforeAppear 1`] = `
+Object {
+  "className": "APPEAR",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeAppear 2`] = `
+Object {
+  "className": "APPEAR",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 44,
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeAppear 3`] = `
+Object {
+  "className": "APPEAR-active",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeAppear 4`] = `
+Object {
+  "className": "done callbacks",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 711,
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeAppear 5`] = `
+Object {
+  "method": "removeAnimationClasses",
+  "name": "horizontal",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeAppear 6`] = `
+<div>
+  <div
+    className="child"
+    style={
+      Object {
+        "backgroundColor": "blue",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`<Transition /> -- all props filled beforeEnter 1`] = `
+Object {
+  "type": "FULL",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeEnter 2`] = `
+Object {
+  "className": "ENTER",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeEnter 3`] = `
+Object {
+  "className": "ENTER",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 54,
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeEnter 4`] = `
+Object {
+  "className": "ENTER-active",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeEnter 5`] = `
+Object {
+  "className": "done callbacks",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 722,
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeEnter 6`] = `
+Object {
+  "method": "removeAnimationClasses",
+  "name": "horizontal",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeEnter 7`] = `
+Object {
+  "empty": false,
+  "num": 0,
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeEnter 8`] = `
+<div>
+  <div
+    className="child"
+    style={
+      Object {
+        "backgroundColor": "blue",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`<Transition /> -- all props filled beforeLeave 1`] = `
+Object {
+  "className": "APPEAR",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeLeave 2`] = `
+Object {
+  "className": "APPEAR",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 44,
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeLeave 3`] = `
+Object {
+  "className": "APPEAR-active",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeLeave 4`] = `
+Object {
+  "className": "done callbacks",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 711,
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeLeave 5`] = `
+Object {
+  "method": "removeAnimationClasses",
+  "name": "horizontal",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeLeave 6`] = `
+Object {
+  "type": "EMPTY",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeLeave 7`] = `
+Object {
+  "className": "LEAVE",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeLeave 8`] = `
+Object {
+  "className": "LEAVE",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 64,
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeLeave 9`] = `
+Object {
+  "className": "LEAVE-active",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeLeave 10`] = `
+Object {
+  "className": "done callbacks",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 733,
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeLeave 11`] = `
+Object {
+  "method": "removeAnimationClasses",
+  "name": "horizontal",
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeLeave 12`] = `
+Object {
+  "empty": true,
+  "num": 0,
+}
+`;
+
+exports[`<Transition /> -- all props filled beforeLeave 13`] = `<div />`;
+
 exports[`<Transition /> -- all props filled enter 1`] = `
 Object {
   "type": "FULL",
@@ -521,6 +731,216 @@ exports[`<TransitionGroup /> -- all props filled appear 6`] = `
   />
 </div>
 `;
+
+exports[`<TransitionGroup /> -- all props filled beforeAppear 1`] = `
+Object {
+  "className": "APPEAR",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeAppear 2`] = `
+Object {
+  "className": "APPEAR",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 44,
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeAppear 3`] = `
+Object {
+  "className": "APPEAR-active",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeAppear 4`] = `
+Object {
+  "className": "done callbacks",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 711,
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeAppear 5`] = `
+Object {
+  "method": "removeAnimationClasses",
+  "name": "horizontal",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeAppear 6`] = `
+<div>
+  <div
+    className="child"
+    style={
+      Object {
+        "backgroundColor": "blue",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeEnter 1`] = `
+Object {
+  "type": "FULL",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeEnter 2`] = `
+Object {
+  "className": "ENTER",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeEnter 3`] = `
+Object {
+  "className": "ENTER",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 54,
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeEnter 4`] = `
+Object {
+  "className": "ENTER-active",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeEnter 5`] = `
+Object {
+  "className": "done callbacks",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 722,
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeEnter 6`] = `
+Object {
+  "method": "removeAnimationClasses",
+  "name": "horizontal",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeEnter 7`] = `
+Object {
+  "empty": false,
+  "num": 0,
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeEnter 8`] = `
+<div>
+  <div
+    className="child"
+    style={
+      Object {
+        "backgroundColor": "blue",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeLeave 1`] = `
+Object {
+  "className": "APPEAR",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeLeave 2`] = `
+Object {
+  "className": "APPEAR",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 44,
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeLeave 3`] = `
+Object {
+  "className": "APPEAR-active",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeLeave 4`] = `
+Object {
+  "className": "done callbacks",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 711,
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeLeave 5`] = `
+Object {
+  "method": "removeAnimationClasses",
+  "name": "horizontal",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeLeave 6`] = `
+Object {
+  "type": "EMPTY",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeLeave 7`] = `
+Object {
+  "className": "LEAVE",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeLeave 8`] = `
+Object {
+  "className": "LEAVE",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 64,
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeLeave 9`] = `
+Object {
+  "className": "LEAVE-active",
+  "method": "addClass",
+  "name": "horizontal",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeLeave 10`] = `
+Object {
+  "className": "done callbacks",
+  "method": "setTimeoutAnimationFrame",
+  "ms": 733,
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeLeave 11`] = `
+Object {
+  "method": "removeAnimationClasses",
+  "name": "horizontal",
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeLeave 12`] = `
+Object {
+  "empty": true,
+  "num": 0,
+}
+`;
+
+exports[`<TransitionGroup /> -- all props filled beforeLeave 13`] = `<div />`;
 
 exports[`<TransitionGroup /> -- all props filled enter 1`] = `
 Object {

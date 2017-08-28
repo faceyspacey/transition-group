@@ -74,6 +74,20 @@ describe('<TransitionGroup /> -- all props filled', () => {
     return app.story()
   })
 
+  it('beforeAppear', () => {
+    const onBeforeAppear = jest.fn()
+    const app = createApp(allProps({ onBeforeAppear }))
+
+    console.log(app.tree())
+    console.log(app.tree().children[0])
+
+    expect(onBeforeAppear).toBeCalled()
+
+    app.snap()
+
+    return app.story()
+  })
+
   it('enter', () => {
     const onEnter = jest.fn()
     const app = createApp(allProps({ onEnter }), null, { type: 'EMPTY' })
@@ -87,6 +101,19 @@ describe('<TransitionGroup /> -- all props filled', () => {
     return app.story()
   })
 
+  it('beforeEnter', () => {
+    const onBeforeEnter = jest.fn()
+    const app = createApp(allProps({ onBeforeEnter }), null, { type: 'EMPTY' })
+
+    app.snap({ type: 'FULL' })
+
+    console.log(app.tree())
+    console.log(app.tree().children[0])
+    expect(onBeforeEnter).toBeCalled()
+
+    return app.story()
+  })
+
   it('leave', () => {
     const onLeave = jest.fn()
     const app = createApp(allProps({ onLeave }))
@@ -95,6 +122,18 @@ describe('<TransitionGroup /> -- all props filled', () => {
 
     console.log(app.tree())
     expect(onLeave).toBeCalled()
+
+    return app.story()
+  })
+
+  it('beforeLeave', () => {
+    const onBeforeLeave = jest.fn()
+    const app = createApp(allProps({ onBeforeLeave }))
+
+    app.snap({ type: 'EMPTY' })
+
+    console.log(app.tree())
+    expect(onBeforeLeave).toBeCalled()
 
     return app.story()
   })
@@ -142,6 +181,20 @@ describe('<Transition /> -- all props filled', () => {
     return app.story()
   })
 
+  it('beforeAppear', () => {
+    const onBeforeAppear = jest.fn()
+    const app = createApp({}, allProps({ onBeforeAppear }))
+
+    console.log(app.tree())
+    console.log(app.tree().children[0])
+
+    expect(onBeforeAppear).toBeCalled()
+
+    app.snap()
+
+    return app.story()
+  })
+
   it('enter', () => {
     const onEnter = jest.fn()
     const app = createApp({}, allProps({ onEnter }), { type: 'EMPTY' })
@@ -155,6 +208,19 @@ describe('<Transition /> -- all props filled', () => {
     return app.story()
   })
 
+  it('beforeEnter', () => {
+    const onBeforeEnter = jest.fn()
+    const app = createApp({}, allProps({ onBeforeEnter }), { type: 'EMPTY' })
+
+    app.snap({ type: 'FULL' })
+
+    console.log(app.tree())
+    console.log(app.tree().children[0])
+    expect(onBeforeEnter).toBeCalled()
+
+    return app.story()
+  })
+
   it('leave', () => {
     const onLeave = jest.fn()
     const app = createApp({}, allProps({ onLeave }))
@@ -163,6 +229,18 @@ describe('<Transition /> -- all props filled', () => {
 
     console.log(app.tree())
     expect(onLeave).toBeCalled()
+
+    return app.story()
+  })
+
+  it('beforeLeave', () => {
+    const onBeforeLeave = jest.fn()
+    const app = createApp({}, allProps({ onBeforeLeave }))
+
+    app.snap({ type: 'EMPTY' })
+
+    console.log(app.tree())
+    expect(onBeforeLeave).toBeCalled()
 
     return app.story()
   })

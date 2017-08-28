@@ -22,6 +22,10 @@ type Props = {
   enterDelay?: number,      // eslint-disable-line react/no-unused-prop-types
   leaveDelay?: number,      // eslint-disable-line react/no-unused-prop-types
 
+  onBeforeAppear?: ?Function,
+  onBeforeEnter?: ?Function,
+  onBeforeLeave?: ?Function,
+
   onAppear?: ?Function,
   onEnter?: ?Function,
   onLeave?: ?Function,
@@ -84,6 +88,10 @@ export default class Transition extends React.Component {
   // triggered by `done` callbacks above:
   componentDidAppear() {
     const { prefix, appear, enter, leave } = this.prepDefaultProps()
+    if (this.props.onBeforeAppear) {
+      this.props.onBeforeAppear()
+    }
+
     removeAnimationClasses(this, prefix, appear, enter, leave)
 
     if (this.props.onAppear) {
@@ -92,6 +100,10 @@ export default class Transition extends React.Component {
   }
   componentDidEnter() {
     const { prefix, appear, enter, leave } = this.prepDefaultProps()
+    if (this.props.onBeforeEnter) {
+      this.props.onBeforeEnter()
+    }
+
     removeAnimationClasses(this, prefix, appear, enter, leave)
 
     if (this.props.onEnter) {
@@ -100,6 +112,10 @@ export default class Transition extends React.Component {
   }
   componentDidLeave() {
     const { prefix, appear, enter, leave } = this.prepDefaultProps()
+    if (this.props.onBeforeLeave) {
+      this.props.onBeforeLeave()
+    }
+
     removeAnimationClasses(this, prefix, appear, enter, leave)
 
     if (this.props.onLeave) {

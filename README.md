@@ -118,6 +118,11 @@ by supplying these, you can customize the delay length (in ms) of the individual
 ### onLeave: Function
 these callbacks will of course be called for the given transition
 
+### onBeforeAppear: Function
+### onBeforeEnter: Function
+### onBeforeLeave: Function
+these callbacks will of course be called for the before their respective transition happens
+
 ### appear: string
 ### enter: string
 ### leave: string
