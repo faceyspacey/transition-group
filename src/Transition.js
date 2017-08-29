@@ -69,29 +69,31 @@ export default class Transition extends React.Component {
   componentWillAppear(done: Function) {
     const { appear, appearDuration, duration, appearDelay, delay } = this.prepDefaultProps()
     const doneTimeout = (appearDuration || duration) + (appearDelay || delay) + 1
-
+    if (this.props.onBeforeAppear) {
+      this.props.onBeforeAppear()
+    }
     this.animate(done, appear, doneTimeout, appearDelay || delay)
   }
   componentWillEnter(done: Function) {
     const { enter, enterDuration, duration, enterDelay, delay } = this.prepDefaultProps()
     const doneTimeout = (enterDuration || duration) + (enterDelay || delay) + 1
-
+    if (this.props.onBeforeEnter) {
+      this.props.onBeforeEnter()
+    }
     this.animate(done, enter, doneTimeout, enterDelay || delay)
   }
   componentWillLeave(done: Function) {
     const { leave, leaveDuration, duration, leaveDelay, delay } = this.prepDefaultProps()
     const doneTimeout = (leaveDuration || duration) + (leaveDelay || delay) + 1
-
+    if (this.props.onBeforeLeave) {
+      this.props.onBeforeLeave()
+    }
     this.animate(done, leave, doneTimeout, leaveDelay || delay)
   }
 
   // triggered by `done` callbacks above:
   componentDidAppear() {
     const { prefix, appear, enter, leave } = this.prepDefaultProps()
-    if (this.props.onBeforeAppear) {
-      this.props.onBeforeAppear()
-    }
-
     removeAnimationClasses(this, prefix, appear, enter, leave)
 
     if (this.props.onAppear) {
@@ -100,10 +102,6 @@ export default class Transition extends React.Component {
   }
   componentDidEnter() {
     const { prefix, appear, enter, leave } = this.prepDefaultProps()
-    if (this.props.onBeforeEnter) {
-      this.props.onBeforeEnter()
-    }
-
     removeAnimationClasses(this, prefix, appear, enter, leave)
 
     if (this.props.onEnter) {
@@ -112,10 +110,6 @@ export default class Transition extends React.Component {
   }
   componentDidLeave() {
     const { prefix, appear, enter, leave } = this.prepDefaultProps()
-    if (this.props.onBeforeLeave) {
-      this.props.onBeforeLeave()
-    }
-
     removeAnimationClasses(this, prefix, appear, enter, leave)
 
     if (this.props.onLeave) {
