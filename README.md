@@ -25,7 +25,7 @@ Lastly, we offer simpler prop names and a lot more customization:
 * **a prefix** (prepended to all classes)
 
 ## Installation
-```yarn add animated-transition-group```
+```yarn add transition-group```
 
 
 ## Usage
@@ -33,7 +33,7 @@ Lastly, we offer simpler prop names and a lot more customization:
 ```javascript
 import React from 'react'
 import { connect } from 'react-redux'
-import { TransitionGroup, Transition } from 'animated-transition-group'
+import { TransitionGroup, Transition } from 'transition-group'
 
 const onLeave = () => console.log('left')
 const onEmpty = () => console.log('group empty')
