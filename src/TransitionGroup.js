@@ -38,9 +38,7 @@ type Props = {
   zeroElements?: number,
 }
 
-export default class TransitionGroup extends React.Component {
-  props: Props
-
+export default class TransitionGroup extends React.Component<Props> {
   static defaultProps = {
     prefix: '',
     duration: 0,
@@ -62,17 +60,27 @@ export default class TransitionGroup extends React.Component {
   }
 
   componentWillReceiveProps(nextProps: Props) {
-    if (this.props.onEmpty
-        && React.Children.count(nextProps.children) === this.props.zeroElements
-        && React.Children.count(this.props.children) > this.props.zeroElements
+    if (
+      this.props.onEmpty &&
+      React.Children.count(nextProps.children) === this.props.zeroElements &&
+      React.Children.count(this.props.children) >
+        (typeof this.props.zeroElements === 'number'
+          ? this.props.zeroElements
+          : 0)
     ) {
-      const duration = (this.props.leaveDuration || this.props.duration) + (this.props.leaveDelay || this.props.delay)
+      const duration =
+        (this.props.leaveDuration || this.props.duration) +
+        (this.props.leaveDelay || this.props.delay)
       setTimeoutAnimationFrame(this.props.onEmpty, duration)
     }
 
-    if (this.props.onFull
-        && React.Children.count(nextProps.children) > this.props.zeroElements
-        && React.Children.count(this.props.children) === this.props.zeroElements
+    if (
+      this.props.onFull &&
+      React.Children.count(nextProps.children) >
+        (typeof this.props.zeroElements === 'number'
+          ? this.props.zeroElements
+          : 0) &&
+      React.Children.count(this.props.children) === this.props.zeroElements
     ) {
       setTimeoutAnimationFrame(this.props.onFull, 0)
     }

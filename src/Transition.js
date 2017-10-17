@@ -31,8 +31,7 @@ type Props = {
   onLeave?: ?Function,
 }
 
-export default class Transition extends React.Component {
-  props: Props
+export default class Transition extends React.Component<Props> {
   _mounted: boolean
 
   componentWillMount() {
@@ -131,10 +130,16 @@ export default class Transition extends React.Component {
     addClass(this, className, prefix)
 
     // the class applied at least 34ms (2 animation frames) later to trigger animation
-    setTimeoutAnimationFrame(() => addClass(this, activeClass, prefix), delay + 34, className)
+    setTimeoutAnimationFrame(
+      () => addClass(this, activeClass, prefix),
+      delay + 34,
+      // $FlowFixMe: Make flow shut up about the third parameter (although it rightfully complains about it)
+      className,
+    )
 
     // will trigger `ComponentDid..` methods and remove all classes + fire callbacks
-    setTimeoutAnimationFrame(done, duration + 34, 'done callbacks') // final param only recorded in shapshot tests
+    // $FlowFixMe: Make flow shut up about the third parameter (although it rightfully complains about it)
+    setTimeoutAnimationFrame(done, duration + 34, 'done callbacks') // final param only recorded in snapshot tests
   }
 
   render() {
