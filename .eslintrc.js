@@ -88,13 +88,7 @@ module.exports = {
           "excludeArrowFunctions": true
         }
     ],
-    "flowtype/require-return-type": [
-      2,
-      "never",
-      {
-        "annotateUndefined": "never"
-      }
-    ],
+    "flowtype/require-return-type": 0,
     "flowtype/require-valid-file-annotation": [
       2,
       "never"
@@ -133,7 +127,7 @@ module.exports = {
     "babel/object-curly-spacing": 0,
     "object-shorthand": 1,
     "arrow-parens": 0,
-    "babel/no-await-in-loop": 1,
+    "no-await-in-loop": 1,
     "comma-dangle": 0,
     "no-console": ["off", { allow: ["warn", "error"] }],
     "no-unused-vars": ["off", { "vars": "all", "args": "after-used" }], //doesn't play nice with jsx
@@ -325,7 +319,7 @@ module.exports = {
 
     // Enforce spaces before the closing bracket of self-closing JSX elements
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-space-before-closing.md
-    'react/jsx-space-before-closing': ['error', 'always'],
+    'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'always'}],
 
     // Enforce component methods order
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md
@@ -1601,3 +1595,4 @@ module.exports = {
     'wrap-regex': 'off',
   }
 }
+

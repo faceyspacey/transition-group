@@ -4,9 +4,11 @@
   "description": "like `<ReactTransitionGroup />` + callbacks, extras and child-specific customization",
   "main": "dist/index.js",
   "scripts": {
+    "start": "npm run storybook",
     "storybook": "start-storybook -p 9001 -c storybook",
     "storybook:build": "rimraf distStoryBook && build-storybook -c storybook -o distStorybook",
     "build": "babel src -d dist",
+    "lint": "eslint --fix src storybook __tests__ __test-helpers__",
     "prepublish": "npm run clean && npm run build && npm run flow-copy",
     "flow-copy": "flow-copy-source src dist",
     "flow-watch": "clear; printf \"\\033[3J\" & npm run flow & fswatch -o ./ | xargs -n1 -I{} sh -c 'clear; printf \"\\033[3J\" && npm run flow'",
@@ -25,49 +27,55 @@
   },
   "homepage": "https://github.com/faceyspacey/transition-group#readme",
   "devDependencies": {
-    "@kadira/react-storybook-addon-info": "^3.3.0",
-    "@kadira/storybook": "^2.35.3",
-    "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@storybook/addon-info": "^3.2.12",
+    "@storybook/addon-knobs": "^3.2.12",
+    "@storybook/addons": "^3.2.12",
+    "@storybook/react": "^3.2.12",
     "babel-cli": "^6.18.0",
-    "babel-eslint": "^6.1.2",
-    "babel-loader": "^6.3.2",
-    "babel-plugin-flow-react-proptypes": "^3.4.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-flow-react-proptypes": "^6.1.0",
     "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-es2015": "^6.18.0",
-    "babel-preset-jest": "^19.0.0",
+    "babel-preset-jest": "^21.2.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
-    "eslint": "^3.7.1",
-    "eslint-plugin-babel": "^3.3.0",
+    "eslint": "^4.9.0",
+    "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-flowtype": "^2.30.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-react": "^6.3.0",
-    "expect": "^1.20.2",
-    "flow-bin": "^0.38.0",
+    "eslint-plugin-react": "^7.4.0",
+    "expect": "1.x",
+    "flow-bin": "^0.57.3",
     "flow-copy-source": "^1.1.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^19.0.2",
+    "jest": "^21.2.1",
     "jest-redux-snap": "^1.0.3",
-    "jest-storybook-facade": "^0.0.7",
+    "jest-storybook-facade": "^0.0.8",
     "json": "^9.0.4",
-    "react": "^15.4.2",
+    "object-assign": "^4.1.1",
+    "promise": "^8.0.1",
+    "react": "^15.6.1",
     "react-addons-test-utils": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react-dom": "^15.6.1",
     "react-redux": "^5.0.3",
-    "react-test-renderer": "^15.4.2",
+    "react-test-renderer": "^15.6.1",
     "redux": "^3.6.0",
     "redux-devtools-extension": "^2.13.0",
     "rimraf": "^2.6.0",
-    "storybook-addon-specifications": "^1.0.15",
-    "storybook-readme": "^1.3.1"
+    "storybook-addon-specifications": "^2.1.1",
+    "storybook-readme": "^3.0.6"
   },
   "peerDependencies": {
-    "react": "15.x",
-    "react-dom": "15.x"
+    "react": "15.x|16.x",
+    "react-dom": "15.x|16.x"
   },
   "jest": {
     "verbose": true,
+    "setupFiles": [
+      "<rootDir>/__test-helpers__/polyfills.js"
+    ],
     "setupTestFrameworkScriptFile": "jest-storybook-facade/jest-facade.js",
     "moduleNameMapper": {
       "styles": "identity-obj-proxy"
@@ -78,7 +86,7 @@
     ]
   },
   "dependencies": {
-    "prop-types": "^15.5.10",
-    "react-addons-transition-group": "^15.4.2"
+    "prop-types": "^15.6.0",
+    "react-addons-transition-group": "^15.6.2"
   }
 }
